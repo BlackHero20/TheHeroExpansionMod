@@ -1,0 +1,14 @@
+{
+  "THEHEROEXPANSION-SMILING_MASK.description": "[gold]The Merchant's[/gold] card removal service now always costs {Price:diff()} [gold]Gold[/gold].",
+  "THEHEROEXPANSION-SMILING_MASK.flavor": "i was to lazy to think of a good common so smiling mask it is",
+  "THEHEROEXPANSION-SMILING_MASK.title": "Smiling Mask",
+  "THEHEROEXPANSION-THREE_STRING_UKULELE.description": "The first time you play a Power each combat, gain {Energy:energyIcons()}.",
+  "THEHEROEXPANSION-THREE_STRING_UKULELE.flavor": "And his music was electric",
+  "THEHEROEXPANSION-THREE_STRING_UKULELE.title": "Three String Ukulele",
+  "THEHEROEXPANSION-POTTED_ALOE_VERA.description": "Start each [gold]Elite[/gold] combat with [blue]{RegenPower}[/blue] [gold]Regen[/gold].",
+  "THEHEROEXPANSION-POTTED_ALOE_VERA.flavor": "weed its weed trust me its weed its weed",
+  "THEHEROEXPANSION-POTTED_ALOE_VERA.title": "Potted Aloe Vera",
+  "THEHEROEXPANSION-MYSTERIOUS_FLASHLIGHT.description": "Upon pickup, obtain {CardName.StringValue:cond:[gold]{}[/gold]|a card from your past}.",
+  "THEHEROEXPANSION-MYSTERIOUS_FLASHLIGHT.flavor": "lol lmao even.",
+  "THEHEROEXPANSION-MYSTERIOUS_FLASHLIGHT.title": "Mysterious Flashlight"
+}

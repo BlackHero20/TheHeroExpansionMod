@@ -1,0 +1,37 @@
+﻿using BaseLib.Abstracts;
+using BaseLib.Extensions;
+using TheHeroExpansion.TheHeroExpansionCode.Extensions;
+using Godot;
+
+namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
+
+public abstract class TheHeroExpansionRelic : CustomRelicModel
+{
+    //TheHeroExpansion/images/relics
+    public override string PackedIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".RelicImagePath();
+            return ResourceLoader.Exists(path) ? path : "relic.png".RelicImagePath();
+        }
+    }
+
+    protected override string PackedIconOutlinePath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}_outline.png".RelicImagePath();
+            return ResourceLoader.Exists(path) ? path : "relic_outline.png".RelicImagePath();
+        }
+    }
+
+    protected override string BigIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigRelicImagePath();
+            return ResourceLoader.Exists(path) ? path : "relic.png".BigRelicImagePath();
+        }
+    }
+}
