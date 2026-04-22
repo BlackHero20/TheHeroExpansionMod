@@ -62,7 +62,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="Readme.md" />
+      <Content Include="README.md" />
     </ItemGroup>
 
     <Target Name="CheckDependencyPaths">
