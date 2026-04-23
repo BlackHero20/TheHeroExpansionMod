@@ -1,5 +1,6 @@
 {
   "THEHEROEXPANSION-TRY_AGAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nPut an Attack in your [gold]Hand[/gold] on top of your [gold]Draw Pile[/gold] and [gold]Enchant[/gold] it with [purple]Sharp {Sharp:diff()}[/purple]",
+  "THEHEROEXPANSION-TRY_AGAIN.selectionScreenPrompt": "Select an Attack to Enchant with Sharp {Sharp:diff()}.",
   "THEHEROEXPANSION-TRY_AGAIN.title": "Try Again",
   "THEHEROEXPANSION-SIX_HUNDRED_STRIKE.description": "Deal {Damage:diff()} damage.\nHits an additional time for each time a card containing “Strike” was played this combat.{InCombat:\n(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
   "THEHEROEXPANSION-SIX_HUNDRED_STRIKE.title": "Six Hundred Strike",
@@ -33,6 +34,9 @@
   "THEHEROEXPANSION-BIT_FLIP.title": "Bit Flip",
   "THEHEROEXPANSION-KILL_DRIVE.description": "Whenever you play a 0{energyPrefix:energyIcons(1)} Attack, [gold]Channel[/gold] 1 [gold]Lightning[/gold]",
   "THEHEROEXPANSION-KILL_DRIVE.title": "Kill Drive",
+  "THEHEROEXPANSION-MAGIC_PEN.description": "Enchant an Attack or Skill in your [gold]Hand[/gold] with [purple]Dreamy[/purple]",
+  "THEHEROEXPANSION-MAGIC_PEN.selectionScreenPrompt": "Select an Attack or Skill to Enchant with Dreamy.",
+  "THEHEROEXPANSION-MAGIC_PEN.title": "Magic Pen",
   "THEHEROEXPANSION-REINFORCED_BODY.description": "Gain {Block:diff()} [gold]Block[/gold] X times.",
   "THEHEROEXPANSION-REINFORCED_BODY.title": "Reinforced Body",
   "THEHEROEXPANSION-EXHUME.description": "Put a card from your [gold]Exhaust Pile[/gold] into your [gold]Hand[/gold].",
