@@ -17,6 +17,7 @@ public class MinionDuty() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Token,
     TargetType.AnyEnemy)
 {
+    public override bool GainsBlock => true;
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => 
         [

@@ -33,6 +33,8 @@
   "THEHEROEXPANSION-BIT_FLIP.title": "Bit Flip",
   "THEHEROEXPANSION-KILL_DRIVE.description": "Whenever you play a 0{energyPrefix:energyIcons(1)} Attack, [gold]Channel[/gold] 1 [gold]Lightning[/gold]",
   "THEHEROEXPANSION-KILL_DRIVE.title": "Kill Drive",
+  "THEHEROEXPANSION-REINFORCED_BODY.description": "Gain {Block:diff()} [gold]Block[/gold] X times.",
+  "THEHEROEXPANSION-REINFORCED_BODY.title": "Reinforced Body",
   "THEHEROEXPANSION-EXHUME.description": "Put a card from your [gold]Exhaust Pile[/gold] into your [gold]Hand[/gold].",
   "THEHEROEXPANSION-EXHUME.selectionScreenPrompt": "Select {Cards:diff()} {Cards:plural:card|cards} to put in your Hand.",
   "THEHEROEXPANSION-EXHUME.title": "Exhume",
