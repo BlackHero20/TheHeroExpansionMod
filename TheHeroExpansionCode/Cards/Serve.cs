@@ -31,7 +31,7 @@ public class Serve() : TheHeroExpansionCard(1,
     {
         Serve serve = this;
         await CreatureCmd.TriggerAnim(serve.Owner.Creature, "Cast", serve.Owner.Character.CastAnimDelay);
-        await PowerCmd.Apply<ServePower>(serve.Owner.Creature, serve.DynamicVars["ServePower"].BaseValue, serve.Owner.Creature, (CardModel) serve);
+        await PowerCmd.Apply<ServePower>(choiceContext, serve.Owner.Creature, serve.DynamicVars["ServePower"].BaseValue, serve.Owner.Creature, (CardModel) serve);
     }
 
     protected override void OnUpgrade()

@@ -23,7 +23,7 @@ public class ServePower : TheHeroExpansionPower
     public override async Task BeforeHandDraw(
         Player player,
         PlayerChoiceContext choiceContext,
-        CombatState combatState)
+        ICombatState combatState)
     {
         ServePower servePower = this;
         if (player != servePower.Owner.Player)

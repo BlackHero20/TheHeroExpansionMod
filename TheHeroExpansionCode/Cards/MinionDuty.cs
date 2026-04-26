@@ -58,7 +58,7 @@ public class MinionDuty() : TheHeroExpansionCard(1,
     public static async Task<IEnumerable<CardModel>> CreateInHand(
         Player owner,
         int count,
-        CombatState combatState)
+        ICombatState combatState)
     {
         if (count == 0)
             return (IEnumerable<CardModel>) Array.Empty<CardModel>();
@@ -67,7 +67,7 @@ public class MinionDuty() : TheHeroExpansionCard(1,
         List<CardModel> minionDuty = new List<CardModel>();
         for (int index = 0; index < count; ++index)
             minionDuty.Add((CardModel) combatState.CreateCard<MinionDuty>(owner));
-        IReadOnlyList<CardPileAddResult> combat = await CardPileCmd.AddGeneratedCardsToCombat((IEnumerable<CardModel>) minionDuty, PileType.Hand, true);
+        IReadOnlyList<CardPileAddResult> combat = await CardPileCmd.AddGeneratedCardsToCombat((IEnumerable<CardModel>) minionDuty, PileType.Hand, owner);
         return (IEnumerable<CardModel>) minionDuty;
     }
 }

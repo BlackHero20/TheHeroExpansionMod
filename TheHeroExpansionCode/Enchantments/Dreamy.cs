@@ -30,6 +30,6 @@ public sealed class Dreamy : TheHeroExpansionEnchantment
         Dreamy enchantment = this;
         CardCmd.PreviewCardPileAdd(
             await CardPileCmd.AddGeneratedCardToCombat(
-                enchantment.Card.CreateClone(), PileType.Discard, true), 2.2f);
+                enchantment.Card.CreateClone(), PileType.Discard, enchantment.Card.Owner), 2.2f);
     }
 }

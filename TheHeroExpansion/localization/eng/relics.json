@@ -10,5 +10,8 @@
   "THEHEROEXPANSION-POTTED_ALOE_VERA.title": "Potted Aloe Vera",
   "THEHEROEXPANSION-MYSTERIOUS_FLASHLIGHT.description": "Upon pickup, obtain {CardName.StringValue:cond:[gold]{}[/gold]|a card from your past}.",
   "THEHEROEXPANSION-MYSTERIOUS_FLASHLIGHT.flavor": "lol lmao even.",
-  "THEHEROEXPANSION-MYSTERIOUS_FLASHLIGHT.title": "Mysterious Flashlight"
+  "THEHEROEXPANSION-MYSTERIOUS_FLASHLIGHT.title": "Mysterious Flashlight",
+  "THEHEROEXPANSION-SACRED_BARK.description": "aaaaa",
+  "THEHEROEXPANSION-SACRED_BARK.flavor": "aaaaa",
+  "THEHEROEXPANSION-SACRED_BARK.title": "Sacred Bark"
 }

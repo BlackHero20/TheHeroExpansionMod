@@ -24,7 +24,7 @@ public class BeastWithin() : TheHeroExpansionCard(2,
         CardPlay play)
     {
         BeastWithin beastWithin = this;
-        await PowerCmd.Apply<BeastWithinPower>(beastWithin.Owner.Creature, beastWithin.DynamicVars["BeastWithinPower"].BaseValue, beastWithin.Owner.Creature, (CardModel) beastWithin);
+        await PowerCmd.Apply<BeastWithinPower>(choiceContext, beastWithin.Owner.Creature, beastWithin.DynamicVars["BeastWithinPower"].BaseValue, beastWithin.Owner.Creature, (CardModel) beastWithin);
     }
 
     protected override void OnUpgrade()

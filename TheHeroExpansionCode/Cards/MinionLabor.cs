@@ -52,7 +52,7 @@ public class MinionLabor() : TheHeroExpansionCard(0,
     public static async Task<IEnumerable<CardModel>> CreateInHand(
         Player owner,
         int count,
-        CombatState combatState)
+        ICombatState combatState)
     {
         if (count == 0)
             return (IEnumerable<CardModel>) Array.Empty<CardModel>();
@@ -61,7 +61,7 @@ public class MinionLabor() : TheHeroExpansionCard(0,
         List<CardModel> minionLabor = new List<CardModel>();
         for (int index = 0; index < count; ++index)
             minionLabor.Add((CardModel) combatState.CreateCard<MinionLabor>(owner));
-        IReadOnlyList<CardPileAddResult> combat = await CardPileCmd.AddGeneratedCardsToCombat((IEnumerable<CardModel>) minionLabor, PileType.Hand, true);
+        IReadOnlyList<CardPileAddResult> combat = await CardPileCmd.AddGeneratedCardsToCombat((IEnumerable<CardModel>) minionLabor, PileType.Hand, owner);
         return (IEnumerable<CardModel>) minionLabor;
     }
 }

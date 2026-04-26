@@ -33,7 +33,7 @@ public class KillDrive() : TheHeroExpansionCard(1,
     {
         KillDrive killDrive = this;
         await CreatureCmd.TriggerAnim(killDrive.Owner.Creature, "Cast", killDrive.Owner.Character.CastAnimDelay);
-        await PowerCmd.Apply<KillDrivePower>(killDrive.Owner.Creature, killDrive.DynamicVars["KillDrivePower"].BaseValue, killDrive.Owner.Creature, (CardModel) killDrive);
+        await PowerCmd.Apply<KillDrivePower>(choiceContext, killDrive.Owner.Creature, killDrive.DynamicVars["KillDrivePower"].BaseValue, killDrive.Owner.Creature, (CardModel) killDrive);
     }
 
     protected override void OnUpgrade()
