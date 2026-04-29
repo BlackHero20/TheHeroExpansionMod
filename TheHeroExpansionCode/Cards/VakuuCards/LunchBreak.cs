@@ -16,6 +16,8 @@ public class LunchBreak() : TheHeroExpansionCard(0,
     CardType.Skill, CardRarity.Ancient,
     TargetType.Self)
 {
+    protected override bool ShouldGlowRedInternal => true;
+    
     public override IEnumerable<CardKeyword> CanonicalKeywords => 
     [
         CardKeyword.Ethereal,

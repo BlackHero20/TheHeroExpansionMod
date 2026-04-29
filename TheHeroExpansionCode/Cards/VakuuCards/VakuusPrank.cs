@@ -19,6 +19,7 @@ public class VakuusPrank() : TheHeroExpansionCard(0,
     CardType.Power, CardRarity.Ancient,
     TargetType.Self)
 {
+    protected override bool ShouldGlowRedInternal => true;
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
