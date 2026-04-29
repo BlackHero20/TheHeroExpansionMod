@@ -54,11 +54,13 @@
   "THEHEROEXPANSION-SEEK.title": "Seek",
   "THEHEROEXPANSION-VAKUUS_PRANK.description": "{IfUpgraded:show:[red][shake]More? Alright, Have fun.[/shake][/red]\n}At the end of your turn, Take {VakuusPrankPower:diff()} Damage.",
   "THEHEROEXPANSION-VAKUUS_PRANK.approval": "[red][shake]Nice Try[/shake][/red]",
-  "THEHEROEXPANSION-VAKUUS_PRANK.title": "Vakuus Prank",
+  "THEHEROEXPANSION-VAKUUS_PRANK.title": "Vakuu's Prank",
   "THEHEROEXPANSION-LUNCH_BREAK.description": "A Note engraved on your arm.\n[red][shake]Out for lunch. You can handle this without me. Right?[/shake][/red]",
   "THEHEROEXPANSION-LUNCH_BREAK.title": "Lunch Break",
   "THEHEROEXPANSION-DEMONIC_SURGE.description": "{IfUpgraded:show:[red][shake]Don't get smart with me[/shake][/red]\nFor the next {DemonicCripplePower:diff()} Turns, Attacks deal half damage|This turn, Attacks deal double damage.}",
   "THEHEROEXPANSION-DEMONIC_SURGE.approval": "[red][shake]No Fuss.[/shake][/red]",
-  "THEHEROEXPANSION-DEMONIC_SURGE.title": "Demonic Surge"
+  "THEHEROEXPANSION-DEMONIC_SURGE.title": "Demonic Surge",
+  "THEHEROEXPANSION-QUICK_THOUGHT.description": "{IfUpgraded:show:[red][shake]Not enough? No problem.[/shake][/red]\n}Gain {Block:diff()} [gold]Block[/gold]{IfUpgraded:show:\nIf you take unblocked attack damage this combat, die. [red][shake]Good Luck.[/shake][/red]}",
+  "THEHEROEXPANSION-QUICK_THOUGHT.title": "Quick Thought"
 
 } 

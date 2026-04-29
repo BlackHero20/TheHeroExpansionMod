@@ -32,7 +32,7 @@ public class TheRing : TheHeroExpansionRelic
 
         relic.Flash();
 
-        int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 5);
+        int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 6);
 
         switch (roll)
         {
@@ -47,6 +47,9 @@ public class TheRing : TheHeroExpansionRelic
                 break;
             case 4:
                 await relic.Effect4(choiceContext, combatState);
+                break;
+            case 5:
+                await relic.Effect5(choiceContext, combatState);
                 break;
             default:
                 break;
@@ -76,5 +79,11 @@ public class TheRing : TheHeroExpansionRelic
     {
         TheRing theRing = this;
         await DemonicSurge.CreateInHand(theRing.Owner, 1, combatState);
+    }
+    
+    private async Task Effect5(PlayerChoiceContext choiceContext, ICombatState combatState)
+    {
+        TheRing theRing = this;
+        await QuickThought.CreateInHand(theRing.Owner, 1, combatState);
     }
 }
