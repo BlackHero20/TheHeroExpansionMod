@@ -51,5 +51,9 @@
   "THEHEROEXPANSION-RESENT.title": "Resent",
   "THEHEROEXPANSION-SEEK.description": "Put {Cards:diff()} {Cards:plural:card|cards} from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].",
   "THEHEROEXPANSION-SEEK.selectionScreenPrompt": "Select {Cards:diff()} {Cards:plural:card|cards} to put in your Hand.",
-  "THEHEROEXPANSION-SEEK.title": "Seek"
+  "THEHEROEXPANSION-SEEK.title": "Seek",
+  "THEHEROEXPANSION-VAKUUS_PRANK.description": "{IfUpgraded:show:[red][shake]More? Alright, Have fun.[/shake][/red]\n}At the end of your turn, Take {VakuusPrankPower:diff()} Damage.",
+  "THEHEROEXPANSION-VAKUUS_PRANK.approval": "[red][shake]Nice Try[/shake][/red]",
+  "THEHEROEXPANSION-VAKUUS_PRANK.title": "Vakuus Prank"
+
 } 

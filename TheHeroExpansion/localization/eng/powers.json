@@ -16,5 +16,8 @@
   "THEHEROEXPANSION-PERISH_SONG_POWER.title": "Perish Song",
   "THEHEROEXPANSION-KILL_DRIVE_POWER.description": "Whenever you play a 0{energyPrefix:energyIcons(1)} Attack, [gold]Channel[/gold] [blue]1[/blue] [gold]Lightning[/gold].",
   "THEHEROEXPANSION-KILL_DRIVE_POWER.smartDescription": "Whenever you play a 0{energyPrefix:energyIcons(1)} Attack, [gold]Channel[/gold] [blue]{Amount}[/blue] [gold]Lightning[/gold].",
-  "THEHEROEXPANSION-KILL_DRIVE_POWER.title": "Kill Drive"
+  "THEHEROEXPANSION-KILL_DRIVE_POWER.title": "Kill Drive",
+  "THEHEROEXPANSION-VAKUUS_PRANK_POWER.description": "Take [blue]X[/blue] Damage at the end of turn.\n\n[red]You're Welcome[/red]",
+  "THEHEROEXPANSION-VAKUUS_PRANK_POWER.smartDescription": "Take [blue]{Amount}[/blue] Damage at the end of turn.\n\n[red][shake]You're Welcome[/shake][/red]",
+  "THEHEROEXPANSION-VAKUUS_PRANK_POWER.title": "Vakuu's Prank"
 }
