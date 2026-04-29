@@ -54,6 +54,8 @@
   "THEHEROEXPANSION-SEEK.title": "Seek",
   "THEHEROEXPANSION-VAKUUS_PRANK.description": "{IfUpgraded:show:[red][shake]More? Alright, Have fun.[/shake][/red]\n}At the end of your turn, Take {VakuusPrankPower:diff()} Damage.",
   "THEHEROEXPANSION-VAKUUS_PRANK.approval": "[red][shake]Nice Try[/shake][/red]",
-  "THEHEROEXPANSION-VAKUUS_PRANK.title": "Vakuus Prank"
+  "THEHEROEXPANSION-VAKUUS_PRANK.title": "Vakuus Prank",
+  "THEHEROEXPANSION-LUNCH_BREAK.description": "A Note engraved on your arm.\n[red][shake]Out for lunch. You can handle this without me. Right?[/shake][/red]",
+  "THEHEROEXPANSION-LUNCH_BREAK.title": "Lunch Break"
 
 } 

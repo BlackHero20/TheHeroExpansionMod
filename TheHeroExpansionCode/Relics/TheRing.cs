@@ -31,7 +31,7 @@ public class TheRing : TheHeroExpansionRelic
 
         relic.Flash();
 
-        int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 3);
+        int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 4);
 
         switch (roll)
         {
@@ -63,9 +63,9 @@ public class TheRing : TheHeroExpansionRelic
         await PowerCmd.Apply<MyTurnPower>(choiceContext, theRing.Owner.Creature, 1M, theRing.Owner.Creature, null);
     }
 
-    private Task Effect3(PlayerChoiceContext choiceContext)
+    private async Task Effect3(PlayerChoiceContext choiceContext)
     {
-        // TODO
-        return Task.CompletedTask;
+        TheRing theRing = this;
+        await LunchBreak.CreateInHand(theRing.Owner, 1, theRing.Owner.Creature.CombatState);
     }
 }
