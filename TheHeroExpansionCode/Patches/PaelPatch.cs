@@ -14,7 +14,7 @@ public static class PaelPatch
         if (__instance.Owner == null)
             return;
 
-        var relic = ModelDb.Relic<TestRelic>().ToMutable(); //change this to whatever relic I want
+        var relic = ModelDb.Relic<PaelsVirus>().ToMutable(); //change this to whatever relic I want
         relic.Owner = __instance.Owner;
 
         // Use reflection to call the protected RelicOption method
