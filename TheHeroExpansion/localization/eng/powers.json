@@ -23,5 +23,11 @@
   "THEHEROEXPANSION-MY_TURN_POWER.description": "[red][shake]I'm playing now[/shake][/red]",
   "THEHEROEXPANSION-MY_TURN_POWER.smartDescription": "[red][shake]I'm playing now[/shake][/red]",
   "THEHEROEXPANSION-MY_TURN_POWER.approval": "[red][shake]My Turn[/shake][/red]",
-  "THEHEROEXPANSION-MY_TURN_POWER.title": "My Turn"
+  "THEHEROEXPANSION-MY_TURN_POWER.title": "My Turn",
+  "THEHEROEXPANSION-DEMONIC_SURGE_POWER.description": "This turn, Attacks deal double damage.",
+  "THEHEROEXPANSION-DEMONIC_SURGE_POWER.smartDescription": "{Amount:plural:This turn|For the next [blue]{}[/blue] turns}, Attacks deal double damage.",
+  "THEHEROEXPANSION-DEMONIC_SURGE_POWER.title": "Demonic Surge",
+  "THEHEROEXPANSION-DEMONIC_CRIPPLE_POWER.description": "This turn, Attacks deal half damage.\n[red][shake]Do not demand from the hand the feeds you.[/shake][/red]",
+  "THEHEROEXPANSION-DEMONIC_CRIPPLE_POWER.smartDescription": "{Amount:plural:This turn|For the next [blue]{}[/blue] turns}, Attacks deal half damage.\n[red][shake]Do not demand from the hand the feeds you.[/shake][/red]",
+  "THEHEROEXPANSION-DEMONIC_CRIPPLE_POWER.title": "Demonic Cripple"
 }

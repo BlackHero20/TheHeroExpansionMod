@@ -20,9 +20,10 @@ public class TheRing : TheHeroExpansionRelic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
-    public override async Task AfterPlayerTurnStart(
+    public override async Task BeforeHandDraw(
+        Player player,
         PlayerChoiceContext choiceContext,
-        Player player)
+        ICombatState combatState)
     {
         TheRing relic = this;
 
@@ -31,29 +32,31 @@ public class TheRing : TheHeroExpansionRelic
 
         relic.Flash();
 
-        int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 4);
+        int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 5);
 
         switch (roll)
         {
             case 1:
-                await relic.Effect1(choiceContext);
+                await relic.Effect1(choiceContext, combatState);
                 break;
             case 2:
                 await relic.Effect2(choiceContext);
                 break;
             case 3:
-                await relic.Effect3(choiceContext);
+                await relic.Effect3(choiceContext, combatState);
                 break;
-            // ... up to 20
+            case 4:
+                await relic.Effect4(choiceContext, combatState);
+                break;
             default:
                 break;
         }
     }
 
-    private async Task Effect1(PlayerChoiceContext choiceContext)
+    private async Task Effect1(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuusPrank.CreateInHand(theRing.Owner, 1, theRing.Owner.Creature.CombatState);
+        await VakuusPrank.CreateInHand(theRing.Owner, 1, combatState);
     }
 
     private async Task Effect2(PlayerChoiceContext choiceContext)
@@ -63,9 +66,15 @@ public class TheRing : TheHeroExpansionRelic
         await PowerCmd.Apply<MyTurnPower>(choiceContext, theRing.Owner.Creature, 1M, theRing.Owner.Creature, null);
     }
 
-    private async Task Effect3(PlayerChoiceContext choiceContext)
+    private async Task Effect3(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await LunchBreak.CreateInHand(theRing.Owner, 1, theRing.Owner.Creature.CombatState);
+        await LunchBreak.CreateInHand(theRing.Owner, 1, combatState);
+    }
+    
+    private async Task Effect4(PlayerChoiceContext choiceContext, ICombatState combatState)
+    {
+        TheRing theRing = this;
+        await DemonicSurge.CreateInHand(theRing.Owner, 1, combatState);
     }
 }

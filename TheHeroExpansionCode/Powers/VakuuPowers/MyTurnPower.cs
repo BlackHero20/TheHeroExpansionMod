@@ -22,7 +22,7 @@ public class MyTurnPower : TheHeroExpansionPower
         Player player)
     {
         MyTurnPower power = this;
-        if (player != power.Owner.Player)
+        if (power.Owner.Player == null || player != power.Owner.Player)
             return;
 
         power.Flash();
@@ -53,6 +53,8 @@ public class MyTurnPower : TheHeroExpansionPower
 
     private Creature? GetTarget(CardModel card, ICombatState combatState)
     {
+        if (this.Owner.Player == null)
+            return null;
         Rng rng = this.Owner.Player.RunState.Rng.CombatTargets;
         return card.TargetType switch
         {

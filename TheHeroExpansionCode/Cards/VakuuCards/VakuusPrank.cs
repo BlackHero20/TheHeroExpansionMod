@@ -37,11 +37,11 @@ public class VakuusPrank() : TheHeroExpansionCard(0,
     public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
         VakuusPrank vakuusPrank = this;
-        TalkCmd.Play(new LocString("cards", "THEHEROEXPANSION-VAKUUS_PRANK.approval"), vakuusPrank.Owner.Creature, VfxColor.Purple);
         if (vakuusPrank.Owner.Creature.Side != side)
             return;
         if (vakuusPrank.Pile?.Type != PileType.Hand)
             return;
+        TalkCmd.Play(new LocString("cards", "THEHEROEXPANSION-VAKUUS_PRANK.approval"), vakuusPrank.Owner.Creature, VfxColor.Purple);
         await CardCmd.AutoPlay(choiceContext, vakuusPrank, null, AutoPlayType.Default);
     }
 
