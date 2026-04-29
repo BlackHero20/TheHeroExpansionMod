@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -53,5 +54,21 @@ public class VakuusPrank() : TheHeroExpansionCard(0,
     protected override void OnUpgrade()
     {
         this.DynamicVars["VakuusPrankPower"].UpgradeValueBy(10M);
+    }
+    
+    public static async Task<IEnumerable<CardModel>> CreateInHand(
+        Player owner,
+        int count,
+        ICombatState combatState)
+    {
+        if (count == 0)
+            return (IEnumerable<CardModel>) Array.Empty<CardModel>();
+        if (CombatManager.Instance.IsOverOrEnding)
+            return (IEnumerable<CardModel>) Array.Empty<CardModel>();
+        List<CardModel> vakuusPrank = new List<CardModel>();
+        for (int index = 0; index < count; ++index)
+            vakuusPrank.Add((CardModel) combatState.CreateCard<VakuusPrank>(owner));
+        IReadOnlyList<CardPileAddResult> combat = await CardPileCmd.AddGeneratedCardsToCombat((IEnumerable<CardModel>) vakuusPrank, PileType.Hand, owner);
+        return (IEnumerable<CardModel>) vakuusPrank;
     }
 }

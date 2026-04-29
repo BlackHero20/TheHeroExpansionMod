@@ -19,5 +19,9 @@
   "THEHEROEXPANSION-KILL_DRIVE_POWER.title": "Kill Drive",
   "THEHEROEXPANSION-VAKUUS_PRANK_POWER.description": "Take [blue]X[/blue] Damage at the end of turn.\n\n[red]You're Welcome[/red]",
   "THEHEROEXPANSION-VAKUUS_PRANK_POWER.smartDescription": "Take [blue]{Amount}[/blue] Damage at the end of turn.\n\n[red][shake]You're Welcome[/shake][/red]",
-  "THEHEROEXPANSION-VAKUUS_PRANK_POWER.title": "Vakuu's Prank"
+  "THEHEROEXPANSION-VAKUUS_PRANK_POWER.title": "Vakuu's Prank",
+  "THEHEROEXPANSION-MY_TURN_POWER.description": "[red][shake]I'm playing now[/shake][/red]",
+  "THEHEROEXPANSION-MY_TURN_POWER.smartDescription": "[red][shake]I'm playing now[/shake][/red]",
+  "THEHEROEXPANSION-MY_TURN_POWER.approval": "[red][shake]My Turn[/shake][/red]",
+  "THEHEROEXPANSION-MY_TURN_POWER.title": "My Turn"
 }
