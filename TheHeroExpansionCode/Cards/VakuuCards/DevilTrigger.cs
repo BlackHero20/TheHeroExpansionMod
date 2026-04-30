@@ -7,13 +7,14 @@ using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
+using TheHeroExpansion.TheHeroExpansionCode.Powers;
+using TheHeroExpansion.TheHeroExpansionCode.Powers.VakuuPowers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards.VakuuCards;
 [Pool(typeof(TokenCardPool))]
-public class Spectre() : VakuuCard(0,
+public class DevilTrigger() : VakuuCard(0,
     CardType.Skill, TargetType.Self)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => 
@@ -24,35 +25,34 @@ public class Spectre() : VakuuCard(0,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<IntangiblePower>(1M),
-        new PowerVar<WraithFormPower>(1M)
+        new PowerVar<TheWorldPower>(1M),
+        new PowerVar<HubrisPower>(2M)
     ];
-
+    
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        Spectre spectre = this;
-        await CreatureCmd.TriggerAnim(spectre.Owner.Creature, "Cast", spectre.Owner.Character.CastAnimDelay);
-        await PowerCmd.Apply<IntangiblePower>(choiceContext, spectre.Owner.Creature, spectre.DynamicVars["IntangiblePower"].BaseValue, spectre.Owner.Creature, (CardModel) spectre);
-        if (spectre.IsUpgraded)
+        DevilTrigger devilTrigger = this;
+        await PowerCmd.Apply<TheWorldPower>(choiceContext, devilTrigger.Owner.Creature, devilTrigger.DynamicVars["TheWorldPower"].BaseValue, devilTrigger.Owner.Creature, (CardModel) devilTrigger);
+        if (devilTrigger.IsUpgraded)
         {
-            await PowerCmd.Apply<WraithFormPower>(choiceContext, spectre.Owner.Creature, spectre.DynamicVars["WraithFormPower"].BaseValue, spectre.Owner.Creature, (CardModel) spectre);
+            await PowerCmd.Apply<HubrisPower>(choiceContext, devilTrigger.Owner.Creature, devilTrigger.DynamicVars["HubrisPower"].BaseValue, devilTrigger.Owner.Creature, (CardModel) devilTrigger);
         }
     }
     
     public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
-        Spectre spectre = this;
-        if (spectre.IsUpgraded)
+        DevilTrigger devilTrigger = this;
+        if (devilTrigger.IsUpgraded)
         {
-            if (spectre.Owner.Creature.Side != side)
+            if (devilTrigger.Owner.Creature.Side != side)
                 return;
-            if (spectre.Pile?.Type != PileType.Hand)
+            if (devilTrigger.Pile?.Type != PileType.Hand)
                 return;
-            TalkCmd.Play(this.GetRandomVakuuTaunt(), spectre.Owner.Creature, VfxColor.Purple);
+            TalkCmd.Play(this.GetRandomVakuuTaunt(), devilTrigger.Owner.Creature, VfxColor.Purple);
             await Cmd.Wait(0.7f);
-            await CardCmd.AutoPlay(choiceContext, spectre, null, AutoPlayType.Default);
+            await CardCmd.AutoPlay(choiceContext, devilTrigger, null, AutoPlayType.Default);
         }
     }
     

@@ -32,5 +32,8 @@
   "THEHEROEXPANSION-DEMONIC_CRIPPLE_POWER.title": "Demonic Cripple",
   "THEHEROEXPANSION-PAINFUL_OFFERING_POWER.description": "Gain [blue]1[/blue] less [gold]Energy[/gold] per turn.",
   "THEHEROEXPANSION-PAINFUL_OFFERING_POWER.smartDescription": "Gain [blue]{Amount}[/blue] less {energyPrefix:energyIcons(1)} per turn.",
-  "THEHEROEXPANSION-PAINFUL_OFFERING_POWER.title": "Painful Offering"
+  "THEHEROEXPANSION-PAINFUL_OFFERING_POWER.title": "Painful Offering",
+  "THEHEROEXPANSION-HUBRIS_POWER.description": "In [blue]X[/blue] Turns, [red]Die[/red]",
+  "THEHEROEXPANSION-HUBRIS_POWER.smartDescription": "In [blue]{Amount}[/blue] {Amount:plural:turn|turns}, [red]Die[/red]",
+  "THEHEROEXPANSION-HUBRIS_POWER.title": "Hubris"
 }

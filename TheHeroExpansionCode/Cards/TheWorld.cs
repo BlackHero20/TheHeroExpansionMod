@@ -35,7 +35,6 @@ public class TheWorld() : TheHeroExpansionCard(2,
 
     protected override void OnUpgrade()
     {
-        // Example upgrade: reduce cost
         this.EnergyCost.UpgradeBy(-1);
     }
 }

@@ -83,7 +83,10 @@
   "THEHEROEXPANSION-DISCARDED_CONTRACT.selectionScreenPrompt": "Select {Cards:diff()} {Cards:plural:card|cards} to put in your Hand.",
   "THEHEROEXPANSION-DISCARDED_CONTRACT.title": "Discarded Contract",
   "THEHEROEXPANSION-BOTTLED_DYNAMISM.description": "{IfUpgraded:show:[red][shake]No need to thank me[/shake][/red]\n}Gain {VigorPower:diff()} [gold]Vigor[/gold]{IfUpgraded:show:\nYou cannot use Attacks this turn.}",
-  "THEHEROEXPANSION-BOTTLED_DYNAMISM.title": "Bottled Dynamism"
+  "THEHEROEXPANSION-BOTTLED_DYNAMISM.title": "Bottled Dynamism",
+  "THEHEROEXPANSION-DEVIL_TRIGGER.description": "{IfUpgraded:show:[red][shake]Don't push your luck, mortal[/shake][/red]\n}Take an extra turn after this one{IfUpgraded:show:\nIn {HubrisPower:diff()} turns, [red]Die[/red]}",
+  "THEHEROEXPANSION-DEVIL_TRIGGER.approval": "[red][shake]You Signed the Contract.[/shake][/red]",
+  "THEHEROEXPANSION-DEVIL_TRIGGER.title": "Devil Trigger"
   
 
 } 

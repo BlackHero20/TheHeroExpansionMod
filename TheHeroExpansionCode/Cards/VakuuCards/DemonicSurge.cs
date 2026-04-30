@@ -54,7 +54,8 @@ public class DemonicSurge() : VakuuCard(0,
                 return;
             if (demonicSurge.Pile?.Type != PileType.Hand)
                 return;
-            TalkCmd.Play(new LocString("cards", "THEHEROEXPANSION-DEMONIC_SURGE.approval"), demonicSurge.Owner.Creature, VfxColor.Purple);
+            TalkCmd.Play(this.GetRandomVakuuTaunt(), demonicSurge.Owner.Creature, VfxColor.Purple);
+            await Cmd.Wait(0.7f);
             await CardCmd.AutoPlay(choiceContext, demonicSurge, null, AutoPlayType.Default);
         }
     }

@@ -30,7 +30,8 @@ public class VakuusPrank() : VakuuCard(0,
             return;
         if (vakuusPrank.Pile?.Type != PileType.Hand)
             return;
-        TalkCmd.Play(new LocString("cards", "THEHEROEXPANSION-VAKUUS_PRANK.approval"), vakuusPrank.Owner.Creature, VfxColor.Purple);
+        TalkCmd.Play(this.GetRandomVakuuTaunt(), vakuusPrank.Owner.Creature, VfxColor.Purple);
+        await Cmd.Wait(0.7f);
         await CardCmd.AutoPlay(choiceContext, vakuusPrank, null, AutoPlayType.Default);
     }
 
