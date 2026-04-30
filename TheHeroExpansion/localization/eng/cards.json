@@ -70,6 +70,12 @@
   "THEHEROEXPANSION-ENGRAVE.title": "Engrave",
   "THEHEROEXPANSION-GLITTER_BOMB.description": "{IfUpgraded:show:[red][shake]Oops. Oh well...[/shake][/red]\n}Deal {Damage:diff()} Damage to {IfUpgraded:show:EVERYONE|ALL enemies}\n[gold]Enchant[/gold] {IfUpgraded:show:your [gold]Hand[/gold]|a card in your [gold]Hand[/gold]} with [purple]Glam[/purple]",
   "THEHEROEXPANSION-GLITTER_BOMB.selectionScreenPrompt": "Select a card to enchant with Glam.",
-  "THEHEROEXPANSION-GLITTER_BOMB.title": "Glitter Bomb"
+  "THEHEROEXPANSION-GLITTER_BOMB.title": "Glitter Bomb",
+  "THEHEROEXPANSION-SPECTRE.description": "{IfUpgraded:show:[red][shake]And I was so generous...[/shake][/red]\n}Gain {IntangiblePower:diff()} [gold]Intangible[/gold].{IfUpgraded:show:\nAt the start of your turn, lose {WraithFormPower:diff()} [gold]Dexterity[/gold].}",
+  "THEHEROEXPANSION-SPECTRE.approval": "[red][shake]Ah ah ah...[/shake][/red]",
+  "THEHEROEXPANSION-SPECTRE.title": "Spectre",
+  "THEHEROEXPANSION-FORBIDDEN_POWER.description": "{IfUpgraded:show:[red][shake]Greed corrupts all[/shake][/red]\n}[gold]Enchant[/gold] every attack in your hand with [purple]{IfUpgraded:show:Doomsday|Corrupted}[/purple].",
+  "THEHEROEXPANSION-FORBIDDEN_POWER.title": "Forbidden Power"
+  
 
 } 
