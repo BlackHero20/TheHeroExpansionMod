@@ -26,5 +26,8 @@
   "THEHEROEXPANSION-TEST_RELIC.description": "Gain [blue]1[/blue] [gold]Dexterity[/gold] at the start of each combat.",
   "THEHEROEXPANSION-TEST_RELIC.eventDescription": "Gain [blue]1[/blue] [gold]Dexterity[/gold] at the start of each combat.",
   "THEHEROEXPANSION-TEST_RELIC.flavor": "",
-  "THEHEROEXPANSION-TEST_RELIC.title": "Test Relic"
+  "THEHEROEXPANSION-TEST_RELIC.title": "Test Relic",
+  "THEHEROEXPANSION-DAINTY_DANDELION.description": "Gain {Energy:energyIcons()} at the start of each turn. Whenever you lose HP in combat, disable this relic for the rest of combat",
+  "THEHEROEXPANSION-DAINTY_DANDELION.flavor": "lol",
+  "THEHEROEXPANSION-DAINTY_DANDELION.title": "Dainty Dandelion"
 }

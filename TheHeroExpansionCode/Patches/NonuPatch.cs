@@ -11,7 +11,7 @@ public static class NonuPatch
 {
     public static void Postfix(Nonupeipe __instance, ref IEnumerable<EventOption> __result)
     {
-        var relic = ModelDb.Relic<TestRelic>().ToMutable(); //change this to whatever relic I want
+        var relic = ModelDb.Relic<DaintyDandelion>().ToMutable();
 
         var method = typeof(AncientEventModel).GetMethod("RelicOption",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance,
