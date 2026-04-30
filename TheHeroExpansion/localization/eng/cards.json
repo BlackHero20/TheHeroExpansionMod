@@ -75,7 +75,13 @@
   "THEHEROEXPANSION-SPECTRE.approval": "[red][shake]Ah ah ah...[/shake][/red]",
   "THEHEROEXPANSION-SPECTRE.title": "Spectre",
   "THEHEROEXPANSION-FORBIDDEN_POWER.description": "{IfUpgraded:show:[red][shake]Greed corrupts all[/shake][/red]\n}[gold]Enchant[/gold] every attack in your hand with [purple]{IfUpgraded:show:Doomsday|Corrupted}[/purple].",
-  "THEHEROEXPANSION-FORBIDDEN_POWER.title": "Forbidden Power"
+  "THEHEROEXPANSION-FORBIDDEN_POWER.title": "Forbidden Power",
+  "THEHEROEXPANSION-GRANTED_CONTRACT.description": "{IfUpgraded:show:[red][shake]Such a shame.[/shake][/red]\n}Put {Cards:diff()} {Cards:plural:card|cards} from your [gold]{IfUpgraded:show:Discard|Draw} Pile[/gold] into your [gold]Hand[/gold].",
+  "THEHEROEXPANSION-GRANTED_CONTRACT.selectionScreenPrompt": "Select {Cards:diff()} {Cards:plural:card|cards} to put in your Hand.",
+  "THEHEROEXPANSION-GRANTED_CONTRACT.title": "Granted Contract",
+  "THEHEROEXPANSION-DISCARDED_CONTRACT.description": "{IfUpgraded:show:[red][shake]Changed your mind?[/shake][/red]\n}Put {Cards:diff()} {Cards:plural:card|cards} from your [gold]{IfUpgraded:show:Draw|Discard} Pile[/gold] into your [gold]Hand[/gold].",
+  "THEHEROEXPANSION-DISCARDED_CONTRACT.selectionScreenPrompt": "Select {Cards:diff()} {Cards:plural:card|cards} to put in your Hand.",
+  "THEHEROEXPANSION-DISCARDED_CONTRACT.title": "Discarded Contract"
   
 
 } 
