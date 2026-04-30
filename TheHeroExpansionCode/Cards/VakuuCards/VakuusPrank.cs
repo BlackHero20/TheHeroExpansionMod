@@ -20,7 +20,7 @@ public class VakuusPrank() : VakuuCard(0,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<VakuusPrankPower>(15M),
+        new PowerVar<VakuusPrankPower>(10M),
     ];
     
     public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)

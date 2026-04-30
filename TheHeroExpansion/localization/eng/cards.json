@@ -67,6 +67,9 @@
   "THEHEROEXPANSION-COGNITION_BLIP.description": "{IfUpgraded:show:[red][shake]You cant handle more[/shake][/red]\n}Draw cards until your [gold]Hand[/gold] is full.{IfUpgraded:show:\nBecome [red]Confused[/red]}",
   "THEHEROEXPANSION-COGNITION_BLIP.title": "Cognition Blip",
   "THEHEROEXPANSION-ENGRAVE.description": "{IfUpgraded:show:[red][shake]Fine, Just sign here.[/shake][/red]\nLose {HpLoss:diff()} HP.\nAdd [gold]Retain[/gold] to every card in hand|[gold]Retain[/gold] your [gold]Hand[/gold] this turn.}",
-  "THEHEROEXPANSION-ENGRAVE.title": "Engrave"
+  "THEHEROEXPANSION-ENGRAVE.title": "Engrave",
+  "THEHEROEXPANSION-GLITTER_BOMB.description": "{IfUpgraded:show:[red][shake]Oops. Oh well...[/shake][/red]\n}Deal {Damage:diff()} Damage to {IfUpgraded:show:EVERYONE|ALL enemies}\n[gold]Enchant[/gold] {IfUpgraded:show:your [gold]Hand[/gold]|a card in your [gold]Hand[/gold]} with [purple]Glam[/purple]",
+  "THEHEROEXPANSION-GLITTER_BOMB.selectionScreenPrompt": "Select a card to enchant with Glam.",
+  "THEHEROEXPANSION-GLITTER_BOMB.title": "Glitter Bomb"
 
 } 
