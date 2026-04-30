@@ -62,7 +62,9 @@
   "THEHEROEXPANSION-DEMONIC_SURGE.title": "Demonic Surge",
   "THEHEROEXPANSION-QUICK_THOUGHT.description": "{IfUpgraded:show:[red][shake]Not enough? No problem.[/shake][/red]\n}Gain {Block:diff()} [gold]Block[/gold]{IfUpgraded:show:\nIf you take unblocked attack damage this combat, die. [red][shake]Good Luck.[/shake][/red]}",
   "THEHEROEXPANSION-QUICK_THOUGHT.title": "Quick Thought",
-  "THEHEROEXPANSION-HUMBLE_OFFERING.description": "{IfUpgraded:show:[red][shake]Generous are we?[/shake][/red]\n}Gain {Energy:energyIcons()}.{IfUpgraded:show:\nGain {PainfulOfferingPower:diff()} less {energyPrefix:energyIcons(1)} per turn. \n}",
-  "THEHEROEXPANSION-HUMBLE_OFFERING.title": "Humble Offering"
+  "THEHEROEXPANSION-HUMBLE_OFFERING.description": "{IfUpgraded:show:[red][shake]Generous are we?[/shake][/red]\n}Gain {Energy:energyIcons()}.{IfUpgraded:show:\nGain {PainfulOfferingPower:diff()} less {energyPrefix:energyIcons(1)} per turn.}",
+  "THEHEROEXPANSION-HUMBLE_OFFERING.title": "Humble Offering",
+  "THEHEROEXPANSION-COGNITION_BLIP.description": "{IfUpgraded:show:[red][shake]You cant handle more[/shake][/red]\n}Draw cards until your [gold]Hand[/gold] is full.{IfUpgraded:show:\nBecome [red]Confused[/red]}",
+  "THEHEROEXPANSION-COGNITION_BLIP.title": "Cognition Blip"
 
 } 

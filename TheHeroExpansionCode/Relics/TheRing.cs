@@ -32,7 +32,7 @@ public class TheRing : TheHeroExpansionRelic
 
         relic.Flash();
 
-        int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 7);
+        int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 8);
 
         switch (roll)
         {
@@ -53,6 +53,9 @@ public class TheRing : TheHeroExpansionRelic
                 break;
             case 6:
                 await relic.Effect6(choiceContext, combatState);
+                break;
+            case 7:
+                await relic.Effect7(choiceContext, combatState);
                 break;
             default:
                 break;
@@ -94,5 +97,11 @@ public class TheRing : TheHeroExpansionRelic
     {
         TheRing theRing = this;
         await VakuuCard.CreateInHand<HumbleOffering>(theRing.Owner, 1, combatState);
+    }
+    
+    private async Task Effect7(PlayerChoiceContext choiceContext, ICombatState combatState)
+    {
+        TheRing theRing = this;
+        await VakuuCard.CreateInHand<CognitionBlip>(theRing.Owner, 1, combatState);
     }
 }
