@@ -11,7 +11,7 @@ public static class VakuuPatch
 {
     public static void Postfix(Vakuu __instance, ref IEnumerable<EventOption> __result)
     {
-        var relic = ModelDb.Relic<TheRing>().ToMutable(); //change this to whatever relic I want
+        var relic = ModelDb.Relic<TheRing>().ToMutable();
 
         var method = typeof(AncientEventModel).GetMethod("RelicOption",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance,

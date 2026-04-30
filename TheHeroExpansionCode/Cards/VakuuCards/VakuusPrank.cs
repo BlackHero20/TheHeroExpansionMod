@@ -15,25 +15,13 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers.VakuuPowers;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards.VakuuCards;
 
 [Pool(typeof(TokenCardPool))]
-public class VakuusPrank() : TheHeroExpansionCard(0,
-    CardType.Power, CardRarity.Ancient,
-    TargetType.Self)
+public class VakuusPrank() : VakuuCard(0,
+    CardType.Power, TargetType.Self)
 {
-    protected override bool ShouldGlowRedInternal => true;
-    
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new PowerVar<VakuusPrankPower>(15M),
     ];
-    
-    public override bool ShouldPlay(CardModel card, AutoPlayType autoPlayType)
-    {
-        if (card.Owner != this.Owner) return true;
-        CardPile pile = this.Pile;
-        return (pile != null ? (pile.Type != PileType.Hand ? 1 : 0) : 1) != 0
-               || card is VakuusPrank
-               || autoPlayType != AutoPlayType.None;
-    }
     
     public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
@@ -55,21 +43,5 @@ public class VakuusPrank() : TheHeroExpansionCard(0,
     protected override void OnUpgrade()
     {
         this.DynamicVars["VakuusPrankPower"].UpgradeValueBy(10M);
-    }
-    
-    public static async Task<IEnumerable<CardModel>> CreateInHand(
-        Player owner,
-        int count,
-        ICombatState combatState)
-    {
-        if (count == 0)
-            return (IEnumerable<CardModel>) Array.Empty<CardModel>();
-        if (CombatManager.Instance.IsOverOrEnding)
-            return (IEnumerable<CardModel>) Array.Empty<CardModel>();
-        List<CardModel> vakuusPrank = new List<CardModel>();
-        for (int index = 0; index < count; ++index)
-            vakuusPrank.Add((CardModel) combatState.CreateCard<VakuusPrank>(owner));
-        IReadOnlyList<CardPileAddResult> combat = await CardPileCmd.AddGeneratedCardsToCombat((IEnumerable<CardModel>) vakuusPrank, PileType.Hand, owner);
-        return (IEnumerable<CardModel>) vakuusPrank;
     }
 }

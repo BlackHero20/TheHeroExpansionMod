@@ -32,7 +32,7 @@ public class TheRing : TheHeroExpansionRelic
 
         relic.Flash();
 
-        int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 6);
+        int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 7);
 
         switch (roll)
         {
@@ -51,6 +51,9 @@ public class TheRing : TheHeroExpansionRelic
             case 5:
                 await relic.Effect5(choiceContext, combatState);
                 break;
+            case 6:
+                await relic.Effect6(choiceContext, combatState);
+                break;
             default:
                 break;
         }
@@ -59,7 +62,7 @@ public class TheRing : TheHeroExpansionRelic
     private async Task Effect1(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuusPrank.CreateInHand(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<VakuusPrank>(theRing.Owner, 1, combatState);
     }
 
     private async Task Effect2(PlayerChoiceContext choiceContext)
@@ -72,18 +75,24 @@ public class TheRing : TheHeroExpansionRelic
     private async Task Effect3(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await LunchBreak.CreateInHand(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<LunchBreak>(theRing.Owner, 1, combatState);
     }
     
     private async Task Effect4(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await DemonicSurge.CreateInHand(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<DemonicSurge>(theRing.Owner, 1, combatState);
     }
     
     private async Task Effect5(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await QuickThought.CreateInHand(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<QuickThought>(theRing.Owner, 1, combatState);
+    }
+    
+    private async Task Effect6(PlayerChoiceContext choiceContext, ICombatState combatState)
+    {
+        TheRing theRing = this;
+        await VakuuCard.CreateInHand<HumbleOffering>(theRing.Owner, 1, combatState);
     }
 }

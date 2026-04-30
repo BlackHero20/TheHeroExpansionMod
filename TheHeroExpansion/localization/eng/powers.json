@@ -29,5 +29,8 @@
   "THEHEROEXPANSION-DEMONIC_SURGE_POWER.title": "Demonic Surge",
   "THEHEROEXPANSION-DEMONIC_CRIPPLE_POWER.description": "This turn, Attacks deal half damage.\n[red][shake]Do not demand from the hand the feeds you.[/shake][/red]",
   "THEHEROEXPANSION-DEMONIC_CRIPPLE_POWER.smartDescription": "{Amount:plural:This turn|For the next [blue]{}[/blue] turns}, Attacks deal half damage.\n[red][shake]Do not demand from the hand the feeds you.[/shake][/red]",
-  "THEHEROEXPANSION-DEMONIC_CRIPPLE_POWER.title": "Demonic Cripple"
+  "THEHEROEXPANSION-DEMONIC_CRIPPLE_POWER.title": "Demonic Cripple",
+  "THEHEROEXPANSION-PAINFUL_OFFERING_POWER.description": "Gain [blue]1[/blue] less [gold]Energy[/gold] per turn.",
+  "THEHEROEXPANSION-PAINFUL_OFFERING_POWER.smartDescription": "Gain [blue]{Amount}[/blue] less {energyPrefix:energyIcons(1)} per turn.",
+  "THEHEROEXPANSION-PAINFUL_OFFERING_POWER.title": "Painful Offering"
 }

@@ -61,6 +61,8 @@
   "THEHEROEXPANSION-DEMONIC_SURGE.approval": "[red][shake]No Fuss.[/shake][/red]",
   "THEHEROEXPANSION-DEMONIC_SURGE.title": "Demonic Surge",
   "THEHEROEXPANSION-QUICK_THOUGHT.description": "{IfUpgraded:show:[red][shake]Not enough? No problem.[/shake][/red]\n}Gain {Block:diff()} [gold]Block[/gold]{IfUpgraded:show:\nIf you take unblocked attack damage this combat, die. [red][shake]Good Luck.[/shake][/red]}",
-  "THEHEROEXPANSION-QUICK_THOUGHT.title": "Quick Thought"
+  "THEHEROEXPANSION-QUICK_THOUGHT.title": "Quick Thought",
+  "THEHEROEXPANSION-HUMBLE_OFFERING.description": "{IfUpgraded:show:[red][shake]Generous are we?[/shake][/red]\n}Gain {Energy:energyIcons()}.{IfUpgraded:show:\nGain {PainfulOfferingPower:diff()} less {energyPrefix:energyIcons(1)} per turn. \n}",
+  "THEHEROEXPANSION-HUMBLE_OFFERING.title": "Humble Offering"
 
 } 
