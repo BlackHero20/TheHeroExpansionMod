@@ -20,4 +20,21 @@ public class LunchBreak() : VakuuCard(0,
         CardKeyword.Ethereal,
         CardKeyword.Exhaust
     ];
+    
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new HealVar(1M)
+    ];
+    
+    protected override async Task OnPlay(
+        PlayerChoiceContext choiceContext,
+        CardPlay cardPlay)
+    {
+        LunchBreak lunchBreak= this;
+        if (lunchBreak.IsUpgraded)
+        {
+            await CreatureCmd.TriggerAnim(lunchBreak.Owner.Creature, "Cast", lunchBreak.Owner.Character.CastAnimDelay);
+            await CreatureCmd.Heal(lunchBreak.Owner.Creature, lunchBreak.DynamicVars.Heal.BaseValue);
+        }
+    }
 }

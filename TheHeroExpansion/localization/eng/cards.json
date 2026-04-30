@@ -55,7 +55,7 @@
   "THEHEROEXPANSION-VAKUUS_PRANK.description": "{IfUpgraded:show:[red][shake]More? Alright, Have fun.[/shake][/red]\n}At the end of your turn, Take {VakuusPrankPower:diff()} Damage.",
   "THEHEROEXPANSION-VAKUUS_PRANK.approval": "[red][shake]Nice Try[/shake][/red]",
   "THEHEROEXPANSION-VAKUUS_PRANK.title": "Vakuu's Prank",
-  "THEHEROEXPANSION-LUNCH_BREAK.description": "A Note engraved on your arm.\n[red][shake]Out for lunch. You can handle this without me. Right?[/shake][/red]",
+  "THEHEROEXPANSION-LUNCH_BREAK.description": "{IfUpgraded:show:You patched the engravings.\nThe wounds burn less now\nHeal {Heal:diff()} HP.|A Note engraved on your arm.\n[red][shake]Out for lunch. You can handle this without me. Right?[/shake][/red]}",
   "THEHEROEXPANSION-LUNCH_BREAK.title": "Lunch Break",
   "THEHEROEXPANSION-DEMONIC_SURGE.description": "{IfUpgraded:show:[red][shake]Don't get smart with me[/shake][/red]\nFor the next {DemonicCripplePower:diff()} Turns, Attacks deal half damage|This turn, Attacks deal double damage.}",
   "THEHEROEXPANSION-DEMONIC_SURGE.approval": "[red][shake]No Fuss.[/shake][/red]",
@@ -81,7 +81,9 @@
   "THEHEROEXPANSION-GRANTED_CONTRACT.title": "Granted Contract",
   "THEHEROEXPANSION-DISCARDED_CONTRACT.description": "{IfUpgraded:show:[red][shake]Changed your mind?[/shake][/red]\n}Put {Cards:diff()} {Cards:plural:card|cards} from your [gold]{IfUpgraded:show:Draw|Discard} Pile[/gold] into your [gold]Hand[/gold].",
   "THEHEROEXPANSION-DISCARDED_CONTRACT.selectionScreenPrompt": "Select {Cards:diff()} {Cards:plural:card|cards} to put in your Hand.",
-  "THEHEROEXPANSION-DISCARDED_CONTRACT.title": "Discarded Contract"
+  "THEHEROEXPANSION-DISCARDED_CONTRACT.title": "Discarded Contract",
+  "THEHEROEXPANSION-BOTTLED_DYNAMISM.description": "{IfUpgraded:show:[red][shake]No need to thank me[/shake][/red]\n}Gain {VigorPower:diff()} [gold]Vigor[/gold]{IfUpgraded:show:\nYou cannot use Attacks this turn.}",
+  "THEHEROEXPANSION-BOTTLED_DYNAMISM.title": "Bottled Dynamism"
   
 
 } 
