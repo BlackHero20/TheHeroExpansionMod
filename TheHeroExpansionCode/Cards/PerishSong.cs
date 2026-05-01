@@ -36,7 +36,7 @@ public class PerishSong() : TheHeroExpansionCard(2,
     {
         PerishSong perishSong = this;
         await CreatureCmd.TriggerAnim(perishSong.Owner.Creature, "Cast", perishSong.Owner.Character.CastAnimDelay);
-        (await PowerCmd.Apply<PerishSongPower>(perishSong.Owner.Creature, perishSong.DynamicVars["Turns"].BaseValue, perishSong.Owner.Creature, (CardModel)perishSong))
+        (await PowerCmd.Apply<PerishSongPower>(choiceContext, perishSong.Owner.Creature, perishSong.DynamicVars["Turns"].BaseValue, perishSong.Owner.Creature, (CardModel)perishSong))
             .SetDoom(perishSong.DynamicVars.Doom.BaseValue);
     }
 

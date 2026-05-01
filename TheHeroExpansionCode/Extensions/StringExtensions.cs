@@ -37,4 +37,9 @@ public static class StringExtensions
     {
         return Path.Join(MainFile.ModId, "images", "relics", "big", path);
     }
+
+    public static string EnchantmentImagePath(this string path)
+    {
+        return Path.Join(MainFile.ModId, "images", "enchantments", path);
+    }
 }

@@ -42,7 +42,7 @@ public class SodaPop() : TheHeroExpansionCard(2,
         await CreatureCmd.TriggerAnim(sodaPop.Owner.Creature, "Cast", sodaPop.Owner.Character.CastAnimDelay);
         await PlayerCmd.GainEnergy(sodaPop.DynamicVars.Energy.BaseValue, sodaPop.Owner);
         List<Soul> souls = Soul.Create(sodaPop.Owner, 1, sodaPop.CombatState).ToList<Soul>();
-        await CardPileCmd.AddGeneratedCardToCombat((CardModel) souls[0], PileType.Hand, true);
+        await CardPileCmd.AddGeneratedCardToCombat((CardModel) souls[0], PileType.Hand, Owner);
         if (Osty.CheckMissingWithAnim(sodaPop.Owner))
             return;
         await CreatureCmd.Heal(sodaPop.Owner.Osty, sodaPop.DynamicVars.Heal.BaseValue);

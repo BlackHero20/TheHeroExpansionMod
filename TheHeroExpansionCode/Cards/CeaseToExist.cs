@@ -35,8 +35,8 @@ public class CeaseToExist() : TheHeroExpansionCard(1,
         CardPlay play)
     {
         CeaseToExist ceaseToExist = this;
-        await PowerCmd.Apply<IntangiblePower>(ceaseToExist.Owner.Creature, ceaseToExist.DynamicVars["IntangiblePower"].BaseValue, ceaseToExist.Owner.Creature, (CardModel) ceaseToExist);
-        await PowerCmd.Apply<CeaseToExistPower>(ceaseToExist.Owner.Creature, ceaseToExist.DynamicVars["CeaseToExistPower"].BaseValue, ceaseToExist.Owner.Creature, (CardModel) ceaseToExist);
+        await PowerCmd.Apply<IntangiblePower>(choiceContext, ceaseToExist.Owner.Creature, ceaseToExist.DynamicVars["IntangiblePower"].BaseValue, ceaseToExist.Owner.Creature, (CardModel) ceaseToExist);
+        await PowerCmd.Apply<CeaseToExistPower>(choiceContext, ceaseToExist.Owner.Creature, ceaseToExist.DynamicVars["CeaseToExistPower"].BaseValue, ceaseToExist.Owner.Creature, (CardModel) ceaseToExist);
     }
 
     protected override void OnUpgrade()

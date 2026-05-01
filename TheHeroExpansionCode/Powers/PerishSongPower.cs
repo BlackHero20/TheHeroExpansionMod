@@ -47,14 +47,14 @@ public sealed class PerishSongPower : TheHeroExpansionPower
             power.Flash();
 
             foreach (Creature enemy in (IEnumerable<Creature>)power.CombatState.HittableEnemies)
-                await PowerCmd.Apply<DoomPower>(enemy, power.DynamicVars.Doom.BaseValue, power.Owner, (CardModel)null);
+                await PowerCmd.Apply<DoomPower>(choiceContext, enemy, power.DynamicVars.Doom.BaseValue, power.Owner, (CardModel)null);
 
-            await PowerCmd.Apply<DoomPower>(power.Owner, power.DynamicVars.Doom.BaseValue, power.Owner, (CardModel)null);
+            await PowerCmd.Apply<DoomPower>(choiceContext, power.Owner, power.DynamicVars.Doom.BaseValue, power.Owner, (CardModel)null);
 
             foreach (Creature ally in (IEnumerable<Creature>)power.CombatState.Allies)
             {
                 if (ally != power.Owner)
-                    await PowerCmd.Apply<DoomPower>(ally, power.DynamicVars.Doom.BaseValue, power.Owner, (CardModel)null);
+                    await PowerCmd.Apply<DoomPower>(choiceContext, ally, power.DynamicVars.Doom.BaseValue, power.Owner, (CardModel)null);
             }
 
             await PowerCmd.Remove((PowerModel)power);

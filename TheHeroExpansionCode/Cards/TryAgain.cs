@@ -21,6 +21,11 @@ public class TryAgain() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
+    public override bool GainsBlock => true;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        HoverTipFactory.FromEnchantment<Sharp>((int)this.DynamicVars["Sharp"].BaseValue);
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new BlockVar(9M, ValueProp.Move),
@@ -34,7 +39,7 @@ public class TryAgain() : TheHeroExpansionCard(1,
         TryAgain tryAgain = this;
         await CreatureCmd.TriggerAnim(tryAgain.Owner.Creature, "Cast", tryAgain.Owner.Character.CastAnimDelay);
         await CreatureCmd.GainBlock(tryAgain.Owner.Creature, tryAgain.DynamicVars.Block, cardPlay);
-        CardSelectorPrefs prefs = new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1);
+        CardSelectorPrefs prefs = new CardSelectorPrefs(tryAgain.SelectionScreenPrompt, 1);
         CardModel card = (await CardSelectCmd.FromHand(choiceContext, tryAgain.Owner, prefs, (Func<CardModel, bool>) (card => card.Type == CardType.Attack && card.Enchantment == null), (AbstractModel) tryAgain)).FirstOrDefault<CardModel>();
         if (card == null)
             return;

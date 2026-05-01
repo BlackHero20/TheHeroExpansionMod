@@ -30,12 +30,11 @@ public class TheWorld() : TheHeroExpansionCard(2,
         CardPlay play)
     {
         TheWorld theWorld = this;
-        await PowerCmd.Apply<TheWorldPower>(theWorld.Owner.Creature, theWorld.DynamicVars["TheWorldPower"].BaseValue, theWorld.Owner.Creature, (CardModel) theWorld);
+        await PowerCmd.Apply<TheWorldPower>(choiceContext, theWorld.Owner.Creature, theWorld.DynamicVars["TheWorldPower"].BaseValue, theWorld.Owner.Creature, (CardModel) theWorld);
     }
 
     protected override void OnUpgrade()
     {
-        // Example upgrade: reduce cost
         this.EnergyCost.UpgradeBy(-1);
     }
 }

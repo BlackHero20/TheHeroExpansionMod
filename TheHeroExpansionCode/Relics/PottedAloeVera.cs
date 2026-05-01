@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -33,6 +34,6 @@ public class PottedAloeVera() : TheHeroExpansionRelic
         if (room.RoomType != RoomType.Elite)
             return;
         pottedAloeVera.Flash();
-        await PowerCmd.Apply<RegenPower>(pottedAloeVera.Owner.Creature, pottedAloeVera.DynamicVars["RegenPower"].BaseValue, pottedAloeVera.Owner.Creature, (CardModel) null);
+        await PowerCmd.Apply<RegenPower>((PlayerChoiceContext) new ThrowingPlayerChoiceContext(), pottedAloeVera.Owner.Creature, pottedAloeVera.DynamicVars["RegenPower"].BaseValue, pottedAloeVera.Owner.Creature, (CardModel) null);
     }
 }

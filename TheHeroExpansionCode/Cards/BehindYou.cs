@@ -35,8 +35,8 @@ public class BehindYou() : TheHeroExpansionCard(2,
         ArgumentNullException.ThrowIfNull((object) cardPlay.Target, "cardPlay.Target");
         await CreatureCmd.TriggerAnim(behindYou.Owner.Creature, "Cast", behindYou.Owner.Character.CastAnimDelay);
         VfxCmd.PlayOnCreatureCenter(behindYou.Owner.Creature, "vfx/vfx_flying_slash");
-        await PowerCmd.Apply<WeakPower>(cardPlay.Target, behindYou.DynamicVars.Weak.BaseValue, behindYou.Owner.Creature, (CardModel)behindYou);
-        await PowerCmd.Apply<VulnerablePower>(cardPlay.Target, behindYou.DynamicVars.Vulnerable.BaseValue, behindYou.Owner.Creature, (CardModel)behindYou);
+        await PowerCmd.Apply<WeakPower>(choiceContext, cardPlay.Target, behindYou.DynamicVars.Weak.BaseValue, behindYou.Owner.Creature, (CardModel)behindYou);
+        await PowerCmd.Apply<VulnerablePower>(choiceContext, cardPlay.Target, behindYou.DynamicVars.Vulnerable.BaseValue, behindYou.Owner.Creature, (CardModel)behindYou);
 
     }
     
