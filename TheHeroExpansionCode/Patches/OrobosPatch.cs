@@ -11,7 +11,7 @@ public static class OrobasPatch
 {
     public static void Postfix(Orobas __instance, ref IEnumerable<EventOption> __result)
     {
-        var relic = ModelDb.Relic<TestRelic>().ToMutable(); //change this to whatever relic I want
+        var relic = ModelDb.Relic<TomeOfOrigin>().ToMutable(); //change this to whatever relic I want
         
         var method = typeof(AncientEventModel).GetMethod("RelicOption",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance,

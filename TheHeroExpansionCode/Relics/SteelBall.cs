@@ -30,7 +30,7 @@ public class SteelBall() : TheHeroExpansionRelic
         CardSelectorPrefs prefs = new CardSelectorPrefs(CardSelectorPrefs.EnchantSelectionPrompt, 1);
         foreach (CardModel card in await CardSelectCmd.FromDeckForEnchantment(steelBall.Owner, (EnchantmentModel) ModelDb.Enchantment<GoldenRatio>(), 1, prefs))
         {
-            CardCmd.Enchant<Infected>(card, steelBall.DynamicVars["GoldenRatio"].BaseValue);
+            CardCmd.Enchant<GoldenRatio>(card, steelBall.DynamicVars["GoldenRatio"].BaseValue);
             CardCmd.Preview(card);
         }
     }
