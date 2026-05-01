@@ -11,7 +11,7 @@ public static class TezcaPatch
 {
     public static void Postfix(Tezcatara __instance, ref IEnumerable<EventOption> __result)
     {
-        var relic = ModelDb.Relic<TestRelic>().ToMutable();
+        var relic = ModelDb.Relic<ToastySmores>().ToMutable();
 
         var method = typeof(AncientEventModel).GetMethod("RelicOption",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance,
