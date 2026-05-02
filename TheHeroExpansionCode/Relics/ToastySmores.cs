@@ -14,11 +14,11 @@ public class ToastySmores() : TheHeroExpansionRelic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
-    private int _extraCards = 5;
+    private int _extraCards = 3;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new CardsVar(5)
+        new CardsVar(3)
     ];
 
     public override bool ShowCounter => true;
@@ -59,7 +59,7 @@ public class ToastySmores() : TheHeroExpansionRelic
     {
         if (room is RestSiteRoom)
         {
-            ExtraCards = 5;
+            ExtraCards = 3;
             this.Flash();
         }
         return Task.CompletedTask;

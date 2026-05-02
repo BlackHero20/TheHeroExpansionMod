@@ -11,7 +11,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 [Pool(typeof(EventRelicPool))]
-public class PaelsVirus() : TheHeroExpansionRelic
+public class PaelsBlight() : TheHeroExpansionRelic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
     
@@ -20,16 +20,17 @@ public class PaelsVirus() : TheHeroExpansionRelic
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("Infected", 1)
+        new DynamicVar("Infected", 1),
+        new CardsVar(2)
     ];
 
     public override async Task AfterObtained()
     {
-        PaelsVirus paelsVirus = this;
-        CardSelectorPrefs prefs = new CardSelectorPrefs(CardSelectorPrefs.EnchantSelectionPrompt, 1);
-        foreach (CardModel card in await CardSelectCmd.FromDeckForEnchantment(paelsVirus.Owner, (EnchantmentModel) ModelDb.Enchantment<Infected>(), 1, prefs))
+        PaelsBlight paelsBlight = this;
+        CardSelectorPrefs prefs = new CardSelectorPrefs(CardSelectorPrefs.EnchantSelectionPrompt, paelsBlight.DynamicVars.Cards.IntValue);
+        foreach (CardModel card in await CardSelectCmd.FromDeckForEnchantment(paelsBlight.Owner, (EnchantmentModel) ModelDb.Enchantment<Infected>(), 1, prefs))
         {
-            CardCmd.Enchant<Infected>(card, paelsVirus.DynamicVars["Infected"].BaseValue);
+            CardCmd.Enchant<Infected>(card, paelsBlight.DynamicVars["Infected"].BaseValue);
             CardCmd.Preview(card);
         }
     }
