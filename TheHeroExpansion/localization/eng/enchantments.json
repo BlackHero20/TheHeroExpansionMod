@@ -10,5 +10,8 @@
   "THEHEROEXPANSION-DREAMY.description": "Whenever this card is played, add a copy to your [gold]Discard Pile[/gold].",
   "THEHEROEXPANSION-ADVANTAGEOUS.title": "Advantageous",
   "THEHEROEXPANSION-ADVANTAGEOUS.description": "The first time you play this card this combat, gain {Amount:energyIcons()}.",
-  "THEHEROEXPANSION-ADVANTAGEOUS.extraCardText": "Gain {Amount:energyIcons()}."
+  "THEHEROEXPANSION-ADVANTAGEOUS.extraCardText": "Gain {Amount:energyIcons()}.",
+  "THEHEROEXPANSION-ROYAL.title": "Royal",
+  "THEHEROEXPANSION-ROYAL.description": "When this card is played, gain {Stars:starIcons()}.",
+  "THEHEROEXPANSION-ROYAL.extraCardText": "Gain {Stars:starIcons()}."
 }

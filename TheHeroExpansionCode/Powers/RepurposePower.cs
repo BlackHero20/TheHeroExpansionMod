@@ -38,7 +38,7 @@ public sealed class RepurposePower : TheHeroExpansionPower
         if (!Hook.ShouldFlush(player.Creature.CombatState, player))
             return;
 
-        CardSelectorPrefs prefs = new CardSelectorPrefs(power.SelectionScreenPrompt, 0, power.Amount);
+        CardSelectorPrefs prefs = new CardSelectorPrefs(power.SelectionScreenPrompt, power.Amount);
         List<CardModel> selected = (await CardSelectCmd.FromHand(
             choiceContext, player, prefs,
             card => card.Enchantment == null &&
