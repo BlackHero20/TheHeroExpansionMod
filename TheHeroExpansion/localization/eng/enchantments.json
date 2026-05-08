@@ -14,6 +14,8 @@
   "THEHEROEXPANSION-ROYAL.title": "Royal",
   "THEHEROEXPANSION-ROYAL.description": "When this card is played, gain {Stars:starIcons()}.",
   "THEHEROEXPANSION-ROYAL.extraCardText": "Gain {Stars:starIcons()}.",
+  "THEHEROEXPANSION-HAUNTED.title": "Haunted",
+  "THEHEROEXPANSION-HAUNTED.description": "When this card is played, add 1 [gold]Soul[/gold] to your [gold]Draw Pile[/gold].",
   "THEHEROEXPANSION-RAVENOUS.title": "Ravenous",
   "THEHEROEXPANSION-RAVENOUS.description": "When this card is played, [gold]Evoke[/gold] your leftmost Orb."
 }
