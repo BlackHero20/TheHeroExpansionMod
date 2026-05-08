@@ -6,6 +6,8 @@
   "THEHEROEXPANSION-SUFFOCATE.title": "Suffocate",
   "THEHEROEXPANSION-SIX_HUNDRED_STRIKE.description": "Deal {Damage:diff()} damage.\nHits an additional time for each time a card containing “Strike” was played this combat.{InCombat:\n(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
   "THEHEROEXPANSION-SIX_HUNDRED_STRIKE.title": "Six Hundred Strike",
+  "THEHEROEXPANSION-FROM_THE_GRAVE.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhenever this card is [gold]Exhausted[/gold], play it for free and add a copy to your [gold]Draw Pile[/gold].",
+  "THEHEROEXPANSION-FROM_THE_GRAVE.title": "From the Grave",
   "THEHEROEXPANSION-BEAST_WITHIN.description": "Whenever you deal single target damage to a [gold]Vulnerable[/gold] enemy, deal that much damage to ALL other enemies",
   "THEHEROEXPANSION-BEAST_WITHIN.title": "Beast Within",
   "THEHEROEXPANSION-BUTTERFLY_KNIFE.description": "Draw {Cards:diff()} Card\nAdd {Shivs:diff()} [gold]{IfUpgraded:show:Shivs+|Shivs}[/gold] into your [gold]Hand[/gold].",
