@@ -8,6 +8,8 @@
   "THEHEROEXPANSION-BEAST_WITHIN.title": "Beast Within",
   "THEHEROEXPANSION-BUTTERFLY_KNIFE.description": "Draw {Cards:diff()} Card\nAdd {Shivs:diff()} [gold]{IfUpgraded:show:Shivs+|Shivs}[/gold] into your [gold]Hand[/gold].",
   "THEHEROEXPANSION-BUTTERFLY_KNIFE.title": "Butterfly Knife",
+  "THEHEROEXPANSION-REPURPOSE.description": "At the end of your turn, [gold]Retain[/gold] 1 card and [gold]Enchant[/gold] it with [purple]Advantageous {Advantageous:diff()}[/purple].",
+  "THEHEROEXPANSION-REPURPOSE.title": "Repurpose",
   "THEHEROEXPANSION-BEHIND_YOU.description": "Apply {WeakPower:diff()} [gold]Weak[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]",
   "THEHEROEXPANSION-BEHIND_YOU.title": "Behind You",
   "THEHEROEXPANSION-CEASE_TO_EXIST.description": "Gain {IntangiblePower:diff()} [gold]Intangible[/gold].\nFor the next {CeaseToExistPower:diff()} turns, You cannot use Attacks.",
