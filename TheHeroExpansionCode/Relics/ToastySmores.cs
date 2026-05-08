@@ -25,7 +25,7 @@ public class ToastySmores() : TheHeroExpansionRelic
     public override int DisplayAmount => _extraCards;
 
     [SavedProperty]
-    public int ExtraCards
+    public int TheHeroExpansionExtraCards
     {
         get => _extraCards;
         set
@@ -50,7 +50,7 @@ public class ToastySmores() : TheHeroExpansionRelic
         if (_extraCards > 0)
         {
             this.Flash();
-            ExtraCards = _extraCards - 1;
+            TheHeroExpansionExtraCards = _extraCards - 1;
         }
         return Task.CompletedTask;
     }
@@ -59,7 +59,7 @@ public class ToastySmores() : TheHeroExpansionRelic
     {
         if (room is RestSiteRoom)
         {
-            ExtraCards = 3;
+            TheHeroExpansionExtraCards = 3;
             this.Flash();
         }
         return Task.CompletedTask;
