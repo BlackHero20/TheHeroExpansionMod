@@ -18,7 +18,6 @@ public class SixHundredStrike() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
-    // as of now broken, scales on every attack instead of only strikes. will fix later
     private const string _calculatedHitsKey = "CalculatedHits";
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
