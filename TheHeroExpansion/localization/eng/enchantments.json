@@ -13,5 +13,7 @@
   "THEHEROEXPANSION-ADVANTAGEOUS.extraCardText": "Gain {Amount:energyIcons()}.",
   "THEHEROEXPANSION-ROYAL.title": "Royal",
   "THEHEROEXPANSION-ROYAL.description": "When this card is played, gain {Stars:starIcons()}.",
-  "THEHEROEXPANSION-ROYAL.extraCardText": "Gain {Stars:starIcons()}."
+  "THEHEROEXPANSION-ROYAL.extraCardText": "Gain {Stars:starIcons()}.",
+  "THEHEROEXPANSION-RAVENOUS.title": "Ravenous",
+  "THEHEROEXPANSION-RAVENOUS.description": "When this card is played, [gold]Evoke[/gold] your leftmost Orb."
 }

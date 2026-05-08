@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
@@ -17,6 +18,11 @@ public class Suffocate() : TheHeroExpansionCard(0,
     [
         new DamageVar(4M, ValueProp.Move),
         new PowerVar<WeakPower>(1M)
+    ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<WeakPower>()
     ];
 
     protected override async Task OnPlay(
