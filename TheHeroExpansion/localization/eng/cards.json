@@ -33,6 +33,8 @@
   "THEHEROEXPANSION-JOY_OF_CREATION.title": "Joy Of Creation",
   "THEHEROEXPANSION-THE_WORLD.description": "Take an extra turn after this one",
   "THEHEROEXPANSION-THE_WORLD.title": "The World",
+  "THEHEROEXPANSION-EDGE_OF_DESTINY.description": "Your [gold]Sovereign Blade[/gold] hits an additional time for {EdgeOfDestinyPower:diff()}X damage, where X is the number of {singleStarIcon} you have.",
+  "THEHEROEXPANSION-EDGE_OF_DESTINY.title": "Edge of Destiny",
   "THEHEROEXPANSION-MINION_LABOR.description": "Gain {Stars:starIcons()}.\n[gold]Forge[/gold] {Forge:diff()}.",
   "THEHEROEXPANSION-MINION_LABOR.title": "Minion Labor",
   "THEHEROEXPANSION-MINION_DUTY.description": "Deal {Damage:diff()} damage\nGain {Block:diff()} [gold]Block[/gold].",
@@ -113,7 +115,8 @@
   "THEHEROEXPANSION-BOTTLED_DYNAMISM.title": "Bottled Dynamism",
   "THEHEROEXPANSION-DEVIL_TRIGGER.description": "{IfUpgraded:show:[red][shake]Don't push your luck, mortal[/shake][/red]\n}Take an extra turn after this one{IfUpgraded:show:\nIn {HubrisPower:diff()} turns, [red]Die[/red]}",
   "THEHEROEXPANSION-DEVIL_TRIGGER.approval": "[red][shake]You Signed the Contract.[/shake][/red]",
-  "THEHEROEXPANSION-DEVIL_TRIGGER.title": "Devil Trigger"
+  "THEHEROEXPANSION-DEVIL_TRIGGER.title": "Devil Trigger",
+  "SOVEREIGN_BLADE.description": "Deal {Damage:diff()} damage{TargetType:choose(AllEnemies): to ALL enemies|}{Repeat:plural:| {} times}.{GainsBlock:cond:\nGain {CalculatedBlock:diff()} [gold]Block[/gold].|}{InCombat:{EdgeOfDestinyDamage:cond:>0?\nHit an additional time for {EdgeOfDestinyDamage:diff()} damage|}|}"
   
 
 } 
