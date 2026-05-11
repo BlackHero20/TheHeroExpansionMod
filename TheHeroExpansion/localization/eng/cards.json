@@ -22,6 +22,8 @@
   "THEHEROEXPANSION-VOLCANIC_VIPER.title": "Volcanic Viper",
   "THEHEROEXPANSION-CEASE_TO_EXIST.description": "Gain {IntangiblePower:diff()} [gold]Intangible[/gold].\nFor the next {CeaseToExistPower:diff()} turns, You cannot use Attacks.",
   "THEHEROEXPANSION-CEASE_TO_EXIST.title": "Cease To Exist",
+  "THEHEROEXPANSION-BOUNCING_BLADE.description": "Deal {Damage:diff()} damage.\nApply {PoisonPower:diff()} [gold]Poison[/gold]\nAdd [gold]Replay[/gold] 1 to ALL Bouncing Blades this combat",
+  "THEHEROEXPANSION-BOUNCING_BLADE.title": "Bouncing Blade",
   "THEHEROEXPANSION-WORK.description": "Add {Cards:diff()} [gold]{Cards:plural:Minion Labor|Minion Labors}[/gold] into your [gold]Hand[/gold].",
   "THEHEROEXPANSION-WORK.title": "WORK!",
   "THEHEROEXPANSION-STRIKE_THE_EARTH.description": "Deal {Damage:diff()} damage\n[gold]Enchant[/gold] a card in your [gold]Hand[/gold] with [purple]Royal[/purple]",
