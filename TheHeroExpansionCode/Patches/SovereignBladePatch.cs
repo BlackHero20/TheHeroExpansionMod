@@ -14,6 +14,9 @@ public static class SovereignBladePatch
 {
     public static void Postfix(ref IEnumerable<DynamicVar> __result)
     {
-        __result = __result.Append(new DamageVar("EdgeOfDestinyDamage", 0M, ValueProp.Move));
+        __result = __result
+            .Append(new DamageVar("EdgeOfDestinyDamage", 0M, ValueProp.Move))
+            .Append(new DynamicVar("HasEdgeOfDestiny", 0M))
+            .Append(new StringVar("SeekingEdgeSuffix"));
     }
 }

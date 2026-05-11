@@ -98,6 +98,7 @@ public sealed class EdgeOfDestinyPower : TheHeroExpansionPower
         if (!CombatManager.Instance.IsInProgress) return;
         int stars = Owner.Player.PlayerCombatState.Stars;
         decimal damage = stars > 0 ? (decimal)stars * Amount : 0M;
+        bool hasSeekingEdge = Owner.HasPower<SeekingEdgePower>();
 
         foreach (var pileType in new[] { PileType.Hand, PileType.Draw, PileType.Discard })
         {
@@ -106,10 +107,11 @@ public sealed class EdgeOfDestinyPower : TheHeroExpansionPower
                 try
                 {
                     card.DynamicVars["EdgeOfDestinyDamage"].BaseValue = damage;
+                    card.DynamicVars["HasEdgeOfDestiny"].BaseValue = 1M;
+                    ((StringVar)card.DynamicVars["SeekingEdgeSuffix"]).StringValue =
+                        hasSeekingEdge ? " to ALL enemies" : "";
                 }
-                catch
-                {
-                }
+                catch { }
             }
         }
     }

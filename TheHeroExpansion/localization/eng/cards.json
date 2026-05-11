@@ -116,7 +116,7 @@
   "THEHEROEXPANSION-DEVIL_TRIGGER.description": "{IfUpgraded:show:[red][shake]Don't push your luck, mortal[/shake][/red]\n}Take an extra turn after this one{IfUpgraded:show:\nIn {HubrisPower:diff()} turns, [red]Die[/red]}",
   "THEHEROEXPANSION-DEVIL_TRIGGER.approval": "[red][shake]You Signed the Contract.[/shake][/red]",
   "THEHEROEXPANSION-DEVIL_TRIGGER.title": "Devil Trigger",
-  "SOVEREIGN_BLADE.description": "Deal {Damage:diff()} damage{TargetType:choose(AllEnemies): to ALL enemies|}{Repeat:plural:| {} times}.{GainsBlock:cond:\nGain {CalculatedBlock:diff()} [gold]Block[/gold].|}{InCombat:{EdgeOfDestinyDamage:cond:>0?\nHit an additional time for {EdgeOfDestinyDamage:diff()} damage|}|}"
+  "SOVEREIGN_BLADE.description": "Deal {Damage:diff()} damage{TargetType:choose(AllEnemies): to ALL enemies|}{Repeat:plural:| {} times}.{GainsBlock:cond:\nGain {CalculatedBlock:diff()} [gold]Block[/gold].|}{InCombat:{HasEdgeOfDestiny:cond:>0?\nHit an additional time for {EdgeOfDestinyDamage:diff()} damage{SeekingEdgeSuffix}|}|}"
   
 
 } 
