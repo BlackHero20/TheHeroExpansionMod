@@ -8,7 +8,7 @@
   "THEHEROEXPANSION-SIX_HUNDRED_STRIKE.title": "Six Hundred Strike",
   "THEHEROEXPANSION-FROM_THE_GRAVE.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhenever this card is [gold]Exhausted[/gold], gain {Block:diff()} [gold]Block[/gold] and add a copy of it to your [gold]Draw Pile[/gold].",
   "THEHEROEXPANSION-FROM_THE_GRAVE.title": "From the Grave",
-  "THEHEROEXPANSION-BEAST_WITHIN.description": "Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nWhenever you deal single target damage to a [gold]Vulnerable[/gold] enemy, deal that much damage to ALL other enemies",
+  "THEHEROEXPANSION-BEAST_WITHIN.description": "Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies.\nWhenever you deal single target damage to a [gold]Vulnerable[/gold] enemy, deal that much damage to ALL other enemies",
   "THEHEROEXPANSION-BEAST_WITHIN.title": "Beast Within",
   "THEHEROEXPANSION-BETTER_DAYS.description": "Whenever you lose HP, Heal {BetterDaysPower:diff()} HP.",
   "THEHEROEXPANSION-BETTER_DAYS.title": "Better Days",

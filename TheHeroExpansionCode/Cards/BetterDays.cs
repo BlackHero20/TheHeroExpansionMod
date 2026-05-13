@@ -9,7 +9,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(IroncladCardPool))]
-public class BetterDays() : TheHeroExpansionCard(2,
+public class BetterDays() : TheHeroExpansionCard(1,
     CardType.Power, CardRarity.Rare, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -24,5 +24,8 @@ public class BetterDays() : TheHeroExpansionCard(2,
             card.DynamicVars["BetterDaysPower"].BaseValue, card.Owner.Creature, card);
     }
 
-    protected override void OnUpgrade() => this.EnergyCost.UpgradeBy(-1);
+    protected override void OnUpgrade()
+    {
+        this.AddKeyword(CardKeyword.Innate);
+    }
 }

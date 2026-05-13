@@ -28,7 +28,7 @@ public class Repurpose() : TheHeroExpansionCard(1,
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         Repurpose repurpose = this;
-        RepurposePower power = (RepurposePower)await PowerCmd.Apply<RepurposePower>(choiceContext, repurpose.Owner.Creature, 1M, repurpose.Owner.Creature, repurpose); power.SetAdvantageous(repurpose.DynamicVars["Advantageous"].BaseValue);
+        RepurposePower power = await PowerCmd.Apply<RepurposePower>(choiceContext, repurpose.Owner.Creature, 1M, repurpose.Owner.Creature, repurpose); power.SetAdvantageous(repurpose.DynamicVars["Advantageous"].BaseValue);
     }
 
     protected override void OnUpgrade()
