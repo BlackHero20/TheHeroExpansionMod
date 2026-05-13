@@ -17,6 +17,8 @@ public class RigorMortis() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
+    protected override bool ShouldGlowRedInternal => this.Owner.IsOstyMissing;
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<DoomPower>()

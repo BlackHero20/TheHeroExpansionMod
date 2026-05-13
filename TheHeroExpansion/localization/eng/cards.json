@@ -52,6 +52,8 @@
   "THEHEROEXPANSION-RIGOR_MORTIS.title": "Rigor Mortis",
   "THEHEROEXPANSION-PERISH_SONG.description": "After {Turns:diff()} turns, Apply {DoomPower:diff()} [gold]Doom[/gold] to [gold]EVERYONE[/gold].",
   "THEHEROEXPANSION-PERISH_SONG.title": "Perish Song",
+  "THEHEROEXPANSION-GOT_YOUR_BACK.description": "[gold]Summon[/gold] equal to [gold]Osty's[/gold] Max HP.\n[gold]Osty[/gold] doesn't block for you this turn.{InCombat:\n(Summons {Summon:diff()})|}",
+  "THEHEROEXPANSION-GOT_YOUR_BACK.title": "Got Your Back",
   "THEHEROEXPANSION-SPLIT_SHARD.description": "Deal {Damage:diff()} damage\n[gold]Channel[/gold] 1 [gold]Glass[/gold].",
   "THEHEROEXPANSION-SPLIT_SHARD.title": "Split Shard",
   "THEHEROEXPANSION-SHADOW_BOXING.description": "Deal {Damage:diff()} damage\n[gold]Enchant[/gold] a card in your [gold]Hand[/gold] with [purple]Ravenous[/purple].",
