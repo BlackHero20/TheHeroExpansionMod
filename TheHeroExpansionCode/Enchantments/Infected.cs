@@ -16,17 +16,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 public sealed class Infected : TheHeroExpansionEnchantment
 {
     public override bool IsStackable => false;
-
-    protected override string? CustomIconPath
-    {
-        get
-        {
-            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".EnchantmentImagePath();
-            return ResourceLoader.Exists(path) ? path : null;
-        }
-    }
-
-    // ✅ REAL dynamic variable (NOT CalculatedVar)
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar("InfectedPercent", 0M)

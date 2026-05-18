@@ -15,7 +15,7 @@ public class JoyOfCreation() : TheHeroExpansionCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new ForgeVar(4)
+        new ForgeVar(3)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
@@ -25,5 +25,5 @@ public class JoyOfCreation() : TheHeroExpansionCard(1,
             card.DynamicVars.Forge.BaseValue, card.Owner.Creature, card);
     }
 
-    protected override void OnUpgrade() => this.DynamicVars.Forge.UpgradeValueBy(2M);
+    protected override void OnUpgrade() => this.DynamicVars.Forge.UpgradeValueBy(1M);
 }

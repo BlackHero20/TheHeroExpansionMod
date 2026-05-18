@@ -7,11 +7,12 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(NecrobinderCardPool))]
-public class InstantAnima() : TheHeroExpansionCard(1,
+public class Eerie() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
@@ -22,26 +23,30 @@ public class InstantAnima() : TheHeroExpansionCard(1,
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        HoverTipFactory.FromEnchantment<Haunted>();
+        HoverTipFactory.FromEnchantment<Jumpscare>();
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [];
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new BlockVar(7M, ValueProp.Move)
+    ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        InstantAnima instantAnima = this;
-        CardSelectorPrefs prefs = new CardSelectorPrefs(instantAnima.SelectionScreenPrompt, 1);
-        CardModel card = (await CardSelectCmd.FromHand(choiceContext, instantAnima.Owner, prefs,
-            card => card.Enchantment == null && card.EnergyCost.Canonical > 0 &&
-                    (card.Type == CardType.Attack || card.Type == CardType.Skill || card.Type == CardType.Power),
-            (AbstractModel)instantAnima)).FirstOrDefault();
+        Eerie eerie = this;
+        await CreatureCmd.GainBlock(eerie.Owner.Creature, eerie.DynamicVars.Block, null);
+        
+        CardSelectorPrefs prefs = new CardSelectorPrefs(eerie.SelectionScreenPrompt, 1);
+        CardModel card = (await CardSelectCmd.FromHand(choiceContext, eerie.Owner, prefs,
+            card => card.Enchantment == null && (card.Type == CardType.Attack || card.Type == CardType.Skill || card.Type == CardType.Power),
+            (AbstractModel)eerie)).FirstOrDefault();
         if (card == null) return;
-        CardCmd.Enchant<Haunted>(card, 1M);
+        CardCmd.Enchant<Jumpscare>(card, 1M);
     }
 
     protected override void OnUpgrade()
     {
-        this.EnergyCost.UpgradeBy(-1);
+        this.DynamicVars.Block.UpgradeValueBy(3M);
     }
 }

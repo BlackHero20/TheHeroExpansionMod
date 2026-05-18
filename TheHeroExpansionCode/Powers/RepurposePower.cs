@@ -41,14 +41,18 @@ public sealed class RepurposePower : TheHeroExpansionPower
         CardSelectorPrefs prefs = new CardSelectorPrefs(power.SelectionScreenPrompt, power.Amount);
         List<CardModel> selected = (await CardSelectCmd.FromHand(
             choiceContext, player, prefs,
-            card => card.Enchantment == null &&
-                    (card.Type == CardType.Attack || card.Type == CardType.Skill || card.Type == CardType.Power),
+            card => true,
             (AbstractModel)power)).ToList();
 
         foreach (CardModel card in selected)
         {
             card.GiveSingleTurnRetain();
-            CardCmd.Enchant<Advantageous>(card, _advantageousAmount);
+
+            if (card.Enchantment == null &&
+                card.Type is CardType.Attack or CardType.Skill or CardType.Power)
+            {
+                CardCmd.Enchant<Advantageous>(card, _advantageousAmount);
+            }
         }
 
         await PowerCmd.Remove(power);

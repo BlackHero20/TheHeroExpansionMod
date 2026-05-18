@@ -14,15 +14,6 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 public sealed class GoldenRatio : TheHeroExpansionEnchantment
 {
     public override bool IsStackable => false;
-
-    protected override string? CustomIconPath
-    {
-        get
-        {
-            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".EnchantmentImagePath();
-            return ResourceLoader.Exists(path) ? path : null;
-        }
-    }
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

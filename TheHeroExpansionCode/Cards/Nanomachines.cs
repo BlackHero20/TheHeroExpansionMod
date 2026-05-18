@@ -9,7 +9,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(DefectCardPool))]
-public class Nanomachines() : TheHeroExpansionCard(2,
+public class Nanomachines() : TheHeroExpansionCard(1,
     CardType.Power, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
