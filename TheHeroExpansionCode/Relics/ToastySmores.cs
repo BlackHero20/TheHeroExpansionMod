@@ -1,6 +1,8 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Rooms;
@@ -14,54 +16,43 @@ public class ToastySmores() : TheHeroExpansionRelic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
-    private int _extraCards = 5;
+    private bool _hadLeftoverEnergy;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        new CardsVar(5)
-    ];
-
-    public override bool ShowCounter => true;
-    public override int DisplayAmount => _extraCards;
-
-    [SavedProperty]
-    public int ExtraCards
+    private bool HadLeftoverEnergy
     {
-        get => _extraCards;
+        get => _hadLeftoverEnergy;
         set
         {
             this.AssertMutable();
-            _extraCards = value;
-            this.DynamicVars.Cards.BaseValue = _extraCards;
-            this.InvokeDisplayAmountChanged();
-            this.Status = _extraCards <= 0 ? RelicStatus.Disabled : RelicStatus.Normal;
+            _hadLeftoverEnergy = value;
         }
+    }
+
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new CardsVar(2)
+    ];
+
+    public override Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    {
+        if (side != CombatSide.Player)
+            return Task.CompletedTask;
+        HadLeftoverEnergy = this.Owner.PlayerCombatState.Energy > 0;
+        return Task.CompletedTask;
     }
 
     public override Decimal ModifyHandDraw(Player player, Decimal count)
     {
-        if (player != this.Owner || _extraCards <= 0)
+        if (player != this.Owner || !HadLeftoverEnergy)
             return count;
-        return count + _extraCards;
+        this.Flash();
+        HadLeftoverEnergy = false;
+        return count + this.DynamicVars.Cards.BaseValue;
     }
 
     public override Task AfterCombatEnd(CombatRoom room)
     {
-        if (_extraCards > 0)
-        {
-            this.Flash();
-            ExtraCards = _extraCards - 1;
-        }
-        return Task.CompletedTask;
-    }
-
-    public override Task AfterRoomEntered(AbstractRoom room)
-    {
-        if (room is RestSiteRoom)
-        {
-            ExtraCards = 5;
-            this.Flash();
-        }
+        HadLeftoverEnergy = false;
         return Task.CompletedTask;
     }
 }

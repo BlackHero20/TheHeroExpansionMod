@@ -11,7 +11,7 @@ public static class PaelPatch
 {
     public static void Postfix(Pael __instance, ref IEnumerable<EventOption> __result)
     {
-        var relic = ModelDb.Relic<PaelsVirus>().ToMutable();
+        var relic = ModelDb.Relic<PaelsBlight>().ToMutable();
         
         var method = typeof(AncientEventModel).GetMethod("RelicOption",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance,

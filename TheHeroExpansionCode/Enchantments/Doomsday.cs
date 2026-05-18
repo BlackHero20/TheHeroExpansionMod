@@ -25,15 +25,6 @@ public sealed class Doomsday : TheHeroExpansionEnchantment
         new MaxHpVar(2M)
         
     ];
-    
-    protected override string? CustomIconPath
-    {
-        get
-        {
-            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".EnchantmentImagePath();
-            return ResourceLoader.Exists(path) ? path : null;
-        }
-    }
 
     public override Decimal EnchantDamageMultiplicative(Decimal originalDamage, ValueProp props)
     {

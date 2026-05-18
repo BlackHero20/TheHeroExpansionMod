@@ -19,7 +19,10 @@ public class BitFlip() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => 
+    [
+        CardKeyword.Exhaust
+    ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -61,6 +64,6 @@ public class BitFlip() : TheHeroExpansionCard(2,
 
     protected override void OnUpgrade()
     {
-        this.EnergyCost.UpgradeBy(-1);
+        this.RemoveKeyword(CardKeyword.Exhaust);
     }
 }

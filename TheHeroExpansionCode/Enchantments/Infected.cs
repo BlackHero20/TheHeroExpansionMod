@@ -16,17 +16,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 public sealed class Infected : TheHeroExpansionEnchantment
 {
     public override bool IsStackable => false;
-
-    protected override string? CustomIconPath
-    {
-        get
-        {
-            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".EnchantmentImagePath();
-            return ResourceLoader.Exists(path) ? path : null;
-        }
-    }
-
-    // ✅ REAL dynamic variable (NOT CalculatedVar)
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar("InfectedPercent", 0M)
@@ -79,31 +69,17 @@ public sealed class Infected : TheHeroExpansionEnchantment
 
     public override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay? cardPlay)
     {
-        if (cardPlay?.Card == null)
-            return;
+        if (cardPlay?.Card == null) return;
+        if (!InfectedHelper.CardNeighborCache.TryGetValue(cardPlay.Card, out var neighbors)) return;
 
-        var card = cardPlay.Card;
+        var (leftCard, rightCard) = neighbors;
 
-        if (!InfectedHelper.CardIndexCache.TryGetValue(card, out var cardIndex))
-            return;
+        if (leftCard != null && leftCard.Enchantment == null &&
+            leftCard.Type is CardType.Attack or CardType.Skill or CardType.Power)
+            CardCmd.Enchant<Infected>(leftCard, 1);
 
-        var owner = card.Owner;
-        var hand = PileType.Hand.GetPile(owner).Cards.ToList();
-
-        GD.Print($"[OnPlay] cached index = {cardIndex}, handCount = {hand.Count}");
-
-        if (cardIndex - 1 >= 0)
-        {
-            var leftCard = hand[cardIndex - 1];
-            if (leftCard.Enchantment == null && (leftCard.Type == CardType.Attack || leftCard.Type == CardType.Skill || leftCard.Type == CardType.Power))
-                CardCmd.Enchant<Infected>(leftCard, 1);
-        }
-
-        if (cardIndex >= 0 && cardIndex < hand.Count)
-        {
-            var rightCard = hand[cardIndex];
-            if (rightCard.Enchantment == null && (rightCard.Type == CardType.Attack || rightCard.Type == CardType.Skill || rightCard.Type == CardType.Power))
-                CardCmd.Enchant<Infected>(rightCard, 1);
-        }
+        if (rightCard != null && rightCard.Enchantment == null &&
+            rightCard.Type is CardType.Attack or CardType.Skill or CardType.Power)
+            CardCmd.Enchant<Infected>(rightCard, 1);
     }
 }

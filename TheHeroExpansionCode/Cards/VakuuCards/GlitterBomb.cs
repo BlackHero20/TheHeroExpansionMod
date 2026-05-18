@@ -36,11 +36,12 @@ public class GlitterBomb() : VakuuCard(0,
         CardPlay cardPlay)
     {
         GlitterBomb glitterBomb = this;
-
+        VfxCmd.PlayFullScreenInCombat("vfx/vfx_dramatic_entrance_fullscreen", glitterBomb.Owner.Creature);
+        
         await DamageCmd.Attack(glitterBomb.DynamicVars.Damage.BaseValue)
             .FromCard(glitterBomb)
             .TargetingAllOpponents(glitterBomb.CombatState)
-            .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3")
+            .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
 
         if (glitterBomb.IsUpgraded)

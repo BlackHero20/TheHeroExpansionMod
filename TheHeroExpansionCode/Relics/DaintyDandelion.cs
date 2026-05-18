@@ -53,6 +53,8 @@ public class DaintyDandelion() : TheHeroExpansionRelic
         Creature? dealer,
         CardModel? cardSource)
     {
+        if (target.CombatState == null)
+            return;
         if (target != this.Owner.Creature)
             return;
         if (result.UnblockedDamage <= 0)

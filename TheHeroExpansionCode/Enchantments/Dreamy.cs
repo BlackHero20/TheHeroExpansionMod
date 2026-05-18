@@ -15,15 +15,6 @@ public sealed class Dreamy : TheHeroExpansionEnchantment
         cardType == CardType.Attack || cardType == CardType.Skill;
 
     public override bool IsStackable => false;
-    
-    protected override string? CustomIconPath
-    {
-        get
-        {
-            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".EnchantmentImagePath();
-            return ResourceLoader.Exists(path) ? path : null;
-        }
-    }
 
     public override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay? cardPlay)
     {

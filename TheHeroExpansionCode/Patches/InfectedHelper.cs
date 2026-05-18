@@ -6,6 +6,6 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Enchantments
 {
     public static class InfectedHelper
     {
-        public static readonly Dictionary<CardModel, int> CardIndexCache = new();
+        public static readonly Dictionary<CardModel, (CardModel? left, CardModel? right)> CardNeighborCache = new();
     }
 }

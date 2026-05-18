@@ -1,11 +1,21 @@
 ﻿{
   "THEHEROEXPANSION-INFECTED.title": "Infected",
-  "THEHEROEXPANSION-INFECTED.description": "[gold]Enchant[/gold] the cards adjacent to this one with [purple]Infected[/purple].\nInfected cards gain [blue]5%[/blue] Damage and [gold]Block[/gold] for each Infected card in your deck.\n[blue]({InfectedPercent:diff()}% Increase)[/blue]",
+  "THEHEROEXPANSION-INFECTED.description": "[gold]Enchant[/gold] the cards adjacent to this one with [purple]Infected[/purple] for this combat.\nInfected cards gain [blue]5%[/blue] Damage and [gold]Block[/gold] for each Infected card in your deck.{InCombat:\n[blue]({InfectedPercent:diff()}% Increase)[/blue]|}",
   "THEHEROEXPANSION-GOLDEN_RATIO.title": "Golden Ratio",
   "THEHEROEXPANSION-GOLDEN_RATIO.description": "Whenever you end the turn with unspent {Energy:energyIcons()}, Play this card from anywhere in your deck",
   "THEHEROEXPANSION-DOOMSDAY.title": "Doomsday",
   "THEHEROEXPANSION-DOOMSDAY.description": "Deal [blue]75%[/blue] more damage, but lose [blue]2[/blue] Max HP.",
   "THEHEROEXPANSION-DOOMSDAY.extraCardText": "Lose 2 Max HP.",
   "THEHEROEXPANSION-DREAMY.title": "Dreamy",
-  "THEHEROEXPANSION-DREAMY.description": "Whenever this card is played, add a copy to your [gold]Discard Pile[/gold]."
+  "THEHEROEXPANSION-DREAMY.description": "Whenever this card is played, add a copy to your [gold]Discard Pile[/gold].",
+  "THEHEROEXPANSION-ADVANTAGEOUS.title": "Advantageous",
+  "THEHEROEXPANSION-ADVANTAGEOUS.description": "The first time you play this card this combat, gain {Amount:energyIcons()}.",
+  "THEHEROEXPANSION-ADVANTAGEOUS.extraCardText": "Gain {Amount:energyIcons()}.",
+  "THEHEROEXPANSION-ROYAL.title": "Royal",
+  "THEHEROEXPANSION-ROYAL.description": "When this card is played, gain {Stars:starIcons()}.",
+  "THEHEROEXPANSION-ROYAL.extraCardText": "Gain {Stars:starIcons()}.",
+  "THEHEROEXPANSION-JUMPSCARE.title": "Jumpscare",
+  "THEHEROEXPANSION-JUMPSCARE.description": "When this card is played, kill all enemies with at least as much [gold]Doom[/gold] as HP.",
+  "THEHEROEXPANSION-RAVENOUS.title": "Ravenous",
+  "THEHEROEXPANSION-RAVENOUS.description": "When this card is played, [gold]Evoke[/gold] your leftmost Orb."
 }
