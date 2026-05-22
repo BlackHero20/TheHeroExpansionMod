@@ -1,5 +1,6 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -33,7 +34,10 @@ public class ToastySmores() : TheHeroExpansionRelic
         new CardsVar(2)
     ];
 
-    public override Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override Task BeforeSideTurnEnd(
+        PlayerChoiceContext choiceContext,
+        CombatSide side,
+        IEnumerable<Creature> participants)
     {
         if (side != CombatSide.Player)
             return Task.CompletedTask;
