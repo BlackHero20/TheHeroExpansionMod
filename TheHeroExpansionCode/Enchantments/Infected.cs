@@ -55,12 +55,13 @@ public sealed class Infected : TheHeroExpansionEnchantment
         return 1m + (percent / 100m);
     }
 
-    public override Decimal EnchantBlockMultiplicative(Decimal originalBlock, ValueProp props)
+    public override Decimal EnchantBlockMultiplicative(Decimal originalBlock)
     {
-        if (!props.IsPoweredAttack())
+        if (Card == null)
             return 1M;
 
-        if (Card == null)
+        var props = EnchantmentBlockContext.CurrentBlockProps;
+        if (!props.IsPoweredAttack())
             return 1M;
 
         var percent = this.DynamicVars["InfectedPercent"].BaseValue;

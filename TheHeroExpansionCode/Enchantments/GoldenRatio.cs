@@ -4,6 +4,7 @@ using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -20,24 +21,21 @@ public sealed class GoldenRatio : TheHeroExpansionEnchantment
         new EnergyVar(1) //exists for localization only
     ];
 
-    public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task BeforeFlushLate(PlayerChoiceContext choiceContext, Player player)
     {
         GoldenRatio enchantment = this;
-        
+
         if (enchantment.Card == null)
             return;
-        
+
         var owner = enchantment.Card.Owner;
-        if (owner == null || owner.Creature.Side != side)
+        if (owner == null || owner != player)
             return;
-        
+
         if (owner.PlayerCombatState.Energy <= 0)
             return;
 
         var card = enchantment.Card;
-        
-        if (card.Pile?.Type != PileType.Hand && card.Pile?.Type != PileType.Exhaust)
-            await CardPileCmd.Add(card, PileType.Hand);
 
         card.SetToFreeThisTurn();
         await CardCmd.AutoPlay(choiceContext, card, null, AutoPlayType.Default);
