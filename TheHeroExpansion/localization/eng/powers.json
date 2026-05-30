@@ -54,5 +54,8 @@
   "THEHEROEXPANSION-PAINFUL_OFFERING_POWER.title": "Painful Offering",
   "THEHEROEXPANSION-HUBRIS_POWER.description": "In [blue]X[/blue] Turns, [red]Die[/red]",
   "THEHEROEXPANSION-HUBRIS_POWER.smartDescription": "In [blue]{Amount}[/blue] {Amount:plural:turn|turns}, [red]Die[/red]",
-  "THEHEROEXPANSION-HUBRIS_POWER.title": "Hubris"
+  "THEHEROEXPANSION-HUBRIS_POWER.title": "Hubris",
+  "THEHEROEXPANSION-MOMENTUM_POWER.description": "Momentum improves attack damage and [gold]Block[/gold] gained from cards, but decreases on card play.",
+  "THEHEROEXPANSION-MOMENTUM_POWER.smartDescription": "{Amount:cond:<0?Decreases|Increases} attack damage and [gold]Block[/gold] gained from cards by [blue]{Amount:abs()}[/blue]. Decreases by 1 whenever you play a card.",
+  "THEHEROEXPANSION-MOMENTUM_POWER.title": "Momentum"
 }
