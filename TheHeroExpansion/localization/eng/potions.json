@@ -1,0 +1,9 @@
+﻿{
+  "THEHEROEXPANSION-VIGOR_POTION.description": "Gain [blue]{VigorPower:diff()}[/blue] [gold]Vigor[/gold]",
+  "THEHEROEXPANSION-VIGOR_POTION.title": "Vigor Potion",
+  "THEHEROEXPANSION-TIME_IN_A_BOTTLE.description": "Gain [blue]{MomentumPower:diff()}[/blue] [gold]Momentum[/gold]",
+  "THEHEROEXPANSION-TIME_IN_A_BOTTLE.title": "Time In A Bottle",
+  "THEHEROEXPANSION-BLEEDING_FUEL.description": "Choose a card in your [gold]Exhaust Pile[/gold] and add it into your [gold]Hand[/gold].",
+  "THEHEROEXPANSION-BLEEDING_FUEL.selectionScreenPrompt": "Choose a card to put into your Hand.",
+  "THEHEROEXPANSION-BLEEDING_FUEL.title": "Bleeding Fuel"
+}

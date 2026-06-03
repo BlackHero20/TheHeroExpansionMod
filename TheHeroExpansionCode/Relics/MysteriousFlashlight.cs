@@ -51,7 +51,7 @@ public class MysteriousFlashlight() : TheHeroExpansionRelic
             if (card == null)
                 return Array.Empty<IHoverTip>();
 
-            return new[] { HoverTipFactory.FromCard(card, true) };
+            return new[] { HoverTipFactory.FromCard(card) };
         }
     }
 
@@ -78,7 +78,7 @@ public class MysteriousFlashlight() : TheHeroExpansionRelic
 
         ((StringVar)relic.DynamicVars["CardName"]).StringValue = card.Title;
         relic._extraHoverTips = card.HoverTips.Concat(
-            new[] { HoverTipFactory.FromCard(card, true) });
+            new[] { HoverTipFactory.FromCard(card) });
 
         CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck), 2f);
     }
