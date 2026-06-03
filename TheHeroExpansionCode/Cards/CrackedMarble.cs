@@ -14,7 +14,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(DefectCardPool))]
-public class SplitShard() : TheHeroExpansionCard(1,
+public class CrackedMarble() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
@@ -30,7 +30,7 @@ public class SplitShard() : TheHeroExpansionCard(1,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        SplitShard card = this;
+        CrackedMarble card = this;
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
         await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue)

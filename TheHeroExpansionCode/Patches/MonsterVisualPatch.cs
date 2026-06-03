@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+﻿/*using System.Reflection;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Nodes.Combat;
@@ -55,4 +55,4 @@ public static class MonsterVisualPatch
             return true;
         }
     }
-}
+}*/

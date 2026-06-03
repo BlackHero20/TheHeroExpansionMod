@@ -1,4 +1,4 @@
-﻿using BaseLib.Abstracts;
+﻿/*using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rooms;
 using System.Collections.Generic;
@@ -25,4 +25,4 @@ public sealed class MyEncounter : CustomEncounterModel
             (ModelDb.Monster<Hexaghost>().ToMutable(), null)
         };
     }
-}
+}*/

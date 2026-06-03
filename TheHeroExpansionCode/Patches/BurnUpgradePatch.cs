@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+﻿/*using HarmonyLib;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 
@@ -25,4 +25,4 @@ public static class BurnUpgradePatch
             burn.DynamicVars.Damage.UpgradeValueBy(1M);
         }
     }
-}
+}*/

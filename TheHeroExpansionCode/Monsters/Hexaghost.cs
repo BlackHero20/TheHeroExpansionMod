@@ -1,4 +1,4 @@
-﻿using BaseLib.Abstracts;
+﻿/*using BaseLib.Abstracts;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -316,4 +316,4 @@ public sealed class Hexaghost : CustomMonsterModel
             BurnUpgradePatch.AllowBurnUpgrade = false;
         }
     }
-}
+}*/

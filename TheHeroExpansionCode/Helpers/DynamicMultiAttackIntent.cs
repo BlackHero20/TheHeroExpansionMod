@@ -1,4 +1,4 @@
-﻿using MegaCrit.Sts2.Core.Entities.Creatures;
+﻿/*using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.MonsterMoves.Intents;
 using System;
@@ -41,4 +41,4 @@ public class DynamicMultiAttackIntent : AttackIntent
         label.Add("Repeat", (decimal)Repeats);
         return label;
     }
-}
+}*/

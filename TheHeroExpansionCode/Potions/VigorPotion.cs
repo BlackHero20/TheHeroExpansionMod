@@ -36,7 +36,7 @@ public sealed class VigorPotion : TheHeroExpansionPotion
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
     {
         AssertValidForTargetedPotion(target);
-        NCombatRoom.Instance?.PlaySplashVfx(target, new Color("f5a623"));
+        NCombatRoom.Instance?.PlaySplashVfx(target, new Color("#ffd100"));
         await PowerCmd.Apply<VigorPower>(choiceContext, target, 12M, Owner.Creature, null);
     }
 }
