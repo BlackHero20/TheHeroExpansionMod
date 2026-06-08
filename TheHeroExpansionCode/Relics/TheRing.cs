@@ -102,37 +102,37 @@ public class TheRing : TheHeroExpansionRelic
     private async Task Effect3(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<LunchBreak>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<StrangeNote>(theRing.Owner, 1, combatState);
     }
     
     private async Task Effect4(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<DemonicSurge>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<UnbreakableStrength>(theRing.Owner, 1, combatState);
     }
     
     private async Task Effect5(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<QuickThought>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<ShadowMantle>(theRing.Owner, 1, combatState);
     }
     
     private async Task Effect6(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<HumbleOffering>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<MysticalSignet>(theRing.Owner, 1, combatState);
     }
     
     private async Task Effect7(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<CognitionBlip>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<StygianFlame>(theRing.Owner, 1, combatState);
     }
     
     private async Task Effect8(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<Engrave>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<SacrificialDagger>(theRing.Owner, 1, combatState);
     }
     
     private async Task Effect9(PlayerChoiceContext choiceContext, ICombatState combatState)
@@ -150,7 +150,7 @@ public class TheRing : TheHeroExpansionRelic
     private async Task Effect11(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<ForbiddenPower>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<NightmareFuel>(theRing.Owner, 1, combatState);
     }
     
     private async Task Effect12(PlayerChoiceContext choiceContext, ICombatState combatState)
@@ -174,6 +174,6 @@ public class TheRing : TheHeroExpansionRelic
     private async Task Effect15(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<DevilTrigger>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<TimeGun>(theRing.Owner, 1, combatState);
     }
 }

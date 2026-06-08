@@ -18,7 +18,7 @@ public static class BellowsPatch
 
         __instance.Flash();
         var cards = PileType.Hand.GetPile(__instance.Owner).Cards
-            .Where(c => c is not VakuusPrank && c is not LunchBreak && c is not DemonicSurge);
+            .Where(c => c is not VakuusPrank && c is not StrangeNote && c is not UnbreakableStrength);
         CardCmd.Upgrade(cards, CardPreviewStyle.HorizontalLayout);
         __result = Task.CompletedTask;
         return false;

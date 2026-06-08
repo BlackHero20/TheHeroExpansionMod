@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dklfqlo3to5ii"
-path="res://.godot/imported/perish_song.png-a51c552179d57c38ef36244293c92146.ctex"
+uid="uid://5itf20l5rtc7"
+path="res://.godot/imported/perish_song.png-7f163d8d1a2c1c5e9d629f6f61fbfa2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheHeroExpansion/images/card_portraits/perish_song.png"
-dest_files=["res://.godot/imported/perish_song.png-a51c552179d57c38ef36244293c92146.ctex"]
+source_file="res://TheHeroExpansion/images/card_portraits/big/perish_song.png"
+dest_files=["res://.godot/imported/perish_song.png-7f163d8d1a2c1c5e9d629f6f61fbfa2b.ctex"]
 
 [params]
 
