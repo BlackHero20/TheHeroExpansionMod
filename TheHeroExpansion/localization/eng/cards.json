@@ -67,6 +67,8 @@
   "THEHEROEXPANSION-KILL_DRIVE.title": "Kill Drive",
   "THEHEROEXPANSION-LIGHT_BUSTER.description": "Deal {Damage:diff()} damage.\n[gold]Evoke[/gold] your rightmost Orb and add it's [gold]Evoke[/gold] effect to this card.{OrbEffects}",
   "THEHEROEXPANSION-LIGHT_BUSTER.title": "Light Buster",
+  "THEHEROEXPANSION-SELF_DESTRUCT.description": "Play {Attacks:diff()} random Attacks from your [gold]Draw Pile[/gold]. Lose {OrbSlots:diff()} Orb Slots.",
+  "THEHEROEXPANSION-SELF_DESTRUCT.title": "Self Destruct",
   "THEHEROEXPANSION-MAGIC_PEN.description": "Enchant an Attack or Skill in your [gold]Hand[/gold] with [purple]Dreamy[/purple]",
   "THEHEROEXPANSION-MAGIC_PEN.selectionScreenPrompt": "Select an Attack or Skill to Enchant with Dreamy.",
   "THEHEROEXPANSION-MAGIC_PEN.title": "Magic Pen",
