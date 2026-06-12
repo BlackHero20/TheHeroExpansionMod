@@ -59,6 +59,8 @@
   "THEHEROEXPANSION-SHADOW_BOXING.description": "Deal {Damage:diff()} damage\n[gold]Enchant[/gold] a card in your [gold]Hand[/gold] with [purple]Ravenous[/purple].",
   "THEHEROEXPANSION-SHADOW_BOXING.selectionScreenPrompt": "Select a card to Enchant with Ravenous.",
   "THEHEROEXPANSION-SHADOW_BOXING.title": "Shadow Boxing",
+  "THEHEROEXPANSION-LOOT_BOX.description": "Add {Cards:diff()} random Common cards to your hand.\nThey are free to play this turn.",
+  "THEHEROEXPANSION-LOOT_BOX.title": "Loot Box",
   "THEHEROEXPANSION-BIT_FLIP.description": "[gold]Evoke[/gold] all of your Orbs.\n[gold]Channel[/gold] 1 [gold]Lightning[/gold] for each [gold]Frost[/gold].\n[gold]Channel[/gold] 1 [gold]Frost[/gold] for each [gold]Lightning[/gold].",
   "THEHEROEXPANSION-BIT_FLIP.title": "Bit Flip",
   "THEHEROEXPANSION-NANOMACHINES.description": "Whenever you play a Power, Play {Cards:diff()} random {Cards:plural:Attack|Attacks} from your [gold]Draw Pile[/gold].",
