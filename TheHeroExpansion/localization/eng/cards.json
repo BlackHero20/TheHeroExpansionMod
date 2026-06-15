@@ -65,6 +65,8 @@
   "THEHEROEXPANSION-BIT_FLIP.title": "Bit Flip",
   "THEHEROEXPANSION-NANOMACHINES.description": "Whenever you play a Power, Play {Cards:diff()} random {Cards:plural:Attack|Attacks} from your [gold]Draw Pile[/gold].",
   "THEHEROEXPANSION-NANOMACHINES.title": "Nanomachines",
+  "THEHEROEXPANSION-DARK_MAGICIAN.description": "This turn, whenever you [gold]Channel[/gold] [gold]Lightning[/gold], also [gold]Channel[/gold] 1 [gold]Dark[/gold].\nAdd a [gold]Void[/gold] to your [gold]Discard Pile[/gold].",
+  "THEHEROEXPANSION-DARK_MAGICIAN.title": "Dark Magician",
   "THEHEROEXPANSION-KILL_DRIVE.description": "Whenever you play a 0{energyPrefix:energyIcons(1)} Attack, [gold]Channel[/gold] 1 [gold]Lightning[/gold]",
   "THEHEROEXPANSION-KILL_DRIVE.title": "Kill Drive",
   "THEHEROEXPANSION-LIGHT_BUSTER.description": "Deal {Damage:diff()} damage.\n[gold]Evoke[/gold] your rightmost Orb and add it's [gold]Evoke[/gold] effect to this card.{OrbEffects}",
