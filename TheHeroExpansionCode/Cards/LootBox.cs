@@ -17,6 +17,8 @@ public class LootBox() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
+    public override bool CanBeGeneratedInCombat => false;
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CardsVar(2)

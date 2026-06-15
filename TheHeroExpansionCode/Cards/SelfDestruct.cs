@@ -11,14 +11,14 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 [Pool(typeof(DefectCardPool))]
-public class SelfDestruct() : TheHeroExpansionCard(3,
+public class SelfDestruct() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar("Attacks", 3M),
-        new DynamicVar("OrbSlots", 3M)
+        new DynamicVar("OrbSlots", 1M)
     ];
 
     protected override async Task OnPlay(
