@@ -58,6 +58,8 @@
   "THEHEROEXPANSION-PERISH_SONG.title": "Perish Song",
   "THEHEROEXPANSION-GOT_YOUR_BACK.description": "[gold]Summon[/gold] equal to [gold]Osty's[/gold] Max HP.\n[gold]Osty[/gold] doesn't block for you this turn.{InCombat:\n(Summons {Summon:diff()})|}",
   "THEHEROEXPANSION-GOT_YOUR_BACK.title": "Got Your Back",
+  "THEHEROEXPANSION-YOKAI.description": "Whenever you [gold]Exhaust[/gold] an [gold]Ethereal[/gold] card, play a copy of it for free.",
+  "THEHEROEXPANSION-YOKAI.title": "Yokai",
   "THEHEROEXPANSION-CRACKED_MARBLE.description": "Deal {Damage:diff()} damage\n[gold]Channel[/gold] 1 [gold]Glass[/gold].",
   "THEHEROEXPANSION-CRACKED_MARBLE.title": "Cracked Marble",
   "THEHEROEXPANSION-SHADOW_BOXING.description": "Deal {Damage:diff()} damage\n[gold]Enchant[/gold] a card in your [gold]Hand[/gold] with [purple]Ravenous[/purple].",

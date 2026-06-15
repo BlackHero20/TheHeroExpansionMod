@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Powers;
-public sealed class DarkMagicianPower : CustomPowerModel
+public sealed class DarkMagicianPower : TheHeroExpansionPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
