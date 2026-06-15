@@ -52,6 +52,8 @@
   "THEHEROEXPANSION-SODA_POP.title": "Soda Pop",
   "THEHEROEXPANSION-RIGOR_MORTIS.description": "Apply [gold]Doom[/gold] equal to {IfUpgraded:show:thrice|twice} osty's HP.{InCombat:\n(Applies {CalculatedDoom:diff()} [gold]Doom[/gold])|}",
   "THEHEROEXPANSION-RIGOR_MORTIS.title": "Rigor Mortis",
+  "THEHEROEXPANSION-SIXTH_FINGER.description": "[gold]Summon[/gold] {Summon:diff()}.\nEvery 3 times [gold]Osty[/gold] hits an enemy this turn, add this to your [gold]Hand[/gold].",
+  "THEHEROEXPANSION-SIXTH_FINGER.title": "Sixth Finger",
   "THEHEROEXPANSION-PERISH_SONG.description": "After {Turns:diff()} turns, Apply {DoomPower:diff()} [gold]Doom[/gold] to [gold]EVERYONE[/gold].",
   "THEHEROEXPANSION-PERISH_SONG.title": "Perish Song",
   "THEHEROEXPANSION-GOT_YOUR_BACK.description": "[gold]Summon[/gold] equal to [gold]Osty's[/gold] Max HP.\n[gold]Osty[/gold] doesn't block for you this turn.{InCombat:\n(Summons {Summon:diff()})|}",
