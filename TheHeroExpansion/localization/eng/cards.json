@@ -46,6 +46,8 @@
   "THEHEROEXPANSION-EERIE.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Enchant[/gold] a card in your [gold]Hand[/gold] with [purple]Jumpscare[/purple]",
   "THEHEROEXPANSION-EERIE.selectionScreenPrompt": "Select a card to Enchant with Jumpscare.",
   "THEHEROEXPANSION-EERIE.title": "Eerie",
+  "THEHEROEXPANSION-ALL_OUT_ATTACK.description": "Deal {Damage:diff()} damage.\n[gold]Osty[/gold] deals {OstyDamage:diff()} damage.\nDeal {Damage:diff()} damage {IfUpgraded:show:to ALL enemies|}.\n[gold]Osty[/gold] deals {OstyDamage:diff()} damage {IfUpgraded:show:to ALL enemies|}.",
+  "THEHEROEXPANSION-ALL_OUT_ATTACK.title": "All Out Attack",
   "THEHEROEXPANSION-SODA_POP.description": "Gain {Energy:energyIcons()}.\nAdd a [gold]Soul[/gold] into your [gold]Hand[/gold].\n[gold]Osty[/gold] heals {Heal:diff()} HP.",
   "THEHEROEXPANSION-SODA_POP.title": "Soda Pop",
   "THEHEROEXPANSION-RIGOR_MORTIS.description": "Apply [gold]Doom[/gold] equal to {IfUpgraded:show:thrice|twice} osty's HP.{InCombat:\n(Applies {CalculatedDoom:diff()} [gold]Doom[/gold])|}",
