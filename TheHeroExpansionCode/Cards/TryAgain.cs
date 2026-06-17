@@ -51,6 +51,5 @@ public class TryAgain() : TheHeroExpansionCard(1,
     {
         this.DynamicVars.Block.UpgradeValueBy(2M);
         this.DynamicVars["Sharp"].UpgradeValueBy(1);
-        
     }
 }
