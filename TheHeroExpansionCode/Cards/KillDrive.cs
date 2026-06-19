@@ -11,7 +11,6 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 using TheHeroExpansion.TheHeroExpansionCode.Powers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(DefectCardPool))]
 public class KillDrive() : TheHeroExpansionCard(1,
     CardType.Power, CardRarity.Rare,

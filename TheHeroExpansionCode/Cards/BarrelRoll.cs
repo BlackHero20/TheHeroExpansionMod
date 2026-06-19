@@ -10,7 +10,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(RegentCardPool))]
 public class BarrelRoll() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,

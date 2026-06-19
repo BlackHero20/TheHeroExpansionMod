@@ -11,7 +11,6 @@ using MegaCrit.Sts2.Core.Models.Monsters;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(NecrobinderCardPool))]
 public class SodaPop() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,

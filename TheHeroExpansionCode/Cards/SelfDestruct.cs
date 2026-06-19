@@ -9,7 +9,6 @@ using System.Linq;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(DefectCardPool))]
 public class SelfDestruct() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Rare,

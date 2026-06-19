@@ -15,7 +15,6 @@ using System.Linq;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(NecrobinderCardPool))]
 public class SixthFinger() : TheHeroExpansionCard(0,
     CardType.Skill, CardRarity.Uncommon,

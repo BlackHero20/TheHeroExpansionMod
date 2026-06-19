@@ -9,7 +9,6 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 using TheHeroExpansion.TheHeroExpansionCode.Powers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(RegentCardPool))]
 public class TheWorld() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Rare,

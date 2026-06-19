@@ -10,7 +10,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(NecrobinderCardPool))]
 public class AllOutAttack() : TheHeroExpansionCard(2,
     CardType.Attack, CardRarity.Common,

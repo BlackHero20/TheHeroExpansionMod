@@ -13,7 +13,6 @@ using MegaCrit.Sts2.Core.Models;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(DefectCardPool))]
 public class BitFlip() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,

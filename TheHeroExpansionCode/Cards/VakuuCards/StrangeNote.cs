@@ -10,7 +10,6 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards.VakuuCards;
-
 [Pool(typeof(TokenCardPool))]
 public class StrangeNote() : VakuuCard(0,
     CardType.Skill, TargetType.Self)

@@ -10,8 +10,6 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
-
 [Pool(typeof(NecrobinderCardPool))]
 public class RigorMortis() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Uncommon,

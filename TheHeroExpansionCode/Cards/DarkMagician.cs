@@ -14,7 +14,6 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers;
 using Void = MegaCrit.Sts2.Core.Models.Cards.Void;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(DefectCardPool))]
 public class DarkMagician() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Uncommon,

@@ -9,7 +9,6 @@ using MegaCrit.Sts2.Core.Models;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(EventCardPool))]
 public class Seek() : TheHeroExpansionCard(0,
     CardType.Skill, CardRarity.Event,

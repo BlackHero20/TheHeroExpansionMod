@@ -13,7 +13,6 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(SilentCardPool))]
 public class BehindYou() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,

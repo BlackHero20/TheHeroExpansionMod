@@ -8,7 +8,6 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(RegentCardPool))]
 public class Work() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,

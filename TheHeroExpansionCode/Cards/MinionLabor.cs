@@ -12,7 +12,6 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(TokenCardPool))]
 public class MinionLabor() : TheHeroExpansionCard(0,
     CardType.Skill, CardRarity.Token,

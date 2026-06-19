@@ -12,7 +12,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards.VakuuCards;
-
 [Pool(typeof(TokenCardPool))]
 public class ShadowMantle() : VakuuCard(0,
     CardType.Skill, TargetType.Self)
