@@ -38,6 +38,8 @@
   "THEHEROEXPANSION-STRIKE_THE_EARTH.description": "Deal {Damage:diff()} damage\n[gold]Enchant[/gold] a card in your [gold]Hand[/gold] with [purple]Royal[/purple]",
   "THEHEROEXPANSION-STRIKE_THE_EARTH.selectionScreenPrompt": "Select a card to Enchant with Royal.",
   "THEHEROEXPANSION-STRIKE_THE_EARTH.title": "Strike The Earth",
+  "THEHEROEXPANSION-BARREL_ROLL.title": "Barrel Roll",
+  "THEHEROEXPANSION-BARREL_ROLL.description": "Gain {Block:diff()} [gold]Block[/gold].\nAdd a [gold]Debris[/gold] to your {IfUpgraded:show:[gold]Discard Pile[/gold]|[gold]Draw Pile[/gold]}.",
   "THEHEROEXPANSION-SERVE.description": "At the start of your turn, add 1 [gold]Minion Duty[/gold] into your [gold]Hand[/gold].",
   "THEHEROEXPANSION-SERVE.title": "SERVE!!",
   "THEHEROEXPANSION-JOY_OF_CREATION.description": "Whenever you create a card, [gold]Forge[/gold] {Forge:diff()}.",
