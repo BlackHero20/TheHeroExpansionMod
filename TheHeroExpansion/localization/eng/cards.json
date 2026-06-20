@@ -29,6 +29,8 @@
   "THEHEROEXPANSION-BEHIND_YOU.title": "Behind You",
   "THEHEROEXPANSION-VOLCANIC_VIPER.description": "Deal {Damage:diff()} damage.\nApply {PoisonPower:diff()} [gold]Poison[/gold].\nTrigger the enemy's [gold]Poison[/gold] once.",
   "THEHEROEXPANSION-VOLCANIC_VIPER.title": "Volcanic Viper",
+  "THEHEROEXPANSION-FMA.description": "Gain {DexterityPower:diff()} [gold]Dexterity[/gold].\n[gold]Dexterity[/gold] also acts as [gold]Strength[/gold]",
+  "THEHEROEXPANSION-FMA.title": "F=ma",
   "THEHEROEXPANSION-CEASE_TO_EXIST.description": "Gain {IntangiblePower:diff()} [gold]Intangible[/gold].\nFor the next {CeaseToExistPower:diff()} turns, You cannot use Attacks.",
   "THEHEROEXPANSION-CEASE_TO_EXIST.title": "Cease To Exist",
   "THEHEROEXPANSION-BOUNCING_BLADE.description": "Deal {Damage:diff()} damage.\nApply {PoisonPower:diff()} [gold]Poison[/gold]\nAdd [gold]Replay[/gold] 1 to ALL Bouncing Blades this combat",
