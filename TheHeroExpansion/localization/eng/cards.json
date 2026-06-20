@@ -23,6 +23,8 @@
   "THEHEROEXPANSION-BUTTERFLY_KNIFE.title": "Butterfly Knife",
   "THEHEROEXPANSION-REPURPOSE.description": "At the end of your turn, [gold]Retain[/gold] 1 card and [gold]Enchant[/gold] it with [purple]Advantageous {Advantageous:diff()}[/purple].",
   "THEHEROEXPANSION-REPURPOSE.title": "Repurpose",
+  "THEHEROEXPANSION-GROUNDWORK.description": "Deal {Damage:diff()} damage to ALL enemies.\nThis card gains [gold]Sly[/gold] for the rest of combat.",
+  "THEHEROEXPANSION-GROUNDWORK.title": "Groundwork",
   "THEHEROEXPANSION-BEHIND_YOU.description": "Apply {WeakPower:diff()} [gold]Weak[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]",
   "THEHEROEXPANSION-BEHIND_YOU.title": "Behind You",
   "THEHEROEXPANSION-VOLCANIC_VIPER.description": "Deal {Damage:diff()} damage.\nApply {PoisonPower:diff()} [gold]Poison[/gold].\nTrigger the enemy's [gold]Poison[/gold] once.",
