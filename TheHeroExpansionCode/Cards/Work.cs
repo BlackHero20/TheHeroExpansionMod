@@ -15,26 +15,26 @@ public class Work() : TheHeroExpansionCard(1,
 {
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        [HoverTipFactory.FromCard<MinionLabor>()];
+    [
+        HoverTipFactory.FromCard<MinionLabor>(IsUpgraded)
+    ];
   
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [new CardsVar(2)];
 
-    protected override async Task OnPlay(
-        PlayerChoiceContext choiceContext,
-        CardPlay play)
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         Work work = this;
         await CreatureCmd.TriggerAnim(work.Owner.Creature, "Cast", work.Owner.Character.CastAnimDelay);
         for (int i = 0; i < work.DynamicVars.Cards.IntValue; ++i)
         {
-            await MinionLabor.CreateInHand(work.Owner, 1, work.CombatState);
+            var created = await MinionLabor.CreateInHand(work.Owner, 1, work.CombatState);
+            if (work.IsUpgraded)
+            {
+                foreach (var card in created)
+                    CardCmd.Upgrade(card);
+            }
             await Cmd.Wait(0.1f);
         }
-    }
-
-    protected override void OnUpgrade()
-    {
-        this.DynamicVars.Cards.UpgradeValueBy(1M);
     }
 }

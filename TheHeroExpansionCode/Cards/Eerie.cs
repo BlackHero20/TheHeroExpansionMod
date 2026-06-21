@@ -18,8 +18,7 @@ public class Eerie() : TheHeroExpansionCard(1,
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        CardKeyword.Ethereal,
-        CardKeyword.Exhaust
+        CardKeyword.Ethereal
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

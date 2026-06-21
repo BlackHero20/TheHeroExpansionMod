@@ -18,13 +18,11 @@ public class BouncingBlade() : TheHeroExpansionCard(0,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(2M, ValueProp.Move),
-        new PowerVar<PoisonPower>(1M)
+        new DamageVar(2M, ValueProp.Move)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<PoisonPower>(),
         HoverTipFactory.Static(StaticHoverTip.ReplayStatic)
     ];
 
@@ -37,10 +35,7 @@ public class BouncingBlade() : TheHeroExpansionCard(0,
             .FromCard(bouncingBlade)
             .Targeting(play.Target)
             .Execute(choiceContext);
-
-        await PowerCmd.Apply<PoisonPower>(choiceContext, play.Target,
-            bouncingBlade.DynamicVars.Poison.BaseValue, bouncingBlade.Owner.Creature, bouncingBlade);
-
+        
         foreach (var blade in bouncingBlade.Owner.PlayerCombatState.AllCards.OfType<BouncingBlade>())
         {
             blade.BaseReplayCount += 1;

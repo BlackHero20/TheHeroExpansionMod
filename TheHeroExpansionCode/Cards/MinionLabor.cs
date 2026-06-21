@@ -44,7 +44,6 @@ public class MinionLabor() : TheHeroExpansionCard(0,
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars.Stars.UpgradeValueBy(1);
         this.DynamicVars.Forge.UpgradeValueBy(2);
     }
     

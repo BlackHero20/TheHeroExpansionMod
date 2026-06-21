@@ -17,7 +17,7 @@ public class Groundwork() : TheHeroExpansionCard(2,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(15M, ValueProp.Move)
+        new DamageVar(13M, ValueProp.Move)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -40,6 +40,6 @@ public class Groundwork() : TheHeroExpansionCard(2,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4M);
+        DynamicVars.Damage.UpgradeValueBy(3M);
     }
 }
