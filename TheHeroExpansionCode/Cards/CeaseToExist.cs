@@ -11,7 +11,6 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 using TheHeroExpansion.TheHeroExpansionCode.Powers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(SilentCardPool))]
 public class CeaseToExist() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Rare,

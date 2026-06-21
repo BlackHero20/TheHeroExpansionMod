@@ -14,7 +14,6 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 using TheHeroExpansion.TheHeroExpansionCode.Powers.VakuuPowers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards.VakuuCards;
-
 [Pool(typeof(TokenCardPool))]
 public class VakuusPrank() : VakuuCard(0,
     CardType.Power, TargetType.Self)

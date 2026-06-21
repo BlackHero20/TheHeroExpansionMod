@@ -12,7 +12,6 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 using TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(DefectCardPool))]
 public class ShadowBoxing() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Common,

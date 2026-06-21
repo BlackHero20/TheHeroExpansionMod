@@ -10,7 +10,6 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 using TheHeroExpansion.TheHeroExpansionCode.Powers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(RegentCardPool))]
 public class EdgeOfDestiny() : TheHeroExpansionCard(1,
     CardType.Power, CardRarity.Rare, TargetType.Self)

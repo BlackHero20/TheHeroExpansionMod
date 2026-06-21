@@ -15,7 +15,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(IroncladCardPool))]
 public class TryAgain() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,
@@ -51,6 +50,5 @@ public class TryAgain() : TheHeroExpansionCard(1,
     {
         this.DynamicVars.Block.UpgradeValueBy(2M);
         this.DynamicVars["Sharp"].UpgradeValueBy(1);
-        
     }
 }

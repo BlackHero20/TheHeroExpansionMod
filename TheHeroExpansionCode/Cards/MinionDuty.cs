@@ -11,7 +11,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(TokenCardPool))]
 public class MinionDuty() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Token,

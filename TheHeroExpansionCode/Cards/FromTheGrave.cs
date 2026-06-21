@@ -17,7 +17,7 @@ public class FromTheGrave() : TheHeroExpansionCard(2,
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(14M, ValueProp.Move)
+        new BlockVar(11M, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
@@ -39,5 +39,5 @@ public class FromTheGrave() : TheHeroExpansionCard(2,
             fromTheGrave.CreateClone(), PileType.Draw, fromTheGrave.Owner, CardPilePosition.Random));
     }
 
-    protected override void OnUpgrade() => this.DynamicVars.Block.UpgradeValueBy(4M);
+    protected override void OnUpgrade() => this.DynamicVars.Block.UpgradeValueBy(3M);
 }

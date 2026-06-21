@@ -10,7 +10,6 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(SilentCardPool))]
 public class ButterflyKnife() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,

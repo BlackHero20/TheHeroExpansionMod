@@ -12,7 +12,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
-
 [Pool(typeof(NecrobinderCardPool))]
 public class Swipe() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Common,
