@@ -32,6 +32,7 @@ public sealed class YokaiPower : TheHeroExpansionPower
     {
         YokaiPower power = this;
         if (card.Owner.Creature != power.Owner) return;
+        if (card.Type == CardType.Curse || card.Type == CardType.Status || card.Type == CardType.Quest) return;
         if (!card.Keywords.Contains(CardKeyword.Ethereal)) return;
         if (_isReplaying) return;
 

@@ -13,7 +13,7 @@ using MegaCrit.Sts2.Core.TestSupport;
 namespace TheHeroExpansion.TheHeroExpansionCode.Powers.VakuuPowers;
 public class MyTurnPower : TheHeroExpansionPower
 {
-    public override PowerType Type => PowerType.Buff;
+    public override PowerType Type => PowerType.Debuff;
     
     public override PowerStackType StackType => PowerStackType.None;
     

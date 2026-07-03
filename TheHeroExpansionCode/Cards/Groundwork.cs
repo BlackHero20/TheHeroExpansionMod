@@ -29,7 +29,7 @@ public class Groundwork() : TheHeroExpansionCard(2,
     {
         Groundwork card = this;
         await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue)
-            .FromCard(card)
+            .FromCard(card, cardPlay)
             .TargetingAllOpponents(card.CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);

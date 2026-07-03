@@ -39,7 +39,7 @@ public class GlitterBomb() : VakuuCard(0,
         VfxCmd.PlayFullScreenInCombat("vfx/vfx_dramatic_entrance_fullscreen", glitterBomb.Owner.Creature);
         
         await DamageCmd.Attack(glitterBomb.DynamicVars.Damage.BaseValue)
-            .FromCard(glitterBomb)
+            .FromCard(glitterBomb, cardPlay)
             .TargetingAllOpponents(glitterBomb.CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
@@ -52,7 +52,7 @@ public class GlitterBomb() : VakuuCard(0,
                 glitterBomb.DynamicVars.Damage.BaseValue,
                 ValueProp.Move,
                 glitterBomb.Owner.Creature,
-                glitterBomb);
+                glitterBomb, cardPlay);
 
             foreach (var card in PileType.Hand.GetPile(glitterBomb.Owner).Cards.ToList())
             {

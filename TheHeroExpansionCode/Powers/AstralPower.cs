@@ -19,7 +19,8 @@ public sealed class AstralPower : TheHeroExpansionPower
         decimal amount,
         ValueProp props,
         Creature? dealer,
-        CardModel? cardSource)
+        CardModel? cardSource,
+        CardPlay cardPlay)
     {
         if (dealer != Owner && !Owner.Pets.Contains(dealer)) return 1M;
         if (!props.IsPoweredAttack()) return 1M;

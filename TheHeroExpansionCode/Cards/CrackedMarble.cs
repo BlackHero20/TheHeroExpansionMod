@@ -34,7 +34,7 @@ public class CrackedMarble() : TheHeroExpansionCard(1,
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
         await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue)
-            .FromCard(card)
+            .FromCard(card, cardPlay)
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3")
             .Execute(choiceContext);

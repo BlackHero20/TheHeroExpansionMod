@@ -13,30 +13,36 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
-public class BouncingBlade() : TheHeroExpansionCard(0,
+public class VenomFlurry() : TheHeroExpansionCard(0,
     CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(2M, ValueProp.Move)
+        new DamageVar(2M, ValueProp.Move),
+        new PowerVar<PoisonPower>(1M)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
+        HoverTipFactory.FromPower<PoisonPower>(),
         HoverTipFactory.Static(StaticHoverTip.ReplayStatic)
     ];
 
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        BouncingBlade bouncingBlade = this;
-        ArgumentNullException.ThrowIfNull(play.Target, nameof(play.Target));
+        VenomFlurry venomFlurry = this;
+        ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
-        await DamageCmd.Attack(bouncingBlade.DynamicVars.Damage.BaseValue)
-            .FromCard(bouncingBlade)
-            .Targeting(play.Target)
+        await DamageCmd.Attack(venomFlurry.DynamicVars.Damage.BaseValue)
+            .FromCard(venomFlurry, cardPlay)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
         
-        foreach (var blade in bouncingBlade.Owner.PlayerCombatState.AllCards.OfType<BouncingBlade>())
+        await PowerCmd.Apply<PoisonPower>(choiceContext, cardPlay.Target,
+            venomFlurry.DynamicVars["PoisonPower"].BaseValue,
+            venomFlurry.Owner.Creature, venomFlurry);
+        
+        foreach (var blade in venomFlurry.Owner.PlayerCombatState.AllCards.OfType<VenomFlurry>())
         {
             blade.BaseReplayCount += 1;
             CardCmd.Preview(blade, 1, CardPreviewStyle.MessyLayout);

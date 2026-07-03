@@ -1,5 +1,6 @@
 ﻿using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -8,9 +9,9 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Powers.VakuuPowers;
-public class DemonicCripplePower : TheHeroExpansionPower
+public class FragileStrengthPower : TheHeroExpansionPower
 {
-    public override PowerType Type => PowerType.Buff;
+    public override PowerType Type => PowerType.Debuff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
@@ -19,7 +20,8 @@ public class DemonicCripplePower : TheHeroExpansionPower
         Decimal amount,
         ValueProp props,
         Creature? dealer,
-        CardModel? cardSource)
+        CardModel? cardSource,
+        CardPlay cardPlay)
     {
         return dealer != this.Owner && !this.Owner.Pets.Contains<Creature>(dealer) || !props.IsPoweredAttack() || cardSource == null ? 1M : 0.5M;
     }
@@ -29,7 +31,7 @@ public class DemonicCripplePower : TheHeroExpansionPower
         CombatSide side,
         IEnumerable<Creature> participants)
     {
-        DemonicCripplePower power = this;
+        FragileStrengthPower power = this;
         if (side != this.Owner.Side)
             return;
 

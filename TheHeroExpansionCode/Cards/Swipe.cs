@@ -35,12 +35,12 @@ public class Swipe() : TheHeroExpansionCard(1,
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
-        CardPlay play)
+        CardPlay cardPlay)
     {
         Swipe swipe = this;
         if (Osty.CheckMissingWithAnim(swipe.Owner))
             return;
-        await DamageCmd.Attack(swipe.DynamicVars.OstyDamage.BaseValue).FromOsty(swipe.Owner.Osty, (CardModel) swipe).TargetingAllOpponents(swipe.CombatState).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
+        await DamageCmd.Attack(swipe.DynamicVars.OstyDamage.BaseValue).FromOsty(swipe.Owner.Osty, swipe, cardPlay).TargetingAllOpponents(swipe.CombatState).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
         foreach (Creature _ in (IEnumerable<Creature>) swipe.CombatState.HittableEnemies)
             await OstyCmd.Summon(choiceContext, swipe.Owner, swipe.DynamicVars.Summon.BaseValue, (AbstractModel) swipe);
     }

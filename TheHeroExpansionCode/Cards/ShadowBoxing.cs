@@ -32,7 +32,7 @@ public class ShadowBoxing() : TheHeroExpansionCard(1,
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
         await DamageCmd.Attack(shadowBoxing.DynamicVars.Damage.BaseValue)
-            .FromCard(shadowBoxing)
+            .FromCard(shadowBoxing, cardPlay)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
 

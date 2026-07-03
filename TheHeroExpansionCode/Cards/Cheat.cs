@@ -1,5 +1,6 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -30,7 +31,7 @@ public class Cheat() : TheHeroExpansionCard(0,
             card.DynamicVars["CheatPower"].BaseValue, card.Owner.Creature, card);
         
         var power = card.Owner.Creature.GetPower<CheatPower>();
-        if (power != null)
+        if (power != null && LocalContext.IsMe(card.Owner.Creature))
             CheatDisplay.UpdateCount(power.Amount);
     }
 

@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Powers.VakuuPowers;
 
-public class PainfulOfferingPower : TheHeroExpansionPower
+public class SoulRingPower : TheHeroExpansionPower
 {
     public override PowerType Type => PowerType.Debuff;
 

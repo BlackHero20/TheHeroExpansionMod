@@ -17,11 +17,12 @@ public class BetterDays() : TheHeroExpansionCard(1,
         new PowerVar<BetterDaysPower>(1M)
     ];
 
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        BetterDays card = this;
-        await PowerCmd.Apply<BetterDaysPower>(choiceContext, card.Owner.Creature,
-            card.DynamicVars["BetterDaysPower"].BaseValue, card.Owner.Creature, card);
+        BetterDays betterDays = this;
+        await CreatureCmd.TriggerAnim(betterDays.Owner.Creature, "Cast", betterDays.Owner.Character.CastAnimDelay);
+        await PowerCmd.Apply<BetterDaysPower>(choiceContext, betterDays.Owner.Creature,
+            betterDays.DynamicVars["BetterDaysPower"].BaseValue, betterDays.Owner.Creature, betterDays);
     }
 
     protected override void OnUpgrade()

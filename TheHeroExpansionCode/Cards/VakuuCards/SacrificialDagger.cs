@@ -27,13 +27,13 @@ public class SacrificialDagger() : VakuuCard(0,
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
-        CardPlay play)
+        CardPlay cardPlay)
     {
         SacrificialDagger sacrificialDagger = this;
         
         if (sacrificialDagger.IsUpgraded)
         {
-            await CreatureCmd.Damage(choiceContext, sacrificialDagger.Owner.Creature, sacrificialDagger.DynamicVars.HpLoss.BaseValue, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, sacrificialDagger);
+            await CreatureCmd.Damage(choiceContext, sacrificialDagger.Owner.Creature, sacrificialDagger.DynamicVars.HpLoss.BaseValue, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, sacrificialDagger, cardPlay);
             foreach (CardModel card in PileType.Hand.GetPile(sacrificialDagger.Owner).Cards.ToList())
             {
                 CardCmd.ApplyKeyword(card, CardKeyword.Retain);
