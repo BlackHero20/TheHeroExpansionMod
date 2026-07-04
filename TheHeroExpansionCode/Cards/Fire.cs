@@ -22,14 +22,14 @@ public class Fire() : TheHeroExpansionCard(1,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        Fire card = this;
-        await CreatureCmd.TriggerAnim(card.Owner.Creature, "Cast",
-            card.Owner.Character.CastAnimDelay);
+        Fire fire = this;
+        await CreatureCmd.TriggerAnim(fire.Owner.Creature, "Cast",
+            fire.Owner.Character.CastAnimDelay);
 
-        var sheriff = card.CombatState.CreateCard<MinionSheriff>(card.Owner);
-        if (card.IsUpgraded)
+        var sheriff = fire.CombatState.CreateCard<MinionSheriff>(fire.Owner);
+        if (fire.IsUpgraded)
             CardCmd.Upgrade(sheriff);
 
-        await CardPileCmd.AddGeneratedCardToCombat(sheriff, PileType.Hand, card.Owner);
+        await CardPileCmd.AddGeneratedCardToCombat(sheriff, PileType.Hand, fire.Owner);
     }
 }

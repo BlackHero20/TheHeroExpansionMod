@@ -22,8 +22,8 @@ public class FromTheGrave() : TheHeroExpansionCard(2,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        FromTheGrave card = this;
-        await CreatureCmd.GainBlock(card.Owner.Creature, card.DynamicVars.Block, play);
+        FromTheGrave fromTheGrave = this;
+        await CreatureCmd.GainBlock(fromTheGrave.Owner.Creature, fromTheGrave.DynamicVars.Block, play);
     }
 
     public override async Task AfterCardExhausted(

@@ -9,15 +9,14 @@ using MegaCrit.Sts2.Core.Models;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Powers;
-
-public class ServePower : TheHeroExpansionPower
+public class UpgradedServePower : TheHeroExpansionPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromCard<MinionDuty>()
+        HoverTipFactory.FromCard<MinionDuty>(true)
     ];
 
     public override async Task BeforeHandDraw(
@@ -25,9 +24,11 @@ public class ServePower : TheHeroExpansionPower
         PlayerChoiceContext choiceContext,
         ICombatState combatState)
     {
-        ServePower power = this;
+        UpgradedServePower power = this;
         if (player != power.Owner.Player) return;
         power.Flash();
-        await MinionDuty.CreateInHand(power.Owner.Player, power.Amount, combatState);
+        var created = await MinionDuty.CreateInHand(power.Owner.Player, power.Amount, combatState);
+        foreach (var card in created)
+            CardCmd.Upgrade(card);
     }
 }

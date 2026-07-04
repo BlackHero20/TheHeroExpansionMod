@@ -1,5 +1,5 @@
 {
-  "THEHEROEXPANSION-TRY_AGAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nPut an Attack in your [gold]Hand[/gold] on top of your [gold]Draw Pile[/gold] and [gold]Enchant[/gold] it with [purple]Sharp {Sharp:diff()}[/purple].",
+  "THEHEROEXPANSION-TRY_AGAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nPut an Attack from your [gold]Hand[/gold] on top of your [gold]Draw Pile[/gold] and [gold]Enchant[/gold] it with [purple]Sharp {Sharp:diff()}[/purple].",
   "THEHEROEXPANSION-TRY_AGAIN.selectionScreenPrompt": "Select an Attack to Enchant with Sharp {Sharp:diff()}.",
   "THEHEROEXPANSION-TRY_AGAIN.title": "Try Again",
   "THEHEROEXPANSION-SUFFOCATE.description": "Deal {Damage:diff()} damage.\nIf the enemy is [gold]Vulnerable[/gold], apply {WeakPower:diff()} [gold]Weak[/gold].",
@@ -44,7 +44,7 @@
   "THEHEROEXPANSION-STRIKE_THE_EARTH.title": "Strike The Earth",
   "THEHEROEXPANSION-BARREL_ROLL.title": "Barrel Roll",
   "THEHEROEXPANSION-BARREL_ROLL.description": "Gain {Block:diff()} [gold]Block[/gold].\nAdd a [gold]Debris[/gold] to your {IfUpgraded:show:[gold]Discard Pile[/gold]|[gold]Draw Pile[/gold]}.",
-  "THEHEROEXPANSION-SERVE.description": "At the start of your turn, add 1 [gold]Minion Duty[/gold] into your [gold]Hand[/gold].",
+  "THEHEROEXPANSION-SERVE.description": "At the start of your turn, add 1 [gold]{IfUpgraded:show:Minion Duty+|Minion Duty}[/gold] into your [gold]Hand[/gold].",
   "THEHEROEXPANSION-SERVE.title": "SERVE!!",
   "THEHEROEXPANSION-JOY_OF_CREATION.description": "Create a copy of every third card you create each turn and add it to your [gold]Hand[/gold]",
   "THEHEROEXPANSION-JOY_OF_CREATION.title": "Joy Of Creation",

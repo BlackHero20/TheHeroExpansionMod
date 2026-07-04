@@ -50,8 +50,8 @@ public class MinionDuty() : TheHeroExpansionCard(1,
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars.Damage.UpgradeValueBy(3M);
-        this.DynamicVars.Block.UpgradeValueBy(3M);
+        this.DynamicVars.Damage.UpgradeValueBy(2M);
+        this.DynamicVars.Block.UpgradeValueBy(2M);
     }
     
     public static async Task<IEnumerable<CardModel>> CreateInHand(

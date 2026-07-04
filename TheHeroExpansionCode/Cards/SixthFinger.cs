@@ -34,11 +34,11 @@ public class SixthFinger() : TheHeroExpansionCard(0,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        SixthFinger card = this;
-        await CreatureCmd.TriggerAnim(card.Owner.Creature,
-            Necrobinder.GetSummonAnimIfApplicable(card.Owner.Character),
-            Necrobinder.GetSummonDelayIfApplicable(card.Owner.Character));
-        await OstyCmd.Summon(choiceContext, card.Owner, card.DynamicVars.Summon.BaseValue, (AbstractModel) card);
+        SixthFinger sixthFinger = this;
+        await CreatureCmd.TriggerAnim(sixthFinger.Owner.Creature,
+            Necrobinder.GetSummonAnimIfApplicable(sixthFinger.Owner.Character),
+            Necrobinder.GetSummonDelayIfApplicable(sixthFinger.Owner.Character));
+        await OstyCmd.Summon(choiceContext, sixthFinger.Owner, sixthFinger.DynamicVars.Summon.BaseValue, (AbstractModel) sixthFinger);
     }
 
     public override async Task AfterSideTurnEnd(
@@ -54,20 +54,20 @@ public class SixthFinger() : TheHeroExpansionCard(0,
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
-        SixthFinger card = this;
-        if (cardPlay.Card.Owner != card.Owner) return;
+        SixthFinger sixthFinger = this;
+        if (cardPlay.Card.Owner != sixthFinger.Owner) return;
 
         int ostyHits = CombatManager.Instance.History.Entries
             .OfType<CreatureAttackedEntry>()
-            .Where(e => e.Actor == card.Owner.Osty && e.HappenedThisTurn(card.CombatState))
+            .Where(e => e.Actor == sixthFinger.Owner.Osty && e.HappenedThisTurn(sixthFinger.CombatState))
             .Sum(e => e.DamageResults.Count);
 
         int threshold = ostyHits / 3;
         if (threshold > _handAddedThisTurn)
         {
             _handAddedThisTurn = threshold;
-            if (card.Pile?.Type != PileType.Hand)
-                await CardPileCmd.Add(card, PileType.Hand);
+            if (sixthFinger.Pile?.Type != PileType.Hand)
+                await CardPileCmd.Add(sixthFinger, PileType.Hand);
         }
     }
 

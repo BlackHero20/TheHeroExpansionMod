@@ -27,26 +27,26 @@ public class AllOutAttack() : TheHeroExpansionCard(2,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        AllOutAttack card = this;
+        AllOutAttack allOutAttack = this;
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
-        bool ostyPresent = !Osty.CheckMissingWithAnim(card.Owner);
+        bool ostyPresent = !Osty.CheckMissingWithAnim(allOutAttack.Owner);
         
-        await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue).FromCard(card, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        await DamageCmd.Attack(allOutAttack.DynamicVars.Damage.BaseValue).FromCard(allOutAttack, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         if (ostyPresent)
-            await DamageCmd.Attack(card.DynamicVars.OstyDamage.BaseValue).FromOsty(card.Owner.Osty, card, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
+            await DamageCmd.Attack(allOutAttack.DynamicVars.OstyDamage.BaseValue).FromOsty(allOutAttack.Owner.Osty, allOutAttack, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
         
-        if (card.IsUpgraded)
+        if (allOutAttack.IsUpgraded)
         {
-            await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue).FromCard(card, cardPlay).TargetingAllOpponents(card.CombatState).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+            await DamageCmd.Attack(allOutAttack.DynamicVars.Damage.BaseValue).FromCard(allOutAttack, cardPlay).TargetingAllOpponents(allOutAttack.CombatState).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
             if (ostyPresent)
-                await DamageCmd.Attack(card.DynamicVars.OstyDamage.BaseValue).FromOsty(card.Owner.Osty, card, cardPlay).TargetingAllOpponents(card.CombatState).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
+                await DamageCmd.Attack(allOutAttack.DynamicVars.OstyDamage.BaseValue).FromOsty(allOutAttack.Owner.Osty, allOutAttack, cardPlay).TargetingAllOpponents(allOutAttack.CombatState).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
         }
         else
         {
-            await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue).FromCard(card, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+            await DamageCmd.Attack(allOutAttack.DynamicVars.Damage.BaseValue).FromCard(allOutAttack, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
             if (ostyPresent)
-                await DamageCmd.Attack(card.DynamicVars.OstyDamage.BaseValue).FromOsty(card.Owner.Osty, card, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
+                await DamageCmd.Attack(allOutAttack.DynamicVars.OstyDamage.BaseValue).FromOsty(allOutAttack.Owner.Osty, allOutAttack, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
         }
     }
 }

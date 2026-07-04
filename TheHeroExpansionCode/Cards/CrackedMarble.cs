@@ -30,15 +30,15 @@ public class CrackedMarble() : TheHeroExpansionCard(1,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        CrackedMarble card = this;
+        CrackedMarble crackedMarble = this;
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
-        await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue)
-            .FromCard(card, cardPlay)
+        await DamageCmd.Attack(crackedMarble.DynamicVars.Damage.BaseValue)
+            .FromCard(crackedMarble, cardPlay)
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3")
             .Execute(choiceContext);
-        await OrbCmd.Channel<GlassOrb>(choiceContext, card.Owner);
+        await OrbCmd.Channel<GlassOrb>(choiceContext, crackedMarble.Owner);
     }
 
     protected override void OnUpgrade()

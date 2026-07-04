@@ -30,10 +30,10 @@ public class MasterfulStab() : TheHeroExpansionCard(0,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        MasterfulStab card = this;
+        MasterfulStab masterfulStab = this;
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
-        await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue)
-            .FromCard(card, cardPlay)
+        await DamageCmd.Attack(masterfulStab.DynamicVars.Damage.BaseValue)
+            .FromCard(masterfulStab, cardPlay)
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);

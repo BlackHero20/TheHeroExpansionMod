@@ -15,26 +15,27 @@ public class Serve() : TheHeroExpansionCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
-    
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        [HoverTipFactory.FromCard<MinionDuty>()];
-    
-    protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<ServePower>(1M)
+        HoverTipFactory.FromCard<MinionDuty>(IsUpgraded)
     ];
 
-    protected override async Task OnPlay(
-        PlayerChoiceContext choiceContext,
-        CardPlay play)
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new PowerVar<ServePower>(1M),
+        new PowerVar<UpgradedServePower>(1M)
+    ];
+
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         Serve serve = this;
         await CreatureCmd.TriggerAnim(serve.Owner.Creature, "Cast", serve.Owner.Character.CastAnimDelay);
-        await PowerCmd.Apply<ServePower>(choiceContext, serve.Owner.Creature, serve.DynamicVars["ServePower"].BaseValue, serve.Owner.Creature, (CardModel) serve);
-    }
 
-    protected override void OnUpgrade()
-    {
-        this.AddKeyword(CardKeyword.Innate);
+        if (serve.IsUpgraded)
+            await PowerCmd.Apply<UpgradedServePower>(choiceContext, serve.Owner.Creature,
+                serve.DynamicVars["UpgradedServePower"].BaseValue, serve.Owner.Creature, serve);
+        else
+            await PowerCmd.Apply<ServePower>(choiceContext, serve.Owner.Creature,
+                serve.DynamicVars["ServePower"].BaseValue, serve.Owner.Creature, serve);
     }
 }
