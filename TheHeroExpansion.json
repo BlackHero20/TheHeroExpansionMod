@@ -3,7 +3,7 @@
   "name": "TheHeroExpansion",
   "author": "BlackHero20",
   "description": "A mod that adds additional content to the game",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "has_pck": true,
   "has_dll": true,
   "dependencies": [{ "id": "BaseLib", "minVersion": "3.3.4" }],
