@@ -41,14 +41,16 @@ public class GotYourBack() : TheHeroExpansionCard(2,
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         GotYourBack gotYourBack = this;
-        if (Osty.CheckMissingWithAnim(gotYourBack.Owner)) return;
-
-        decimal summon = ((CalculatedVar)gotYourBack.DynamicVars["Summon"]).Calculate(null);
-
+        if (!Osty.CheckMissingWithAnim(gotYourBack.Owner))
+        {
+            decimal summon = ((CalculatedVar)gotYourBack.DynamicVars["Summon"]).Calculate(null);
+            await OstyCmd.Summon(choiceContext, gotYourBack.Owner, summon, gotYourBack);
+        };
+        
         await PowerCmd.Apply<GotYourBackPower>(choiceContext, gotYourBack.Owner.Creature,
             1M, gotYourBack.Owner.Creature, gotYourBack);
         await CreatureCmd.TriggerAnim(gotYourBack.Owner.Creature, "Cast", gotYourBack.Owner.Character.CastAnimDelay);
-        await OstyCmd.Summon(choiceContext, gotYourBack.Owner, summon, gotYourBack);
+
     }
     
     protected override void OnUpgrade()

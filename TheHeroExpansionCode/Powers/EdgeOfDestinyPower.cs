@@ -38,14 +38,14 @@ public sealed class EdgeOfDestinyPower : TheHeroExpansionPower
     {
         EdgeOfDestinyPower power = this;
 
-        if (cardPlay.Card is SovereignBlade sb && cardPlay.Card.Owner.Creature == power.Owner)
+        if (cardPlay.Card is SovereignBlade sovereignBlade && cardPlay.Card.Owner.Creature == power.Owner)
         {
             decimal bonus = power.GetInternalData<Data>().addedBonus;
 
             if (bonus > 0)
             {
                 power.Flash();
-                var attackCmd = DamageCmd.Attack(bonus).FromCard(sb);
+                var attackCmd = DamageCmd.Attack(bonus).FromCard(sovereignBlade, cardPlay);
                 await Cmd.Wait(0.1f);
 
                 if (power.Owner.HasPower<SeekingEdgePower>())

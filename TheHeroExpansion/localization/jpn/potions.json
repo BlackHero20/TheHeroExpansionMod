@@ -1,0 +1,9 @@
+{
+  "THEHEROEXPANSION-VIGOR_POTION.description": "[blue]{VigorPower:diff()}[/blue][gold]活力[/gold]を得る。",
+  "THEHEROEXPANSION-VIGOR_POTION.title": "活力ポーション",
+  "THEHEROEXPANSION-TIME_IN_A_BOTTLE.description": "[blue]{MomentumPower:diff()}[/blue][gold]モメンタム[/gold]を得る。",
+  "THEHEROEXPANSION-TIME_IN_A_BOTTLE.title": "瓶詰めの時間",
+  "THEHEROEXPANSION-BLEEDING_FUEL.description": "[gold]廃棄札[/gold]のカードを1枚選び、[gold]手札[/gold]に加える。",
+  "THEHEROEXPANSION-BLEEDING_FUEL.selectionScreenPrompt": "[gold]手札[/gold]に加えるカードを1枚選ぶ。",
+  "THEHEROEXPANSION-BLEEDING_FUEL.title": "出血燃料"
+}

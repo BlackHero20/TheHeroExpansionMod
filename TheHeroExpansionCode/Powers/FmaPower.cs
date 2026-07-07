@@ -1,4 +1,5 @@
 ﻿using BaseLib.Abstracts;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Models;
@@ -17,7 +18,8 @@ public sealed class FmaPower : TheHeroExpansionPower
         decimal amount,
         ValueProp props,
         Creature? dealer,
-        CardModel? cardSource)
+        CardModel? cardSource,
+        CardPlay cardPlay)
     {
         if (Owner != dealer) return 0M;
         if (!props.IsPoweredAttack()) return 0M;

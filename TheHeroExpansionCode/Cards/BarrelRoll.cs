@@ -29,14 +29,14 @@ public class BarrelRoll() : TheHeroExpansionCard(1,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        BarrelRoll card = this;
-        await CreatureCmd.GainBlock(card.Owner.Creature, card.DynamicVars.Block, cardPlay);
+        BarrelRoll barrelRoll = this;
+        await CreatureCmd.GainBlock(barrelRoll.Owner.Creature, barrelRoll.DynamicVars.Block, cardPlay);
 
-        var debrisPile = card.IsUpgraded ? PileType.Discard : PileType.Draw;
+        var debrisPile = barrelRoll.IsUpgraded ? PileType.Discard : PileType.Draw;
         CardCmd.PreviewCardPileAdd(
             await CardPileCmd.AddGeneratedCardToCombat(
-                card.CombatState.CreateCard<Debris>(card.Owner),
-                debrisPile, card.Owner));
+                barrelRoll.CombatState.CreateCard<Debris>(barrelRoll.Owner),
+                debrisPile, barrelRoll.Owner));
 
         await Cmd.Wait(0.5f);
     }

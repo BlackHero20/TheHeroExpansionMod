@@ -1,5 +1,6 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -23,14 +24,14 @@ public class Cheat() : TheHeroExpansionCard(0,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        Cheat card = this;
-        await CreatureCmd.TriggerAnim(card.Owner.Creature, "PowerUp",
-            card.Owner.Character.PowerUpAnimDelay);
-        await PowerCmd.Apply<CheatPower>(choiceContext, card.Owner.Creature,
-            card.DynamicVars["CheatPower"].BaseValue, card.Owner.Creature, card);
+        Cheat cheat = this;
+        await CreatureCmd.TriggerAnim(cheat.Owner.Creature, "PowerUp",
+            cheat.Owner.Character.PowerUpAnimDelay);
+        await PowerCmd.Apply<CheatPower>(choiceContext, cheat.Owner.Creature,
+            cheat.DynamicVars["CheatPower"].BaseValue, cheat.Owner.Creature, cheat);
         
-        var power = card.Owner.Creature.GetPower<CheatPower>();
-        if (power != null)
+        var power = cheat.Owner.Creature.GetPower<CheatPower>();
+        if (power != null && LocalContext.IsMe(cheat.Owner.Creature))
             CheatDisplay.UpdateCount(power.Amount);
     }
 

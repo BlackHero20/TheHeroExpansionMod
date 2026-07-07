@@ -21,7 +21,7 @@ public class VakuusPrankPower : TheHeroExpansionPower
         if (vakuusPrankPower.Owner.Player.Creature.Side != side)
             return;
         vakuusPrankPower.Flash();
-        await CreatureCmd.Damage(choiceContext, vakuusPrankPower.Owner, (Decimal) vakuusPrankPower.Amount, ValueProp.Unpowered, vakuusPrankPower.Owner, (CardModel) null);
+        await CreatureCmd.Damage(choiceContext, vakuusPrankPower.Owner, (Decimal) vakuusPrankPower.Amount, ValueProp.Unpowered, vakuusPrankPower.Owner, null, null);
         VfxCmd.PlayOnCreatureCenter(vakuusPrankPower.Owner, "vfx/vfx_attack_blunt");
         await PowerCmd.Remove((PowerModel) vakuusPrankPower);
     }

@@ -25,7 +25,7 @@ public class MysticalSignet() : VakuuCard(0,
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new EnergyVar(3),
-        new PowerVar<PainfulOfferingPower>(1)
+        new PowerVar<SoulRingPower>(1)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -41,7 +41,7 @@ public class MysticalSignet() : VakuuCard(0,
         await PlayerCmd.GainEnergy(mysticalSignet.DynamicVars.Energy.BaseValue, mysticalSignet.Owner);
         if (mysticalSignet.IsUpgraded)
         {
-            await PowerCmd.Apply<PainfulOfferingPower>(choiceContext, mysticalSignet.Owner.Creature, mysticalSignet.DynamicVars["PainfulOfferingPower"].BaseValue, mysticalSignet.Owner.Creature, (CardModel) mysticalSignet);
+            await PowerCmd.Apply<SoulRingPower>(choiceContext, mysticalSignet.Owner.Creature, mysticalSignet.DynamicVars["SoulRingPower"].BaseValue, mysticalSignet.Owner.Creature, (CardModel) mysticalSignet);
         }
     }
     

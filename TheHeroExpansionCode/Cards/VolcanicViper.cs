@@ -26,27 +26,27 @@ public class VolcanicViper() : TheHeroExpansionCard(3,
         HoverTipFactory.FromPower<PoisonPower>()
     ];
 
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        VolcanicViper card = this;
-        ArgumentNullException.ThrowIfNull(play.Target, nameof(play.Target));
+        VolcanicViper volcanicViper = this;
+        ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
-        await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue)
-            .FromCard(card)
-            .Targeting(play.Target)
+        await DamageCmd.Attack(volcanicViper.DynamicVars.Damage.BaseValue)
+            .FromCard(volcanicViper, cardPlay)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
 
-        await PowerCmd.Apply<PoisonPower>(choiceContext, play.Target,
-            card.DynamicVars["PoisonPower"].BaseValue,
-            card.Owner.Creature, card);
+        await PowerCmd.Apply<PoisonPower>(choiceContext, cardPlay.Target,
+            volcanicViper.DynamicVars["PoisonPower"].BaseValue,
+            volcanicViper.Owner.Creature, volcanicViper);
         
-        var poison = play.Target.GetPower<PoisonPower>();
+        var poison = cardPlay.Target.GetPower<PoisonPower>();
         if (poison != null && poison.Amount > 0)
         {
-            await CreatureCmd.Damage(choiceContext, play.Target,
+            await CreatureCmd.Damage(choiceContext, cardPlay.Target,
                 (decimal)poison.Amount,
                 ValueProp.Unblockable | ValueProp.Unpowered,
-                play.Target, null);
+                cardPlay.Target, volcanicViper, cardPlay);
             await PowerCmd.Decrement(poison);
         }
     }

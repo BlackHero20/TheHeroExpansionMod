@@ -1,0 +1,21 @@
+{
+  "THEHEROEXPANSION-INFECTED.title": "感染",
+  "THEHEROEXPANSION-INFECTED.description": "この戦闘中、このカードに隣接するカードに[purple]感染[/purple]を[gold]エンチャント[/gold]する。\n[purple]感染[/purple]したカードは、デッキ内の[purple]感染[/purple]カード1枚につき[blue]5%[/blue]の追加ダメージと[gold]ブロック[/gold]を得る。{InCombat:\n[blue]({InfectedPercent:diff()}%増加)[/blue]|}",
+  "THEHEROEXPANSION-GOLDEN_RATIO.title": "黄金比",
+  "THEHEROEXPANSION-GOLDEN_RATIO.description": "ターン終了時に{Energy:energyIcons()}が余っている場合、このカードをデッキのどこにあってもプレイする。",
+  "THEHEROEXPANSION-DOOMSDAY.title": "壊滅",
+  "THEHEROEXPANSION-DOOMSDAY.description": "ダメージが[blue]75%[/blue]増加するが、最大HPを[blue]2[/blue]失う。",
+  "THEHEROEXPANSION-DOOMSDAY.extraCardText": "最大HPを2失う。",
+  "THEHEROEXPANSION-DREAMY.title": "夢心地",
+  "THEHEROEXPANSION-DREAMY.description": "このカードをプレイするたび、コピーを[gold]捨て札[/gold]に加える。",
+  "THEHEROEXPANSION-ADVANTAGEOUS.title": "有利",
+  "THEHEROEXPANSION-ADVANTAGEOUS.description": "各戦闘で初めてプレイした時、{Amount:energyIcons()}を得る。",
+  "THEHEROEXPANSION-ADVANTAGEOUS.extraCardText": "初めてプレイした時、{Amount:energyIcons()}を得る。",
+  "THEHEROEXPANSION-ROYAL.title": "王家",
+  "THEHEROEXPANSION-ROYAL.description": "プレイ時、{Stars:starIcons()}を得る。",
+  "THEHEROEXPANSION-ROYAL.extraCardText": "{Stars:starIcons()}を得る。",
+  "THEHEROEXPANSION-JUMPSCARE.title": "ジャンプスケア",
+  "THEHEROEXPANSION-JUMPSCARE.description": "プレイ時、[gold]破滅[/gold]がHP以上蓄積しているすべての敵を即死させる。",
+  "THEHEROEXPANSION-RAVENOUS.title": "貪欲",
+  "THEHEROEXPANSION-RAVENOUS.description": "プレイ時、一番左の[gold]オーブ[/gold]を[gold]解放[/gold]する。"
+}

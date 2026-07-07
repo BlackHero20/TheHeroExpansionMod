@@ -19,9 +19,9 @@ public class Nanomachines() : TheHeroExpansionCard(1,
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        Nanomachines card = this;
-        await PowerCmd.Apply<NanomachinesPower>(choiceContext, card.Owner.Creature,
-            card.DynamicVars.Cards.BaseValue, card.Owner.Creature, card);
+        Nanomachines nanomachines = this;
+        await PowerCmd.Apply<NanomachinesPower>(choiceContext, nanomachines.Owner.Creature,
+            nanomachines.DynamicVars.Cards.BaseValue, nanomachines.Owner.Creature, nanomachines);
     }
 
     protected override void OnUpgrade() => this.DynamicVars.Cards.UpgradeValueBy(1M);

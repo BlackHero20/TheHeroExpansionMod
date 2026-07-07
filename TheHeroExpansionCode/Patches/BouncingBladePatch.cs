@@ -10,7 +10,7 @@ public static class BouncingBladePatch
 {
     public static bool Prefix(NCard __instance, ref Task __result)
     {
-        if (__instance.Model is BouncingBlade)
+        if (__instance.Model is VenomFlurry)
         {
             __result = Task.CompletedTask;
             return false;

@@ -31,7 +31,7 @@ public class Transfusion() : TheHeroExpansionCard(1,
         Transfusion transfusion = this;
         VfxCmd.PlayOnCreatureCenter(transfusion.Owner.Creature, "vfx/vfx_bloody_impact");
         bool hitCount = Transfusion.LostHpThisTurn(transfusion.Owner.Creature);
-        await DamageCmd.Attack(transfusion.DynamicVars.Damage.BaseValue).FromCard((CardModel) transfusion).TargetingAllOpponents(transfusion.CombatState).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3").Execute(choiceContext);
+        await DamageCmd.Attack(transfusion.DynamicVars.Damage.BaseValue).FromCard(transfusion, cardPlay).TargetingAllOpponents(transfusion.CombatState).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3").Execute(choiceContext);
         if (hitCount)
         {
             await CreatureCmd.TriggerAnim(transfusion.Owner.Creature, "Cast", transfusion.Owner.Character.CastAnimDelay);

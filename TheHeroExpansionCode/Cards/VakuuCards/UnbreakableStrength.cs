@@ -26,8 +26,8 @@ public class UnbreakableStrength() : VakuuCard(0,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<DemonicSurgePower>(1M),
-        new PowerVar<DemonicCripplePower>(2M)
+        new PowerVar<UnbreakableStrengthPower>(1M),
+        new PowerVar<FragileStrengthPower>(2M)
         
     ];
 
@@ -38,11 +38,11 @@ public class UnbreakableStrength() : VakuuCard(0,
         UnbreakableStrength unbreakableStrength = this;
         if (!unbreakableStrength.IsUpgraded)
         {
-            await PowerCmd.Apply<DemonicSurgePower>(choiceContext, unbreakableStrength.Owner.Creature, unbreakableStrength.DynamicVars["DemonicSurgePower"].BaseValue, unbreakableStrength.Owner.Creature, (CardModel) unbreakableStrength);
+            await PowerCmd.Apply<UnbreakableStrengthPower>(choiceContext, unbreakableStrength.Owner.Creature, unbreakableStrength.DynamicVars["UnbreakableStrengthPower"].BaseValue, unbreakableStrength.Owner.Creature, (CardModel) unbreakableStrength);
         }
         else
         {
-            await PowerCmd.Apply<DemonicCripplePower>(choiceContext, unbreakableStrength.Owner.Creature, unbreakableStrength.DynamicVars["DemonicCripplePower"].BaseValue, unbreakableStrength.Owner.Creature, (CardModel) unbreakableStrength);
+            await PowerCmd.Apply<FragileStrengthPower>(choiceContext, unbreakableStrength.Owner.Creature, unbreakableStrength.DynamicVars["FragileStrengthPower"].BaseValue, unbreakableStrength.Owner.Creature, (CardModel) unbreakableStrength);
         }
     }
     

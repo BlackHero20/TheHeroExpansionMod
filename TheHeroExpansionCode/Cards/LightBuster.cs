@@ -73,14 +73,14 @@ public class LightBuster() : TheHeroExpansionCard(1,
         return Task.CompletedTask;
     }
 
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         LightBuster lightBuster = this;
-        ArgumentNullException.ThrowIfNull(play.Target, nameof(play.Target));
+        ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
         await DamageCmd.Attack(lightBuster.DynamicVars.Damage.BaseValue)
-            .FromCard(lightBuster)
-            .Targeting(play.Target)
+            .FromCard(lightBuster, cardPlay)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
 
         foreach (var (orbId, evokeValue) in lightBuster._evokedOrbs)

@@ -58,7 +58,8 @@ public sealed class BeastWithinPower : TheHeroExpansionPower
                 (decimal)(result.TotalDamage + result.OverkillDamage),
                 ValueProp.Unpowered | ValueProp.Move,
                 power.Owner,
-                (CardModel?)null);
+                null,
+                null);
         }
     }
 }

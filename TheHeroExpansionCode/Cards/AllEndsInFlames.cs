@@ -24,10 +24,11 @@ public class AllEndsInFlames() : TheHeroExpansionCard(1,
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
-        CardPlay play)
+        CardPlay cardPlay)
     {
         AllEndsInFlames allEndsInFlames = this;
-        CardSelectorPrefs prefs = new CardSelectorPrefs(allEndsInFlames.SelectionScreenPrompt, allEndsInFlames.DynamicVars.Cards.IntValue);
+        await CreatureCmd.TriggerAnim(allEndsInFlames.Owner.Creature, "Cast", allEndsInFlames.Owner.Character.CastAnimDelay);
+        CardSelectorPrefs prefs = new CardSelectorPrefs(allEndsInFlames.SelectionScreenPrompt, 0, allEndsInFlames.DynamicVars.Cards.IntValue);
         IEnumerable<CardModel> cards = await CardSelectCmd.FromSimpleGrid(
             choiceContext,
             (IReadOnlyList<CardModel>)PileType.Draw.GetPile(allEndsInFlames.Owner).Cards

@@ -31,6 +31,7 @@ public class BeastWithin() : TheHeroExpansionCard(1,
         CardPlay play)
     {
         BeastWithin beastWithin = this;
+        await CreatureCmd.TriggerAnim(beastWithin.Owner.Creature, "Cast", beastWithin.Owner.Character.CastAnimDelay);
         
         foreach (Creature enemy in (IEnumerable<Creature>)beastWithin.CombatState.HittableEnemies)
         {

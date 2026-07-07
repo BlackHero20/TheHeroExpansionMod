@@ -31,10 +31,11 @@ public class Akumetsu() : TheHeroExpansionCard(2,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        Akumetsu card = this;
-        await CreatureCmd.GainBlock(card.Owner.Creature, card.DynamicVars.Block, cardPlay);
-        await PowerCmd.Apply<AkumetsuPower>(choiceContext, card.Owner.Creature,
-            1M, card.Owner.Creature, card);
+        Akumetsu akumetsu = this;
+        await CreatureCmd.TriggerAnim(akumetsu.Owner.Creature, "Cast", akumetsu.Owner.Character.CastAnimDelay);
+        await CreatureCmd.GainBlock(akumetsu.Owner.Creature, akumetsu.DynamicVars.Block, cardPlay);
+        await PowerCmd.Apply<AkumetsuPower>(choiceContext, akumetsu.Owner.Creature,
+            1M, akumetsu.Owner.Creature, akumetsu);
     }
 
     protected override void OnUpgrade()

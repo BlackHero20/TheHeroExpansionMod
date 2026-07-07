@@ -35,7 +35,7 @@ public class SixHundredStrike() : TheHeroExpansionCard(1,
         ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
 
         await DamageCmd.Attack(sixHundredStrike.DynamicVars.CalculatedDamage)
-            .FromCard(sixHundredStrike)
+            .FromCard(sixHundredStrike, cardPlay)
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash", tmpSfx: "heavy_attack.mp3")
             .Execute(choiceContext);

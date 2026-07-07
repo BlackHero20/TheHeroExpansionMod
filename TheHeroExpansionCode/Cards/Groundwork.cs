@@ -27,15 +27,15 @@ public class Groundwork() : TheHeroExpansionCard(2,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        Groundwork card = this;
-        await DamageCmd.Attack(card.DynamicVars.Damage.BaseValue)
-            .FromCard(card)
-            .TargetingAllOpponents(card.CombatState)
+        Groundwork groundwork = this;
+        await DamageCmd.Attack(groundwork.DynamicVars.Damage.BaseValue)
+            .FromCard(groundwork, cardPlay)
+            .TargetingAllOpponents(groundwork.CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         
-        if (!card.Keywords.Contains(CardKeyword.Sly))
-            card.AddKeyword(CardKeyword.Sly);
+        if (!groundwork.Keywords.Contains(CardKeyword.Sly))
+            groundwork.AddKeyword(CardKeyword.Sly);
     }
 
     protected override void OnUpgrade()

@@ -27,19 +27,19 @@ public class Suffocate() : TheHeroExpansionCard(0,
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
-        CardPlay play)
+        CardPlay cardPlay)
     {
         Suffocate suffocate = this;
-        ArgumentNullException.ThrowIfNull(play.Target, nameof(play.Target));
+        ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
         await DamageCmd.Attack(suffocate.DynamicVars.Damage.BaseValue)
-            .FromCard(suffocate)
-            .Targeting(play.Target)
+            .FromCard(suffocate, cardPlay)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
 
-        if (play.Target.HasPower<VulnerablePower>())
+        if (cardPlay.Target.HasPower<VulnerablePower>())
         {
-            await PowerCmd.Apply<WeakPower>(choiceContext, play.Target,
+            await PowerCmd.Apply<WeakPower>(choiceContext, cardPlay.Target,
                 suffocate.DynamicVars["WeakPower"].BaseValue,
                 suffocate.Owner.Creature, suffocate);
         }

@@ -24,21 +24,19 @@ public class MinionSheriff() : TheHeroExpansionCard(1,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        MinionSheriff card = this;
+        MinionSheriff minionSheriff = this;
 
-        var minionCards = PileType.Exhaust.GetPile(card.Owner).Cards
-            .Where(c => c.Tags.Contains(CardTag.Minion) && c != card && c is not MinionSheriff)
+        var minionCards = PileType.Exhaust.GetPile(minionSheriff.Owner).Cards
+            .Where(c => c.Tags.Contains(CardTag.Minion) && c != minionSheriff && c is not MinionSheriff)
             .ToList();
 
         bool first = true;
         foreach (var minion in minionCards)
         {
-            if (card.IsUpgraded && minion.IsUpgradable)
+            if (minionSheriff.IsUpgraded && minion.IsUpgradable)
                 CardCmd.Upgrade(minion, CardPreviewStyle.None);
 
             await CardCmd.AutoPlay(choiceContext, minion, null, skipCardPileVisuals: false);
         }
     }
-
-    protected override void OnUpgrade() { }
 }

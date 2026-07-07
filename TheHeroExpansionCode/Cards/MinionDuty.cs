@@ -40,7 +40,7 @@ public class MinionDuty() : TheHeroExpansionCard(1,
         MinionDuty minionDuty = this;
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
         await DamageCmd.Attack(minionDuty.DynamicVars.Damage.BaseValue)
-            .FromCard(minionDuty)
+            .FromCard(minionDuty, cardPlay)
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3")
             .Execute(choiceContext);
@@ -50,8 +50,8 @@ public class MinionDuty() : TheHeroExpansionCard(1,
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars.Damage.UpgradeValueBy(3M);
-        this.DynamicVars.Block.UpgradeValueBy(3M);
+        this.DynamicVars.Damage.UpgradeValueBy(2M);
+        this.DynamicVars.Block.UpgradeValueBy(2M);
     }
     
     public static async Task<IEnumerable<CardModel>> CreateInHand(

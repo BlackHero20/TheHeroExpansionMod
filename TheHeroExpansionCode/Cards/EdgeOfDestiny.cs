@@ -26,9 +26,9 @@ public class EdgeOfDestiny() : TheHeroExpansionCard(1,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        EdgeOfDestiny card = this;
-        await PowerCmd.Apply<EdgeOfDestinyPower>(choiceContext, card.Owner.Creature,
-            card.DynamicVars["EdgeOfDestinyPower"].BaseValue, card.Owner.Creature, card);
+        EdgeOfDestiny edgeOfDestiny = this;
+        await PowerCmd.Apply<EdgeOfDestinyPower>(choiceContext, edgeOfDestiny.Owner.Creature,
+            edgeOfDestiny.DynamicVars["EdgeOfDestinyPower"].BaseValue, edgeOfDestiny.Owner.Creature, edgeOfDestiny);
     }
 
     protected override void OnUpgrade() => this.DynamicVars["EdgeOfDestinyPower"].UpgradeValueBy(2M);
