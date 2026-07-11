@@ -6,6 +6,8 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using System.Linq;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Models;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
@@ -18,6 +20,11 @@ public class SelfDestruct() : TheHeroExpansionCard(2,
     [
         new DynamicVar("Attacks", 3M),
         new DynamicVar("OrbSlots", 1M)
+    ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromCard<BustedCore>()
     ];
 
     protected override async Task OnPlay(
@@ -43,8 +50,9 @@ public class SelfDestruct() : TheHeroExpansionCard(2,
             if (attack == null) break;
             await CardCmd.AutoPlay(choiceContext, attack, null);
         }
-        await CreatureCmd.TriggerAnim(selfDestruct.Owner.Creature, "PowerUp", selfDestruct.Owner.Character.PowerUpAnimDelay);
-        OrbCmd.RemoveSlots(Owner, DynamicVars["OrbSlots"].IntValue);
+        for (int i = 0; i < 2; ++i)
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat((CardModel) selfDestruct.CombatState.CreateCard<BustedCore>(selfDestruct.Owner), PileType.Discard, selfDestruct.Owner));
+        await Cmd.Wait(0.5f);
     }
 
     protected override void OnUpgrade()

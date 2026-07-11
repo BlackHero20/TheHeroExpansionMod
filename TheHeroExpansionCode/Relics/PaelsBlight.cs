@@ -10,15 +10,16 @@ using TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
+
 [Pool(typeof(EventRelicPool))]
 public class PaelsBlight() : TheHeroExpansionRelic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
-    
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         HoverTipFactory.FromEnchantment<Infected>();
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar("Infected", 1),
         new CardsVar(2)

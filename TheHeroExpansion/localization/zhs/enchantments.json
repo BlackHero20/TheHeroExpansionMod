@@ -1,0 +1,21 @@
+﻿{
+  "THEHEROEXPANSION-INFECTED.title": "感染",
+  "THEHEROEXPANSION-INFECTED.description": "为本场战斗中与此牌相邻的牌[gold]附魔[/gold][purple]感染[/purple]。\n你牌组中每有一张感染牌，感染牌造成的伤害及其提供的[gold]格挡[/gold]就提高[blue]5%[/blue]。{InCombat:\n[blue]（提高{InfectedPercent:diff()}%）[/blue]|}",
+  "THEHEROEXPANSION-GOLDEN_RATIO.title": "黄金比例",
+  "THEHEROEXPANSION-GOLDEN_RATIO.description": "每当你结束回合时仍有未花费的{Energy:energyIcons()}，无论此牌位于牌组何处，都将其打出。",
+  "THEHEROEXPANSION-DOOMSDAY.title": "末日",
+  "THEHEROEXPANSION-DOOMSDAY.description": "造成的伤害提高[blue]75%[/blue]，但失去[blue]2[/blue]点最大生命。",
+  "THEHEROEXPANSION-DOOMSDAY.extraCardText": "失去2点最大生命。",
+  "THEHEROEXPANSION-DREAMY.title": "梦幻",
+  "THEHEROEXPANSION-DREAMY.description": "每当打出此牌时，将此牌的一张复制品加入你的[gold]弃牌堆[/gold]。",
+  "THEHEROEXPANSION-ADVANTAGEOUS.title": "优势",
+  "THEHEROEXPANSION-ADVANTAGEOUS.description": "本场战斗中第一次打出此牌时，获得{Amount:energyIcons()}。",
+  "THEHEROEXPANSION-ADVANTAGEOUS.extraCardText": "获得{Amount:energyIcons()}。",
+  "THEHEROEXPANSION-ROYAL.title": "王权",
+  "THEHEROEXPANSION-ROYAL.description": "打出此牌时，获得{Stars:starIcons()}。",
+  "THEHEROEXPANSION-ROYAL.extraCardText": "获得{Stars:starIcons()}。",
+  "THEHEROEXPANSION-JUMPSCARE.title": "惊吓",
+  "THEHEROEXPANSION-JUMPSCARE.description": "打出此牌时，杀死所有[gold]灾厄[/gold]大于等于其当前生命值的敌人。",
+  "THEHEROEXPANSION-RAVENOUS.title": "贪食",
+  "THEHEROEXPANSION-RAVENOUS.description": "打出此牌时，[gold]激发[/gold]你最左侧的充能球。"
+}
