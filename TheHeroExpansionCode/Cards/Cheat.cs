@@ -14,7 +14,7 @@ using TheHeroExpansion.TheHeroExpansionCode.UI;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class Cheat() : TheHeroExpansionCard(0,
-    CardType.Power, CardRarity.Rare,
+    CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>

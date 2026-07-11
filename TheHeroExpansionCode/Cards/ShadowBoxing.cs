@@ -19,7 +19,7 @@ public class ShadowBoxing() : TheHeroExpansionCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(9M, ValueProp.Move),
+        new DamageVar(10M, ValueProp.Move),
         new DynamicVar("Ravenous", 1)
     ];
 

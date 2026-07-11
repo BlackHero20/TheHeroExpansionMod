@@ -1,0 +1,9 @@
+﻿{
+  "THEHEROEXPANSION-VIGOR_POTION.description": "获得[blue]{VigorPower:diff()}[/blue]点[gold]活力[/gold]。",
+  "THEHEROEXPANSION-VIGOR_POTION.title": "活力药水",
+  "THEHEROEXPANSION-TIME_IN_A_BOTTLE.description": "获得[blue]{MomentumPower:diff()}[/blue]点[gold]动量[/gold]。",
+  "THEHEROEXPANSION-TIME_IN_A_BOTTLE.title": "瓶中时光",
+  "THEHEROEXPANSION-BLEEDING_FUEL.description": "从你的[gold]消耗牌堆[/gold]中选择一张牌，将其加入你的[gold]手牌[/gold]。",
+  "THEHEROEXPANSION-BLEEDING_FUEL.selectionScreenPrompt": "选择一张牌加入你的手牌。",
+  "THEHEROEXPANSION-BLEEDING_FUEL.title": "血作燃料"
+}

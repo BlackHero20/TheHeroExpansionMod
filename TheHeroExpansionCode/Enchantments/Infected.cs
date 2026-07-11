@@ -10,13 +10,14 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Extensions;
+using TheHeroExpansion.TheHeroExpansionCode.Patches;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 
 public sealed class Infected : TheHeroExpansionEnchantment
 {
     public override bool IsStackable => false;
-    
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar("InfectedPercent", 0M)
@@ -28,8 +29,6 @@ public sealed class Infected : TheHeroExpansionEnchantment
             return;
 
         var count = GetInfectedCount(Card);
-
-        // 5% per infected card
         this.DynamicVars["InfectedPercent"].BaseValue = 5m * count;
     }
 
@@ -48,23 +47,25 @@ public sealed class Infected : TheHeroExpansionEnchantment
         if (!props.IsPoweredAttack())
             return 1M;
 
-        if (Card == null)
+        if (Card?.Owner?.PlayerCombatState == null)
             return 1M;
 
-        var percent = this.DynamicVars["InfectedPercent"].BaseValue;
+        int count = Card.Owner.PlayerCombatState.AllCards.Count(c => c.Enchantment is Infected);
+        decimal percent = 5m * count;
         return 1m + (percent / 100m);
     }
 
     public override Decimal EnchantBlockMultiplicative(Decimal originalBlock)
     {
-        if (Card == null)
+        if (Card?.Owner?.PlayerCombatState == null)
             return 1M;
 
         var props = EnchantmentBlockContext.CurrentBlockProps;
-        if (!props.IsPoweredAttack())
+        if (!props.IsPoweredCardOrMonsterMoveBlock())
             return 1M;
 
-        var percent = this.DynamicVars["InfectedPercent"].BaseValue;
+        int count = Card.Owner.PlayerCombatState.AllCards.Count(c => c.Enchantment is Infected);
+        decimal percent = 5m * count;
         return 1m + (percent / 100m);
     }
 

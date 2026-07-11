@@ -6,12 +6,12 @@ using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 
-namespace TheHeroExpansion.TheHeroExpansionCode.Enchantments;
+namespace TheHeroExpansion.TheHeroExpansionCode.Patches;
 
 public static class EnchantmentBlockContext
 {
-    [ThreadStatic]
     public static ValueProp CurrentBlockProps;
 }
 

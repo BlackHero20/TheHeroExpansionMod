@@ -13,7 +13,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class Fma() : TheHeroExpansionCard(1,
-    CardType.Power, CardRarity.Uncommon,
+    CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
