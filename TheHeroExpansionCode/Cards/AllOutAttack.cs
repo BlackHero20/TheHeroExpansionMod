@@ -19,8 +19,8 @@ public class AllOutAttack() : TheHeroExpansionCard(2,
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(5M, ValueProp.Move),
-        new OstyDamageVar(5M, ValueProp.Move)
+        new DamageVar(4M, ValueProp.Move),
+        new OstyDamageVar(4M, ValueProp.Move)
     ];
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.OstyAttack];

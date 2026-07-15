@@ -20,7 +20,7 @@ public class StrikeTheEarth() : TheHeroExpansionCard(0,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(6M, ValueProp.Move),
+        new DamageVar(4M, ValueProp.Move),
         new DynamicVar("Royal", 1)
     ];
     

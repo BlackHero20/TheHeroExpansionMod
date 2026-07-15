@@ -11,11 +11,14 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(RegentCardPool))]
-public class InstantTransmission() : TheHeroExpansionCard(1,
+public class InstantTransmission() : TheHeroExpansionCard(0,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
     public override int CanonicalStarCost => 2;
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords => 
+        [CardKeyword.Innate];
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

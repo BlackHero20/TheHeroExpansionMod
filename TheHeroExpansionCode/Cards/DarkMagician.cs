@@ -19,9 +19,6 @@ public class DarkMagician() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
-    public override IEnumerable<CardKeyword> CanonicalKeywords => 
-    [CardKeyword.Exhaust];
-
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<DarkMagicianPower>(1M)
@@ -32,7 +29,7 @@ public class DarkMagician() : TheHeroExpansionCard(1,
         HoverTipFactory.Static(StaticHoverTip.Channeling),
         HoverTipFactory.FromOrb<LightningOrb>(),
         HoverTipFactory.FromOrb<DarkOrb>(),
-        HoverTipFactory.FromCard<Void>()
+        HoverTipFactory.FromCard<Dazed>()
     ];
 
     protected override async Task OnPlay(
@@ -41,7 +38,7 @@ public class DarkMagician() : TheHeroExpansionCard(1,
     {
         DarkMagician darkMagician = this;
         await PowerCmd.Apply<DarkMagicianPower>(choiceContext, darkMagician.Owner.Creature, darkMagician.DynamicVars["DarkMagicianPower"].BaseValue, darkMagician.Owner.Creature, darkMagician);
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat((CardModel) darkMagician.CombatState.CreateCard<Void>(darkMagician.Owner), PileType.Discard, darkMagician.Owner));
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat((CardModel) darkMagician.CombatState.CreateCard<Dazed>(darkMagician.Owner), PileType.Discard, darkMagician.Owner));
         await Cmd.Wait(0.5f);
     }
 

@@ -25,7 +25,7 @@
   "THEHEROEXPANSION-CEASE_TO_EXIST_POWER.smartDescription": "Cannot use Attacks {Amount:plural:this turn|for the next [blue]{}[/blue] turns}.",
   "THEHEROEXPANSION-CEASE_TO_EXIST_POWER.title": "Cease To Exist",
   "THEHEROEXPANSION-SERVE_POWER.description": "At the start of your turn, add a [gold]Minion Duty[/gold] into your [gold]Hand[/gold].",
-  "THEHEROEXPANSION-SERVE_POWER.smartDescription": "At the start of your turn, add {Amount:plural:a [gold]Minion Duty[/gold]|[blue]{}[/blue] [gold]Minion Dutys[/gold]} into your [gold]Hand[/gold].",
+  "THEHEROEXPANSION-SERVE_POWER.smartDescription": "At the start of your turn, add {Amount:plural:a [gold]Minion Duty[/gold]|[blue]{}[/blue] [gold]Minion Duties[/gold]} into your [gold]Hand[/gold].",
   "THEHEROEXPANSION-SERVE_POWER.title": "Serve",
   "THEHEROEXPANSION-UPGRADED_SERVE_POWER.description": "At the start of your turn, add a [gold]Minion Duty+[/gold] into your [gold]Hand[/gold].",
   "THEHEROEXPANSION-UPGRADED_SERVE_POWER.smartDescription": "At the start of your turn, add {Amount:plural:a [gold]Minion Duty+[/gold]|[blue]{}[/blue] [gold]Minion Dutys+[/gold]} into your [gold]Hand[/gold].",

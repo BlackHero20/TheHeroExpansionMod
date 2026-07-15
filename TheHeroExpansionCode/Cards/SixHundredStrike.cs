@@ -19,8 +19,8 @@ public class SixHundredStrike() : TheHeroExpansionCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new CalculationBaseVar(3M),
-        new ExtraDamageVar(3M),
+        new CalculationBaseVar(4M),
+        new ExtraDamageVar(4M),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((card, _) =>
             CombatManager.Instance.History.Entries.OfType<CardPlayFinishedEntry>()
                 .Count(e => e.CardPlay.Card.Owner == card.Owner &&
@@ -43,7 +43,7 @@ public class SixHundredStrike() : TheHeroExpansionCard(1,
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars.CalculationBase.UpgradeValueBy(1M);
-        this.DynamicVars.ExtraDamage.UpgradeValueBy(1M);
+        this.DynamicVars.CalculationBase.UpgradeValueBy(2M);
+        this.DynamicVars.ExtraDamage.UpgradeValueBy(2M);
     }
 }
