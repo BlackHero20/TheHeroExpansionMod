@@ -89,7 +89,7 @@ public class TheRing : TheHeroExpansionRelic
     private async Task Effect1(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<VakuusPrank>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<VakuusPrank>(theRing.Owner, 1, combatState, choiceContext);
     }
 
     private async Task Effect2(PlayerChoiceContext choiceContext)
@@ -102,78 +102,78 @@ public class TheRing : TheHeroExpansionRelic
     private async Task Effect3(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<StrangeNote>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<StrangeNote>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect4(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<UnbreakableStrength>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<UnbreakableStrength>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect5(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<ShadowMantle>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<ShadowMantle>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect6(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<MysticalSignet>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<MysticalSignet>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect7(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<StygianFlame>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<StygianFlame>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect8(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<SacrificialDagger>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<SacrificialDagger>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect9(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<GlitterBomb>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<GlitterBomb>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect10(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<Spectre>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<Spectre>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect11(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<NightmareFuel>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<NightmareFuel>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect12(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<GrantedContract>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<GrantedContract>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect13(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<DiscardedContract>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<DiscardedContract>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect14(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<BottledDynamism>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<BottledDynamism>(theRing.Owner, 1, combatState, choiceContext);
     }
     
     private async Task Effect15(PlayerChoiceContext choiceContext, ICombatState combatState)
     {
         TheRing theRing = this;
-        await VakuuCard.CreateInHand<TimeGun>(theRing.Owner, 1, combatState);
+        await VakuuCard.CreateInHand<TimeGun>(theRing.Owner, 1, combatState, choiceContext);
     }
 }

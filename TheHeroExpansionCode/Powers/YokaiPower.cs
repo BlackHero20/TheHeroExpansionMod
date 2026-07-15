@@ -41,7 +41,6 @@ public sealed class YokaiPower : TheHeroExpansionPower
 
         try
         {
-            await CardPileCmd.Add(card, PileType.Hand);
             await CardCmd.AutoPlay(choiceContext, card, null);
             
             if (card.Pile?.Type != PileType.Exhaust)

@@ -35,8 +35,6 @@ public sealed class RepurposePower : TheHeroExpansionPower
         RepurposePower power = this;
         if (player != power.Owner.Player)
             return;
-        if (!Hook.ShouldFlush(player.Creature.CombatState, player))
-            return;
 
         CardSelectorPrefs prefs = new CardSelectorPrefs(power.SelectionScreenPrompt, power.Amount);
         List<CardModel> selected = (await CardSelectCmd.FromHand(

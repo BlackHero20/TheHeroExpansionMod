@@ -103,7 +103,7 @@
   "THEHEROEXPANSION-SELF_DESTRUCT.title": "Self Destruct",
   "THEHEROEXPANSION-BUSTED_CORE.description": "Lose {OrbSlots:diff()} Orb Slot.\nDraw {Cards:diff()} card.",
   "THEHEROEXPANSION-BUSTED_CORE.title": "Busted Core",
-  "THEHEROEXPANSION-MAGIC_PEN.description": "Enchant an Attack or Skill in your [gold]Hand[/gold] with [purple]Dreamy[/purple]",
+  "THEHEROEXPANSION-MAGIC_PEN.description": "Enchant an Attack or Skill in your [gold]Hand[/gold] with [purple]Dreamy[/purple]{IfUpgraded:show:| at random}.",
   "THEHEROEXPANSION-MAGIC_PEN.selectionScreenPrompt": "Select an Attack or Skill to Enchant with Dreamy.",
   "THEHEROEXPANSION-MAGIC_PEN.title": "Magic Pen",
   "THEHEROEXPANSION-REINFORCED_BODY.description": "Gain {Block:diff()} [gold]Block[/gold] X times.",
