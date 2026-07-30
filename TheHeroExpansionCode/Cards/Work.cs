@@ -20,7 +20,9 @@ public class Work() : TheHeroExpansionCard(1,
     ];
   
     protected override IEnumerable<DynamicVar> CanonicalVars => 
-    [new CardsVar(2)];
+    [
+        new CardsVar(2)
+    ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {

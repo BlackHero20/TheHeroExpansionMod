@@ -11,7 +11,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(NecrobinderCardPool))]
-public class Yokai() : TheHeroExpansionCard(1,
+public class Yokai() : TheHeroExpansionCard(2,
     CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {

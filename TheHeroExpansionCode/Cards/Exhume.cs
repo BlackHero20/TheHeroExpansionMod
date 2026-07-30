@@ -31,10 +31,16 @@ public class Exhume() : TheHeroExpansionCard(0,
     {
         Exhume exhume = this;
         CardSelectorPrefs prefs = new CardSelectorPrefs(exhume.SelectionScreenPrompt, exhume.DynamicVars.Cards.IntValue);
-        CardModel card = (await CardSelectCmd.FromSimpleGrid(choiceContext, (IReadOnlyList<CardModel>) PileType.Exhaust.GetPile(exhume.Owner).Cards.OrderBy<CardModel, CardRarity>((Func<CardModel, CardRarity>) (c => c.Rarity)).ThenBy<CardModel, ModelId>((Func<CardModel, ModelId>) (c => c.Id)).ToList<CardModel>(), exhume.Owner, prefs)).FirstOrDefault<CardModel>();
-        if (card == null)
-            return;
-        await CardPileCmd.Add(card, PileType.Hand);
+        IEnumerable<CardModel> cards = await CardSelectCmd.FromSimpleGrid(
+            choiceContext,
+            (IReadOnlyList<CardModel>)PileType.Exhaust.GetPile(exhume.Owner).Cards
+                .OrderBy(c => c.Rarity)
+                .ThenBy(c => c.Id)
+                .ToList(),
+            exhume.Owner,
+            prefs);
+        foreach (CardModel card in cards)
+            await CardPileCmd.Add(card, PileType.Hand);
     }
 
     protected override void OnUpgrade()

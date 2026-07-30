@@ -34,6 +34,14 @@ public class TheRing : TheHeroExpansionRelic
 
         int roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(1, 16);
 
+        if (roll == 1 || roll == 2)
+        {
+            if (relic.Owner.RunState.Rng.CombatTargets.NextInt(0, 2) == 0)
+            {
+                roll = relic.Owner.RunState.Rng.CombatTargets.NextInt(3, 16);
+            }
+        }
+
         switch (roll)
         {
             case 1:

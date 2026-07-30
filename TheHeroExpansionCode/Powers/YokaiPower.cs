@@ -15,7 +15,7 @@ public sealed class YokaiPower : TheHeroExpansionPower
 {
 
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerStackType StackType => PowerStackType.Counter;
 
     private bool _isReplaying = false;
 
@@ -41,10 +41,25 @@ public sealed class YokaiPower : TheHeroExpansionPower
 
         try
         {
-            await CardCmd.AutoPlay(choiceContext, card, null);
-            
-            if (card.Pile?.Type != PileType.Exhaust)
-                await CardPileCmd.Add(card, PileType.Exhaust, CardPilePosition.Random, null, skipVisuals: true);
+            int stacks = (int)power.Amount;
+            if (card.Type == CardType.Power)
+            {
+                for (int i = 0; i < stacks; i++)
+                {
+                    CardModel clone = card.CreateClone();
+                    await CardCmd.AutoPlay(choiceContext, clone, null);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < stacks; i++)
+                {
+                    await CardCmd.AutoPlay(choiceContext, card, null);
+                }
+
+                if (card.Pile?.Type != PileType.Exhaust)
+                    await CardPileCmd.Add(card, PileType.Exhaust, CardPilePosition.Random, null, skipVisuals: true);
+            }
         }
         finally
         {

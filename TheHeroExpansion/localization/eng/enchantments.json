@@ -2,7 +2,7 @@
   "THEHEROEXPANSION-INFECTED.title": "Infected",
   "THEHEROEXPANSION-INFECTED.description": "[gold]Enchant[/gold] the cards adjacent to this one with [purple]Infected[/purple] for this combat.\nInfected cards gain [blue]5%[/blue] Damage and [gold]Block[/gold] for each Infected card in your deck.{InCombat:\n[blue]({InfectedPercent:diff()}% Increase)[/blue]|}",
   "THEHEROEXPANSION-GOLDEN_RATIO.title": "Golden Ratio",
-  "THEHEROEXPANSION-GOLDEN_RATIO.description": "Whenever you end the turn with unspent {Energy:energyIcons()}, Play this card from anywhere in your deck",
+  "THEHEROEXPANSION-GOLDEN_RATIO.description": "Whenever you end the turn with at least {Energy:energyIcons()} unspent {energyPrefix:energyIcons(1)}, Play this card from anywhere in your deck outside the exhaust pile.",
   "THEHEROEXPANSION-DOOMSDAY.title": "Doomsday",
   "THEHEROEXPANSION-DOOMSDAY.description": "Deal [blue]75%[/blue] more damage, but lose [blue]2[/blue] Max HP.",
   "THEHEROEXPANSION-DOOMSDAY.extraCardText": "Lose 2 Max HP.",

@@ -37,13 +37,13 @@
   "THEHEROEXPANSION-THE_WORLD_POWER.smartDescription": "このターンの後、追加で[blue]{Amount}[/blue]{Amount:plural:ターン|ターン}行動できる。",
   "THEHEROEXPANSION-THE_WORLD_POWER.title": "ザ・ワールド",
   "THEHEROEXPANSION-EDGE_OF_DESTINY_POWER.description": "[gold]ソヴリン・ブレード[/gold]は追加攻撃を行い、[blue]X[/blue]ダメージを与える。Xは所持している{singleStarIcon}の数。",
-  "THEHEROEXPANSION-EDGE_OF_DESTINY_POWER.smartDescription": "[gold]ソヴリン・ブレード[/gold]は追加攻撃を行い、[blue]X[/blue]ダメージを与える。Xは所持している{singleStarIcon}の数。",
+  "THEHEROEXPANSION-EDGE_OF_DESTINY_POWER.smartDescription": "[gold]ソヴリン・ブレード[/gold]は追加攻撃を行い、[blue]{Amount}X[/blue]ダメージを与える。Xは所持している{singleStarIcon}の数。",
   "THEHEROEXPANSION-EDGE_OF_DESTINY_POWER.title": "運命の刃",
   "THEHEROEXPANSION-PERISH_SONG_POWER.description": "[blue]{Amount}[/blue]ターン終了時、全員に[blue]X[/blue][gold]破滅[/gold]を付与する。",
   "THEHEROEXPANSION-PERISH_SONG_POWER.smartDescription": "{Amount:plural:このターン終了時|[blue]{}[/blue]ターン終了時}、全員に[blue]{DoomPower:diff()}[/blue][gold]破滅[/gold]を付与する。",
   "THEHEROEXPANSION-PERISH_SONG_POWER.title": "ほろびのうた",
   "THEHEROEXPANSION-GOT_YOUR_BACK_POWER.description": "[gold]オスティ[/gold]は[blue]X[/blue]ターンの間、ダメージを肩代わりしない。",
-  "THEHEROEXPANSION-GOT_YOUR_BACK_POWER.smartDescription": "[gold]オスティ[/gold]は[blue]X[/blue]ターンの間、ダメージを肩代わりしない。",
+  "THEHEROEXPANSION-GOT_YOUR_BACK_POWER.smartDescription": "[gold]オスティ[/gold]は{Amount:plural:このターン|[blue]{}[/blue]ターンの間}、ダメージを肩代わりしない。",
   "THEHEROEXPANSION-GOT_YOUR_BACK_POWER.title": "背中を任せろ",
   "THEHEROEXPANSION-YOKAI_POWER.description": "[gold]エセリアル[/gold]カードを[gold]廃棄[/gold]するたび、そのコピーをプレイする。",
   "THEHEROEXPANSION-YOKAI_POWER.smartDescription": "[gold]エセリアル[/gold]カードを[gold]廃棄[/gold]するたび、そのコピーをプレイする。",
@@ -77,6 +77,6 @@
   "THEHEROEXPANSION-HUBRIS_POWER.smartDescription": "[blue]{Amount}[/blue]{Amount:plural:ターン|ターン}後、[red]死亡[/red]する。",
   "THEHEROEXPANSION-HUBRIS_POWER.title": "傲慢",
   "THEHEROEXPANSION-MOMENTUM_POWER.description": "カードのダメージと[gold]ブロック[/gold]を増加させる。[gold]モメンタム[/gold]の値はカードをプレイするたびに減少する。",
-  "THEHEROEXPANSION-MOMENTUM_POWER.smartDescription": "カードのダメージと[gold]ブロック[/gold]を{Amount:abs()}[/blue]{Amount:cond:<0?減少|増加}させる。カードをプレイするたびに1減少する。",
+  "THEHEROEXPANSION-MOMENTUM_POWER.smartDescription": "カードのダメージと[gold]ブロック[/gold]を[blue]{Amount:abs()}[/blue]{Amount:cond:<0?減少|増加}させる。カードをプレイするたびに1減少する。",
   "THEHEROEXPANSION-MOMENTUM_POWER.title": "モメンタム"
 }

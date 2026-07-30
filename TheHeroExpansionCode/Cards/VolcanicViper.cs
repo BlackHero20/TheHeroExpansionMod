@@ -18,7 +18,8 @@ public class VolcanicViper() : TheHeroExpansionCard(3,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(13M, ValueProp.Move),
-        new PowerVar<PoisonPower>(8M)
+        new PowerVar<PoisonPower>(8M),
+        new DynamicVar("PoisonTrigger", 1)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -39,10 +40,14 @@ public class VolcanicViper() : TheHeroExpansionCard(3,
         await PowerCmd.Apply<PoisonPower>(choiceContext, cardPlay.Target,
             volcanicViper.DynamicVars["PoisonPower"].BaseValue,
             volcanicViper.Owner.Creature, volcanicViper);
-        
-        var poison = cardPlay.Target.GetPower<PoisonPower>();
-        if (poison != null && poison.Amount > 0)
+
+        int triggers = volcanicViper.DynamicVars["PoisonTrigger"].IntValue;
+        for (int i = 0; i < triggers; i++)
         {
+            var poison = cardPlay.Target.GetPower<PoisonPower>();
+            if (poison == null || poison.Amount <= 0)
+                break;
+
             await CreatureCmd.Damage(choiceContext, cardPlay.Target,
                 (decimal)poison.Amount,
                 ValueProp.Unblockable | ValueProp.Unpowered,

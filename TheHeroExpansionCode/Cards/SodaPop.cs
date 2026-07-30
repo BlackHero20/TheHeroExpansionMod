@@ -22,7 +22,7 @@ public class SodaPop() : TheHeroExpansionCard(2,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new EnergyVar(2),
+        new EnergyVar(1),
         new CardsVar(1),
         new HealVar(6M)
     ];
@@ -40,7 +40,7 @@ public class SodaPop() : TheHeroExpansionCard(2,
         SodaPop sodaPop = this;
         await CreatureCmd.TriggerAnim(sodaPop.Owner.Creature, "Cast", sodaPop.Owner.Character.CastAnimDelay);
         await PlayerCmd.GainEnergy(sodaPop.DynamicVars.Energy.BaseValue, sodaPop.Owner);
-        List<Soul> souls = Soul.Create(sodaPop.Owner, 1, sodaPop.CombatState).ToList<Soul>();
+        List<Soul> souls = Soul.Create(sodaPop.Owner, sodaPop.DynamicVars.Cards.IntValue, sodaPop.CombatState).ToList<Soul>();
         await CardPileCmd.AddGeneratedCardToCombat((CardModel) souls[0], PileType.Hand, Owner);
         if (Osty.CheckMissingWithAnim(sodaPop.Owner))
             return;

@@ -21,7 +21,8 @@ public class Akumetsu() : TheHeroExpansionCard(2,
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(10M, ValueProp.Move)
+        new BlockVar(10M, ValueProp.Move),
+        new PowerVar<AkumetsuPower>(1M)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -34,8 +35,7 @@ public class Akumetsu() : TheHeroExpansionCard(2,
         Akumetsu akumetsu = this;
         await CreatureCmd.TriggerAnim(akumetsu.Owner.Creature, "Cast", akumetsu.Owner.Character.CastAnimDelay);
         await CreatureCmd.GainBlock(akumetsu.Owner.Creature, akumetsu.DynamicVars.Block, cardPlay);
-        await PowerCmd.Apply<AkumetsuPower>(choiceContext, akumetsu.Owner.Creature,
-            1M, akumetsu.Owner.Creature, akumetsu);
+        await PowerCmd.Apply<AkumetsuPower>(choiceContext, akumetsu.Owner.Creature, akumetsu.DynamicVars["AkumetsuPower"].BaseValue, akumetsu.Owner.Creature, akumetsu);
     }
 
     protected override void OnUpgrade()
