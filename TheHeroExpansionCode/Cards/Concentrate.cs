@@ -8,12 +8,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
+using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(EventCardPool))]
 public class Concentrate() : TheHeroExpansionCard(0,
     CardType.Skill, CardRarity.Event,
-    TargetType.Self)
+    TargetType.Self, nameof(MysteriousFlashlight))
 {
     public override CardPoolModel VisualCardPool => ModelDb.CardPool<SilentCardPool>();
     

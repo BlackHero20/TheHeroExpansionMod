@@ -15,7 +15,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(TokenCardPool))]
 public class MinionLabor() : TheHeroExpansionCard(0,
     CardType.Skill, CardRarity.Token,
-    TargetType.Self)
+    TargetType.Self, nameof(Work))
 {
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => 

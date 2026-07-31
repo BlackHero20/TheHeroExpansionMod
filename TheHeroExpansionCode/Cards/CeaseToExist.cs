@@ -14,7 +14,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class CeaseToExist() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Rare,
-    TargetType.Self)
+    TargetType.Self, nameof(CeaseToExist))
 {
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => 

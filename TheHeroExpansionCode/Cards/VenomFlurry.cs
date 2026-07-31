@@ -14,7 +14,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class VenomFlurry() : TheHeroExpansionCard(1,
-    CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+    CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy, nameof(VenomFlurry))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

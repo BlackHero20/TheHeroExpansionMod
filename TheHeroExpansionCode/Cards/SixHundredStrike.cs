@@ -15,7 +15,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(IroncladCardPool))]
 public class SixHundredStrike() : TheHeroExpansionCard(1,
-    CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+    CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy, nameof(SixHundredStrike))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

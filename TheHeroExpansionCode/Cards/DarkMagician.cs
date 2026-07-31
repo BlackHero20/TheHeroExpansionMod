@@ -17,7 +17,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(DefectCardPool))]
 public class DarkMagician() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.Self, nameof(DarkMagician))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

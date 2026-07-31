@@ -14,7 +14,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(NecrobinderCardPool))]
 public class PerishSong() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Rare,
-    TargetType.Self)
+    TargetType.Self, nameof(PerishSong))
 {
     public override bool CanBeGeneratedInCombat => false;
     

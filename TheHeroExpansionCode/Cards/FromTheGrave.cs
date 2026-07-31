@@ -11,7 +11,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(IroncladCardPool))]
 public class FromTheGrave() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.Self, nameof(Fire))
 {
     public override bool GainsBlock => true;
 

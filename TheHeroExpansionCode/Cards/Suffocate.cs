@@ -12,7 +12,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(IroncladCardPool))]
 public class Suffocate() : TheHeroExpansionCard(0,
     CardType.Attack, CardRarity.Common,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(Suffocate))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

@@ -9,7 +9,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 [Pool(typeof(EventRelicPool))]
-public class BladeHandle() : TheHeroExpansionRelic
+public class BladeHandle() : TheHeroExpansionRelic(nameof(BladeHandle))
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 

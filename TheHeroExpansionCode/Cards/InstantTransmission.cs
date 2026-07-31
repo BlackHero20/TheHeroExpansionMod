@@ -13,7 +13,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(RegentCardPool))]
 public class InstantTransmission() : TheHeroExpansionCard(0,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.Self, nameof(InstantTransmission))
 {
     public override int CanonicalStarCost => 2;
     

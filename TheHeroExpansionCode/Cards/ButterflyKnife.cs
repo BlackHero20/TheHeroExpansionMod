@@ -13,7 +13,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class ButterflyKnife() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,
-    TargetType.Self)
+    TargetType.Self, nameof(ButterflyKnife))
 {
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

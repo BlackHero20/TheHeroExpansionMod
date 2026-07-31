@@ -13,7 +13,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(RegentCardPool))]
 public class Serve() : TheHeroExpansionCard(1,
     CardType.Power, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.Self, nameof(Serve))
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

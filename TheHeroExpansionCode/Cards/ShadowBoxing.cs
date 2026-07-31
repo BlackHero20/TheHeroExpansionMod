@@ -15,7 +15,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(DefectCardPool))]
 public class ShadowBoxing() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Common,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(ShadowBoxing))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

@@ -13,7 +13,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 [Pool(typeof(EventRelicPool))]
-public class ToastySmores() : TheHeroExpansionRelic
+public class ToastySmores() : TheHeroExpansionRelic(nameof(ToastySmores))
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 

@@ -15,7 +15,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class Cheat() : TheHeroExpansionCard(0,
     CardType.Power, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.Self, nameof(Cheat))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

@@ -19,7 +19,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(IroncladCardPool))]
 public class Transfusion() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Common,
-    TargetType.AllEnemies)
+    TargetType.AllEnemies, nameof(TheWorld))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

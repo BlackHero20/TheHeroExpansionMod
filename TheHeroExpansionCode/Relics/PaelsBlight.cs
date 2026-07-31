@@ -12,7 +12,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 [Pool(typeof(EventRelicPool))]
-public class PaelsBlight() : TheHeroExpansionRelic
+public class PaelsBlight() : TheHeroExpansionRelic(nameof(PaelsBlight))
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 

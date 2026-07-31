@@ -16,7 +16,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(DefectCardPool))]
 public class CrackedMarble() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Common,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(CrackedMarble))
 {
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

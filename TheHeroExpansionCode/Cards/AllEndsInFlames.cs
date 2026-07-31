@@ -12,7 +12,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(IroncladCardPool))]
 public class AllEndsInFlames() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Rare,
-    TargetType.Self)
+    TargetType.Self, nameof(AllEndsInFlames))
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => 
         [CardKeyword.Exhaust];

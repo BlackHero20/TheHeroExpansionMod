@@ -15,7 +15,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(DefectCardPool))]
 public class LightBuster() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Rare,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(LightBuster))
 {
     private readonly List<ModelId> _evokedOrbIds = new();
 

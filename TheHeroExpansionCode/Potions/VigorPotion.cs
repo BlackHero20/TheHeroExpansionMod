@@ -15,7 +15,7 @@ using MegaCrit.Sts2.Core.Models.PotionPools;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Potions;
 [Pool(typeof(SharedPotionPool))]
-public sealed class VigorPotion : TheHeroExpansionPotion
+public class VigorPotion() : TheHeroExpansionPotion(nameof(VigorPotion))
 {
     public override PotionRarity Rarity => PotionRarity.Common;
     

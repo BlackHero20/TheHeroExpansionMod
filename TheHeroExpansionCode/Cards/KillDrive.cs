@@ -14,7 +14,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(DefectCardPool))]
 public class KillDrive() : TheHeroExpansionCard(1,
     CardType.Power, CardRarity.Rare,
-    TargetType.Self)
+    TargetType.Self, nameof(KillDrive))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

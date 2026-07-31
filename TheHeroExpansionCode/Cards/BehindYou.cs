@@ -16,7 +16,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class BehindYou() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(BehindYou))
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [HoverTipFactory.FromPower<WeakPower>(),

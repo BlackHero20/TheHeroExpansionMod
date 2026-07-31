@@ -14,7 +14,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(TokenCardPool))]
 public class MinionDuty() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Token,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(Serve))
 {
     public override bool GainsBlock => true;
     

@@ -17,7 +17,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 [Pool(typeof(SharedRelicPool))]
-public class MysteriousFlashlight() : TheHeroExpansionRelic
+public class MysteriousFlashlight() : TheHeroExpansionRelic(nameof(MysteriousFlashlight))
 {
     public override RelicRarity Rarity => RelicRarity.Shop;
 

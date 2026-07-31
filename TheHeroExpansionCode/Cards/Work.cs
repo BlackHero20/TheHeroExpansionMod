@@ -11,7 +11,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(RegentCardPool))]
 public class Work() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,
-    TargetType.Self)
+    TargetType.Self, nameof(Work))
 {
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

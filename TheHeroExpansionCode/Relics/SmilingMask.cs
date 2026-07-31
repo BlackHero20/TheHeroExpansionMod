@@ -9,7 +9,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 [Pool(typeof(SharedRelicPool))]
-public class SmilingMask() : TheHeroExpansionRelic
+public class SmilingMask() : TheHeroExpansionRelic(nameof(SmilingMask))
 {
     public override RelicRarity Rarity => RelicRarity.Common;
 

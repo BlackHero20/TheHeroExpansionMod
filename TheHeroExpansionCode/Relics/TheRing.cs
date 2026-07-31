@@ -16,7 +16,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 
 [Pool(typeof(EventRelicPool))]
-public class TheRing : TheHeroExpansionRelic
+public class TheRing() : TheHeroExpansionRelic(nameof(TheRing))
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 

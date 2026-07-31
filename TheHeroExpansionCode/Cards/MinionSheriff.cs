@@ -12,7 +12,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(TokenCardPool))]
 public class MinionSheriff() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Token,
-    TargetType.Self)
+    TargetType.Self,  nameof(Fire))
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [CardKeyword.Exhaust];

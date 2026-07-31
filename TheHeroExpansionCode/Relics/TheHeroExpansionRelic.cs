@@ -2,12 +2,26 @@
 using BaseLib.Extensions;
 using TheHeroExpansion.TheHeroExpansionCode.Extensions;
 using Godot;
-
+ 
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
-
+ 
 public abstract class TheHeroExpansionRelic : CustomRelicModel
 {
-    //TheHeroExpansion/images/relics
+    private static bool IsConfigEnabled(string className)
+    {
+        var prop = typeof(TheHeroExpansionConfig).GetProperty(className);
+        return prop == null || (bool)prop.GetValue(null)!;
+    }
+ 
+    protected TheHeroExpansionRelic(string configName)
+        : base(IsConfigEnabled(configName))
+    {
+    }
+ 
+    protected TheHeroExpansionRelic() : base(true)
+    {
+    }
+ 
     public override string PackedIconPath
     {
         get
@@ -16,7 +30,7 @@ public abstract class TheHeroExpansionRelic : CustomRelicModel
             return ResourceLoader.Exists(path) ? path : "relic.png".RelicImagePath();
         }
     }
-
+ 
     protected override string PackedIconOutlinePath
     {
         get
@@ -25,7 +39,7 @@ public abstract class TheHeroExpansionRelic : CustomRelicModel
             return ResourceLoader.Exists(path) ? path : "relic_outline.png".RelicImagePath();
         }
     }
-
+ 
     protected override string BigIconPath
     {
         get

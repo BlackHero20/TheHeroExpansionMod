@@ -14,7 +14,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(NecrobinderCardPool))]
 public class SodaPop() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.Self, nameof(SodaPop))
 {
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => 

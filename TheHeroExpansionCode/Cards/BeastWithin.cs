@@ -15,7 +15,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(IroncladCardPool))]
 public class BeastWithin() : TheHeroExpansionCard(1,
     CardType.Power, CardRarity.Rare,
-    TargetType.Self)
+    TargetType.Self, nameof(BeastWithin))
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [HoverTipFactory.FromPower<VulnerablePower>()];

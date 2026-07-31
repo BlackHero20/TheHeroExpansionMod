@@ -18,7 +18,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(NecrobinderCardPool))]
 public class SixthFinger() : TheHeroExpansionCard(0,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.Self, nameof(SixthFinger))
 {
     private int _handAddedThisTurn = 0;
 

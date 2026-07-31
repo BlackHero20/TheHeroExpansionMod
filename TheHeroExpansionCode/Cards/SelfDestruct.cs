@@ -14,7 +14,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(DefectCardPool))]
 public class SelfDestruct() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Rare,
-    TargetType.Self)
+    TargetType.Self, nameof(SelfDestruct))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

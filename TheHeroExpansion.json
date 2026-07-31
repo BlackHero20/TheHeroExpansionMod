@@ -6,6 +6,6 @@
   "version": "1.3.0",
   "has_pck": true,
   "has_dll": true,
-  "dependencies": [{ "id": "BaseLib", "minVersion": "3.3.8" }],
+  "dependencies": [{ "id": "BaseLib", "minVersion": "3.4.0" }],
   "affects_gameplay": true
 }
