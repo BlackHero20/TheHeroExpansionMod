@@ -19,7 +19,7 @@ public class BarrelRoll() : TheHeroExpansionCard(1,
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(11M, ValueProp.Move)
+        new BlockVar(10M, ValueProp.Move)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

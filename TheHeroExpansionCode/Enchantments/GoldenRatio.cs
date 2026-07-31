@@ -18,7 +18,7 @@ public sealed class GoldenRatio : TheHeroExpansionEnchantment
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new EnergyVar(1)
+        new EnergyVar(2)
     ];
 
     public override async Task BeforeFlushLate(PlayerChoiceContext choiceContext, Player player)
@@ -32,7 +32,7 @@ public sealed class GoldenRatio : TheHeroExpansionEnchantment
             return;
         if (owner == null || owner != player)
             return;
-        if (owner.PlayerCombatState.Energy <= 0)
+        if (owner.PlayerCombatState.Energy <= 1)
             return;
 
         var card = enchantment.Card;

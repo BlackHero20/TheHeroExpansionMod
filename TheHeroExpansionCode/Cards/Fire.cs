@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
@@ -13,7 +14,10 @@ public class Fire() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [];
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new CardsVar(1)
+    ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -26,10 +30,16 @@ public class Fire() : TheHeroExpansionCard(1,
         await CreatureCmd.TriggerAnim(fire.Owner.Creature, "Cast",
             fire.Owner.Character.CastAnimDelay);
 
-        var sheriff = fire.CombatState.CreateCard<MinionSheriff>(fire.Owner);
-        if (fire.IsUpgraded)
-            CardCmd.Upgrade(sheriff);
+        int count = fire.DynamicVars.Cards.IntValue;
+        List<CardModel> sheriffs = new List<CardModel>();
+        for (int i = 0; i < count; i++)
+        {
+            var sheriff = fire.CombatState.CreateCard<MinionSheriff>(fire.Owner);
+            if (fire.IsUpgraded)
+                CardCmd.Upgrade(sheriff);
+            sheriffs.Add(sheriff);
+        }
 
-        await CardPileCmd.AddGeneratedCardToCombat(sheriff, PileType.Hand, fire.Owner);
+        await CardPileCmd.AddGeneratedCardsToCombat(sheriffs, PileType.Hand, fire.Owner);
     }
 }

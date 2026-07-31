@@ -13,13 +13,14 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
-public class VenomFlurry() : TheHeroExpansionCard(0,
+public class VenomFlurry() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(2M, ValueProp.Move),
-        new PowerVar<PoisonPower>(1M)
+        new PowerVar<PoisonPower>(1M),
+        new IntVar("Replay", 1M)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -44,8 +45,8 @@ public class VenomFlurry() : TheHeroExpansionCard(0,
         
         foreach (var blade in venomFlurry.Owner.PlayerCombatState.AllCards.OfType<VenomFlurry>())
         {
-            blade.BaseReplayCount += 1;
-            CardCmd.Preview(blade, 1, CardPreviewStyle.MessyLayout);
+            blade.BaseReplayCount += venomFlurry.DynamicVars["Replay"].IntValue;
+            CardCmd.Preview(blade, venomFlurry.DynamicVars["Replay"].IntValue, CardPreviewStyle.MessyLayout);
         }
     }
 

@@ -32,15 +32,24 @@ public class MagicPen() : TheHeroExpansionCard(1,
         CardPlay play)
     {
         MagicPen magicPen = this;
-        CardSelectorPrefs prefs = new CardSelectorPrefs(magicPen.SelectionScreenPrompt, 1);
-        CardModel card = (await CardSelectCmd.FromHand(choiceContext, magicPen.Owner, prefs, (Func<CardModel, bool>) (card => card.Enchantment == null && (card.Type == CardType.Attack || card.Type == CardType.Skill)), (AbstractModel) magicPen)).FirstOrDefault<CardModel>();
+        CardModel card;
+        if (magicPen.IsUpgraded)
+        {
+            CardSelectorPrefs prefs = new CardSelectorPrefs(magicPen.SelectionScreenPrompt, 1);
+            card = (await CardSelectCmd.FromHand(choiceContext, magicPen.Owner, prefs,
+                (Func<CardModel, bool>)(card => card.Enchantment == null &&
+                                                 (card.Type == CardType.Attack || card.Type == CardType.Skill)),
+                (AbstractModel)magicPen)).FirstOrDefault<CardModel>();
+        }
+        else
+        {
+            CardPile pile = PileType.Hand.GetPile(magicPen.Owner);
+            card = magicPen.Owner.RunState.Rng.CombatCardSelection.NextItem<CardModel>(
+                pile.Cards.Where(c => c.Enchantment == null &&
+                                       (c.Type == CardType.Attack || c.Type == CardType.Skill)));
+        }
         if (card == null)
             return;
         CardCmd.Enchant<Dreamy>(card, magicPen.DynamicVars["Dreamy"].BaseValue);
-    }
-
-    protected override void OnUpgrade()
-    {
-        this.EnergyCost.UpgradeBy(-1);
     }
 }

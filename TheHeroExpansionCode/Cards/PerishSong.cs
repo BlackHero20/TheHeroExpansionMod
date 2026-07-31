@@ -16,10 +16,12 @@ public class PerishSong() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self)
 {
+    public override bool CanBeGeneratedInCombat => false;
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DynamicVar("Turns", 3M),
-        new PowerVar<DoomPower>(90M),
+        new PowerVar<DoomPower>(80M),
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => 

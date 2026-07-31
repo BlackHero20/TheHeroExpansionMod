@@ -22,13 +22,14 @@ public class Repurpose() : TheHeroExpansionCard(1,
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
+        new CardsVar(1),
         new DynamicVar("Advantageous", 2)
     ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         Repurpose repurpose = this;
-        RepurposePower power = await PowerCmd.Apply<RepurposePower>(choiceContext, repurpose.Owner.Creature, 1M, repurpose.Owner.Creature, repurpose); power.SetAdvantageous(repurpose.DynamicVars["Advantageous"].BaseValue);
+        RepurposePower power = await PowerCmd.Apply<RepurposePower>(choiceContext, repurpose.Owner.Creature, repurpose.DynamicVars.Cards.IntValue, repurpose.Owner.Creature, repurpose); power.SetAdvantageous(repurpose.DynamicVars["Advantageous"].BaseValue);
     }
 
     protected override void OnUpgrade()

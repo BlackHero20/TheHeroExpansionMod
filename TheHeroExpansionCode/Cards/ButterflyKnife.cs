@@ -29,7 +29,7 @@ public class ButterflyKnife() : TheHeroExpansionCard(1,
     {
         ButterflyKnife butterflyKnife = this;
         await CardPileCmd.Draw(choiceContext, butterflyKnife.DynamicVars.Cards.BaseValue, butterflyKnife.Owner);
-        IEnumerable<CardModel> inHand = await Shiv.CreateInHand(butterflyKnife.Owner, butterflyKnife.DynamicVars["Shivs"].IntValue, butterflyKnife.CombatState);
+        IEnumerable<CardModel> inHand = await Shiv.CreateInHand(butterflyKnife.Owner, butterflyKnife.DynamicVars["Shivs"].IntValue, butterflyKnife.CombatState, butterflyKnife.Owner);
         if (!butterflyKnife.IsUpgraded)
             return;
         foreach (CardModel card in inHand)

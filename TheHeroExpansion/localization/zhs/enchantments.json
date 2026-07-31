@@ -1,4 +1,4 @@
-﻿{
+{
   "THEHEROEXPANSION-INFECTED.title": "感染",
   "THEHEROEXPANSION-INFECTED.description": "为本场战斗中与此牌相邻的牌[gold]附魔[/gold][purple]感染[/purple]。\n你牌组中每有一张感染牌，感染牌造成的伤害及其提供的[gold]格挡[/gold]就提高[blue]5%[/blue]。{InCombat:\n[blue]（提高{InfectedPercent:diff()}%）[/blue]|}",
   "THEHEROEXPANSION-GOLDEN_RATIO.title": "黄金比例",

@@ -30,7 +30,8 @@ public sealed class AkumetsuPower : TheHeroExpansionPower
         await PowerCmd.Remove(power);
     }
 
-    public override async Task AfterSideTurnStart(
+    public override async Task BeforeSideTurnStart(
+        PlayerChoiceContext choiceContext,
         CombatSide side,
         IReadOnlyList<Creature> participants,
         ICombatState combatState)
