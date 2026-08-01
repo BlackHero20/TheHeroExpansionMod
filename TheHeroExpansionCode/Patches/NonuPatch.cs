@@ -11,6 +11,9 @@ public static class NonuPatch
 {
     public static void Postfix(Nonupeipe __instance, ref IEnumerable<EventOption> __result)
     {
+        if (!TheHeroExpansionConfig.DaintyDandelion)
+            return;
+        
         var relic = ModelDb.Relic<DaintyDandelion>().ToMutable();
 
         var method = typeof(AncientEventModel).GetMethod("RelicOption",

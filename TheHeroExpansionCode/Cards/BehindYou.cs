@@ -18,6 +18,9 @@ public class BehindYou() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.AnyEnemy, nameof(BehindYou))
 {
+    public override IEnumerable<CardKeyword> CanonicalKeywords => 
+        [CardKeyword.Exhaust];
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [HoverTipFactory.FromPower<WeakPower>(),
         HoverTipFactory.FromPower<VulnerablePower>()];

@@ -11,6 +11,9 @@ public static class OrobasPatch
 {
     public static void Postfix(Orobas __instance, ref IEnumerable<EventOption> __result)
     {
+        if (!TheHeroExpansionConfig.TomeOfOrigin)
+            return;
+        
         var relic = ModelDb.Relic<TomeOfOrigin>().ToMutable(); //change this to whatever relic I want
         
         var method = typeof(AncientEventModel).GetMethod("RelicOption",

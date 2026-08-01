@@ -11,6 +11,9 @@ public static class VakuuPatch
 {
     public static void Postfix(Vakuu __instance, ref IEnumerable<EventOption> __result)
     {
+        if (!TheHeroExpansionConfig.TheRing)
+            return;
+        
         var relic = ModelDb.Relic<TheRing>().ToMutable();
 
         var method = typeof(AncientEventModel).GetMethod("RelicOption",

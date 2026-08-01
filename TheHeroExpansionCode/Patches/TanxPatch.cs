@@ -11,6 +11,9 @@ public static class TanxPatch
 {
     public static void Postfix(Tanx __instance, ref IEnumerable<EventOption> __result)
     {
+        if (!TheHeroExpansionConfig.SteelBall)
+            return;
+        
         var relic = ModelDb.Relic<SteelBall>().ToMutable();
         
         var method = typeof(AncientEventModel).GetMethod("RelicOption",

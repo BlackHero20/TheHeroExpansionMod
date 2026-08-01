@@ -23,7 +23,7 @@ public class Repurpose() : TheHeroExpansionCard(1,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CardsVar(1),
-        new DynamicVar("Advantageous", 2)
+        new DynamicVar("Advantageous", 1)
     ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

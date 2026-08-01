@@ -11,6 +11,9 @@ public static class NeowPatch
 {
     public static void Postfix(Neow __instance, ref IEnumerable<EventOption> __result)
     {
+        if (!TheHeroExpansionConfig.BladeHandle)
+            return;
+
         var relic = ModelDb.Relic<BladeHandle>().ToMutable();
 
         var method = typeof(AncientEventModel).GetMethod("RelicOption",

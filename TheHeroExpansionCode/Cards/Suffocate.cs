@@ -47,7 +47,6 @@ public class Suffocate() : TheHeroExpansionCard(0,
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars.Damage.UpgradeValueBy(1M);
-        this.DynamicVars.Weak.UpgradeValueBy(1M);
+        this.DynamicVars.Damage.UpgradeValueBy(3M);
     }
 }

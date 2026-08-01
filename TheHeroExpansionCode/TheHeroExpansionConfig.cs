@@ -75,8 +75,12 @@ internal class TheHeroExpansionConfig : SimpleModConfig
     // ── Colorless ─────────────────────────────────────────
     [ConfigSection("Colorless")]
     
+    public static bool KaraCancel { get; set; } = true;
+    public static bool JustLucky { get; set; } = true;
+    public static bool PatriotShield { get; set; } = true;
     public static bool MagicPen { get; set; } = true;
     public static bool ReinforcedBody { get; set; } = true;
+    public static bool SuperForm { get; set; } = true;
 
     // ── Relics ────────────────────────────────────────────
     [ConfigSection("Relics")]

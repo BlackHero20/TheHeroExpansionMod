@@ -2,7 +2,7 @@
   "THEHEROEXPANSION-INFECTED.title": "感染",
   "THEHEROEXPANSION-INFECTED.description": "为本场战斗中与此牌相邻的牌[gold]附魔[/gold][purple]感染[/purple]。\n你牌组中每有一张感染牌，感染牌造成的伤害及其提供的[gold]格挡[/gold]就提高[blue]5%[/blue]。{InCombat:\n[blue]（提高{InfectedPercent:diff()}%）[/blue]|}",
   "THEHEROEXPANSION-GOLDEN_RATIO.title": "黄金比例",
-  "THEHEROEXPANSION-GOLDEN_RATIO.description": "每当你结束回合时仍有未花费的{Energy:energyIcons()}，无论此牌位于牌组何处，都将其打出。",
+  "THEHEROEXPANSION-GOLDEN_RATIO.description": "每当你结束回合时仍有至少{Energy:energyIcons()}未花费的{energyPrefix:energyIcons(1)}，无论此牌位于你牌组中除[gold]消耗牌堆[/gold]外的何处，都将其打出。",
   "THEHEROEXPANSION-DOOMSDAY.title": "末日",
   "THEHEROEXPANSION-DOOMSDAY.description": "造成的伤害提高[blue]75%[/blue]，但失去[blue]2[/blue]点最大生命。",
   "THEHEROEXPANSION-DOOMSDAY.extraCardText": "失去2点最大生命。",

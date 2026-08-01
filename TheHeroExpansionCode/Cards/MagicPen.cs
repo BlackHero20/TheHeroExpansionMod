@@ -13,7 +13,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(ColorlessCardPool))]
 public class MagicPen() : TheHeroExpansionCard(1,
-    CardType.Skill, CardRarity.Uncommon,
+    CardType.Skill, CardRarity.Rare,
     TargetType.Self, nameof(MagicPen))
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

@@ -11,6 +11,9 @@ public static class TezcaPatch
 {
     public static void Postfix(Tezcatara __instance, ref IEnumerable<EventOption> __result)
     {
+        if (!TheHeroExpansionConfig.ToastySmores)
+            return;
+        
         var relic = ModelDb.Relic<ToastySmores>().ToMutable();
 
         var method = typeof(AncientEventModel).GetMethod("RelicOption",
