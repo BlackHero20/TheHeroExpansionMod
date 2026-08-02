@@ -109,6 +109,8 @@
   "THEHEROEXPANSION-JUST_LUCKY.title": "Just Lucky",
   "THEHEROEXPANSION-PATRIOT_SHIELD.description": "Gain {Block:diff()} [gold]Block[/gold].\nAt the start of your next turn, return this to your [gold]Hand[/gold]",
   "THEHEROEXPANSION-PATRIOT_SHIELD.title": "Patriot Shield",
+  "THEHEROEXPANSION-CRYSTAL_FOCUS.description": "Gain {Block:diff()} [gold]Block[/gold].\nWhen retained, Increase this card's [gold]Block[/gold] by {RetainBlock:diff()} this combat. If this Blocks for {BlockThreshold:diff()} or more, deal your [gold]Block[/gold] as damage to a random enemy.",
+  "THEHEROEXPANSION-CRYSTAL_FOCUS.title": "Crystal Focus",
   "THEHEROEXPANSION-MAGIC_PEN.description": "Enchant an Attack or Skill in your [gold]Hand[/gold] with [purple]Dreamy[/purple]{IfUpgraded:show:| at random}.",
   "THEHEROEXPANSION-MAGIC_PEN.selectionScreenPrompt": "Select an Attack or Skill to Enchant with Dreamy.",
   "THEHEROEXPANSION-MAGIC_PEN.title": "Magic Pen",
