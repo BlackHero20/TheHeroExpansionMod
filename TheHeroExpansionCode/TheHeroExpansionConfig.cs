@@ -76,6 +76,7 @@ internal class TheHeroExpansionConfig : SimpleModConfig
     [ConfigSection("Colorless")]
     
     public static bool KaraCancel { get; set; } = true;
+    public static bool Setup { get; set; } = true;
     public static bool JustLucky { get; set; } = true;
     public static bool PatriotShield { get; set; } = true;
     public static bool CrystalFocus { get; set; } = true;
