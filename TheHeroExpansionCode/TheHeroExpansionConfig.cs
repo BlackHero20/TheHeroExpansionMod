@@ -82,6 +82,7 @@ internal class TheHeroExpansionConfig : SimpleModConfig
     public static bool CrystalFocus { get; set; } = true;
     public static bool MagicPen { get; set; } = true;
     public static bool ReinforcedBody { get; set; } = true;
+    public static bool KickOfTheFinalHour { get; set; } = true;
     public static bool SuperForm { get; set; } = true;
 
     // ── Relics ────────────────────────────────────────────

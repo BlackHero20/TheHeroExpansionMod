@@ -119,6 +119,8 @@
   "THEHEROEXPANSION-MAGIC_PEN.title": "Magic Pen",
   "THEHEROEXPANSION-REINFORCED_BODY.description": "Gain {Block:diff()} [gold]Block[/gold] X times.",
   "THEHEROEXPANSION-REINFORCED_BODY.title": "Reinforced Body",
+  "THEHEROEXPANSION-KICK_OF_THE_FINAL_HOUR.description": "Deal {Damage:diff()} damage to a random enemy {Repeat:diff()} times.\nAfter you play 11 cards, this card costs 0 until you play your next card.\n{InCombat:{CardsUntilDiscount:cond:>0?({CardsUntilDiscount:diff()} more {CardsUntilDiscount:plural:card|cards} and the Clock Strikes)|(The Clock Strikes)}|}",
+  "THEHEROEXPANSION-KICK_OF_THE_FINAL_HOUR.title": "Kick of the Final Hour",
   "THEHEROEXPANSION-SUPER_FORM.description": "Gain {MomentumPower:diff()} [gold]Momentum[/gold]\nAt the start of your turn, gain {SuperFormPower:diff()} [gold]Momentum[/gold].",
   "THEHEROEXPANSION-SUPER_FORM.title": "Super Form",
   "THEHEROEXPANSION-EXHUME.description": "Put {Cards:plural:a card|{} cards} from your [gold]Exhaust Pile[/gold] into your [gold]Hand[/gold].",
