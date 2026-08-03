@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Powers;
 
@@ -23,7 +24,7 @@ public sealed class EdgeOfDestinyPower : TheHeroExpansionPower
     public override Task BeforeCardPlayed(CardPlay cardPlay)
     {
         EdgeOfDestinyPower power = this;
-        if (cardPlay.Card is not SovereignBlade || cardPlay.Card.Owner.Creature != power.Owner)
+        if (cardPlay.Card is not (SovereignBlade or TheSecondBlade) || cardPlay.Card.Owner.Creature != power.Owner)
             return Task.CompletedTask;
 
         int stars = power.Owner.Player.PlayerCombatState.Stars;
@@ -38,14 +39,14 @@ public sealed class EdgeOfDestinyPower : TheHeroExpansionPower
     {
         EdgeOfDestinyPower power = this;
 
-        if (cardPlay.Card is SovereignBlade sovereignBlade && cardPlay.Card.Owner.Creature == power.Owner)
+        if (cardPlay.Card is (SovereignBlade or TheSecondBlade) && cardPlay.Card.Owner.Creature == power.Owner)
         {
             decimal bonus = power.GetInternalData<Data>().addedBonus;
 
             if (bonus > 0)
             {
                 power.Flash();
-                var attackCmd = DamageCmd.Attack(bonus).FromCard(sovereignBlade, cardPlay);
+                var attackCmd = DamageCmd.Attack(bonus).FromCard(cardPlay.Card, cardPlay);
                 await Cmd.Wait(0.1f);
 
                 if (power.Owner.HasPower<SeekingEdgePower>())
@@ -88,7 +89,7 @@ public sealed class EdgeOfDestinyPower : TheHeroExpansionPower
 
     public override Task AfterCardGeneratedForCombat(CardModel card, Player? creator)
     {
-        if (card is SovereignBlade && creator == Owner.Player)
+        if ((card is SovereignBlade || card is TheSecondBlade) && creator == Owner.Player)
             UpdateSovereignBladeVars();
         return Task.CompletedTask;
     }
@@ -102,7 +103,7 @@ public sealed class EdgeOfDestinyPower : TheHeroExpansionPower
 
         foreach (var pileType in new[] { PileType.Hand, PileType.Draw, PileType.Discard })
         {
-            foreach (var card in pileType.GetPile(Owner.Player).Cards.OfType<SovereignBlade>())
+            foreach (var card in pileType.GetPile(Owner.Player).Cards.Where(c => c is SovereignBlade || c is TheSecondBlade))
             {
                 try
                 {

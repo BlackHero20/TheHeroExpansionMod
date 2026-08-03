@@ -16,7 +16,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(EventCardPool))]
 public class TheTaintedBlade() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Event,
-    TargetType.AnyEnemy, nameof(TheTaintedBlade))
+    TargetType.AnyEnemy, nameof(TheBrokenBlade))
 {
     public override CardPoolModel VisualCardPool => ModelDb.CardPool<SilentCardPool>();
 

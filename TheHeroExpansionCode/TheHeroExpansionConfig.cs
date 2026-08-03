@@ -83,8 +83,8 @@ internal class TheHeroExpansionConfig : SimpleModConfig
     public static bool MagicPen { get; set; } = true;
     public static bool ReinforcedBody { get; set; } = true;
     public static bool KickOfTheFinalHour { get; set; } = true;
-    public static bool TheBrokenBlade { get; set; } = true;
     public static bool SuperForm { get; set; } = true;
+    public static bool TheBrokenBlade { get; set; } = true;
 
     // ── Relics ────────────────────────────────────────────
     [ConfigSection("Relics")]
