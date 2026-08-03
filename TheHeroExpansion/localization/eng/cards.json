@@ -125,6 +125,8 @@
   "THEHEROEXPANSION-THE_BROKEN_BLADE.title": "The Broken Blade",
   "THEHEROEXPANSION-SUPER_FORM.description": "Gain {MomentumPower:diff()} [gold]Momentum[/gold]\nAt the start of your turn, gain {SuperFormPower:diff()} [gold]Momentum[/gold].",
   "THEHEROEXPANSION-SUPER_FORM.title": "Super Form",
+  "THEHEROEXPANSION-THE_TAINTED_BLADE.description": "Deal {Damage:diff()} damage.\nApply [gold]Poison[/gold] equal to damage dealt.\nEnemy loses [gold]Strength[/gold] this turn equal to damage dealt",
+  "THEHEROEXPANSION-THE_TAINTED_BLADE.title": "The Tainted Blade",
   "THEHEROEXPANSION-THE_FINISHED_BLADE.description": "Deal {Damage:diff()} Damage.",
   "THEHEROEXPANSION-THE_FINISHED_BLADE.title": "The Finished Blade",
   "THEHEROEXPANSION-EXHUME.description": "Put {Cards:plural:a card|{} cards} from your [gold]Exhaust Pile[/gold] into your [gold]Hand[/gold].",
