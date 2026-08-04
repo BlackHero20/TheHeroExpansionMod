@@ -11,6 +11,9 @@ using MegaCrit.Sts2.Core.Models.RelicPools;
 using MegaCrit.Sts2.Core.Rooms;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 using TheHeroExpansion.TheHeroExpansionCode.Relics;
+using MegaCrit.Sts2.Core.Entities.Relics;
+
+
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 
@@ -39,7 +42,7 @@ public class SharedReserves() : TheHeroExpansionRelic
 
         sharedReserves.Flash();
 
-        CardModel shareCard = sharedReserves.CombatState.CreateCard<ShareEnergy>(sharedReserves.Owner);
+        CardModel shareCard = combatState.CreateCard<ShareEnergy>(sharedReserves.Owner);
         shareCard.SetToFreeThisTurn();
 
         var added = await CardPileCmd.AddGeneratedCardToCombat(

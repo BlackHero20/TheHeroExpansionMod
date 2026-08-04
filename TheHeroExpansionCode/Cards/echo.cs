@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Runs;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
@@ -18,7 +19,7 @@ public class Echo() : TheHeroExpansionCard(1,
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [CardKeyword.Exhaust];
-
+   
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CardsVar(1)
@@ -29,8 +30,7 @@ public class Echo() : TheHeroExpansionCard(1,
         CardPlay play)
     {
         Echo echo = this;
-
-        var players = RunManager.Instance.State?.Players;
+        var players = echo.CombatState?.PlayerCreatures.Select(c => c.Player).Distinct();
         if (players == null) return;
 
         var alliedDiscards = players
@@ -53,8 +53,7 @@ public class Echo() : TheHeroExpansionCard(1,
             prefs)).FirstOrDefault();
 
         if (chosen == null) return;
-        await CardPileCmd.Add();
-        await CardPileCmd.Add(chosen, PileType.Draw, CardPilePosition.Top, chosen.Owner);
+        await CardPileCmd.Add(chosen, PileType.Draw, CardPilePosition.Top, echo);
     }
 
     protected override void OnUpgrade()

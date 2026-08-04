@@ -8,12 +8,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 [Pool(typeof(TokenCardPool))]
 public class ShareEnergy() : TheHeroExpansionCard(0,
-    CardType.Skill, CardRarity.Special,
+    CardType.Skill, CardRarity.Token,
     TargetType.AnyAlly)
 {
     public const string StoredEnergyKey = "StoredEnergy";

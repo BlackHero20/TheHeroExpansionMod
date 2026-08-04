@@ -157,7 +157,10 @@
   "THEHEROEXPANSION-DEJA_VU.title": "Deja Vu",
   "SOVEREIGN_BLADE.description": "Deal {Damage:diff()} damage{TargetType:choose(AllEnemies): to ALL enemies|}{Repeat:plural:| {} times}.{GainsBlock:cond:\nGain {CalculatedBlock:diff()} [gold]Block[/gold].|}{InCombat:{HasEdgeOfDestiny:cond:>0?\nHit an additional time for {EdgeOfDestinyDamage:diff()} damage{SeekingEdgeSuffix}|}|}",
   "THEHEROEXPANSION-MASTERFUL_STAB.description": "Costs 1 additional {energyPrefix:energyIcons(1)} for each time you lose HP this combat.\nDeal {Damage:diff()} damage.",
-  "THEHEROEXPANSION-MASTERFUL_STAB.title": "Masterful Stab"
-  
-
+  "THEHEROEXPANSION-MASTERFUL_STAB.title": "Masterful Stab",
+  "THEHEROEXPANSION-ECHO.title": "Echo",
+  "THEHEROEXPANSION-ECHO.description": "Choose a card from an ally's [gold]Discard Pile[/gold] and put it on top of your [gold]Draw Pile[/gold].",
+  "THEHEROEXPANSION-ECHO.selectionScreenPrompt": "Choose a card from an ally's Discard Pile.",
+  "THEHEROEXPANSION-SHARE_ENERGY.title": "Share Energy",
+  "THEHEROEXPANSION-SHARE_ENERGY.description": "Give {Energy:energyIcons()} to an ally."
 } 

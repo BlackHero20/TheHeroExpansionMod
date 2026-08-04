@@ -38,5 +38,8 @@
   "THEHEROEXPANSION-DAINTY_DANDELION.description": "Gain {Energy:energyIcons()} at the start of each turn. Whenever you lose HP in combat, disable this relic for the rest of combat",
   "THEHEROEXPANSION-DAINTY_DANDELION.eventDescription": "Gain {Energy:energyIcons()} at the start of each turn. Whenever you lose HP in combat, disable this relic for the rest of combat",
   "THEHEROEXPANSION-DAINTY_DANDELION.flavor": "lol",
-  "THEHEROEXPANSION-DAINTY_DANDELION.title": "Dainty Dandelion"
+  "THEHEROEXPANSION-DAINTY_DANDELION.title": "Dainty Dandelion",
+  "THEHEROEXPANSION-SHARED_RESERVES.title": "Shared Reserves",
+  "THEHEROEXPANSION-SHARED_RESERVES.description": "At the start of combat, add a [gold]Share Energy[/gold] card to your [gold]Hand[/gold] for free. Any unspent {energyPrefix:energyIcons(1)} at the end of your turn gets added to it.",
+  "THEHEROEXPANSION-SHARED_RESERVES.flavor": "Daniel is awesome"
 }
