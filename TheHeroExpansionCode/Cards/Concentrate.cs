@@ -18,6 +18,9 @@ public class Concentrate() : TheHeroExpansionCard(0,
 {
     public override CardPoolModel VisualCardPool => ModelDb.CardPool<SilentCardPool>();
     
+    public override IEnumerable<CardKeyword> CanonicalKeywords => 
+        [CardKeyword.Exhaust];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(2),
@@ -43,6 +46,6 @@ public class Concentrate() : TheHeroExpansionCard(0,
     
     protected override void OnUpgrade()
     {
-        this.DynamicVars.Energy.UpgradeValueBy(1);
+        this.RemoveKeyword(CardKeyword.Exhaust);
     }
 }

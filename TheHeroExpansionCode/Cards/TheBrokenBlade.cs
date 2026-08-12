@@ -8,9 +8,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Characters;
+using MegaCrit.Sts2.Core.Rewards;
+using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.Saves;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
+using TheHeroExpansion.TheHeroExpansionCode.Extensions;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(ColorlessCardPool))]
@@ -18,6 +22,8 @@ public class TheBrokenBlade() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Rare,
     TargetType.AnyEnemy, nameof(TheBrokenBlade))
 {
+    //look at extensions for cross mod compatability
+    
     public override bool CanBeGeneratedInCombat => false;
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -25,8 +31,6 @@ public class TheBrokenBlade() : TheHeroExpansionCard(1,
 
     private int _playsRemaining = 5;
 
-    // Persists across combats within the run, same pattern as Dowsing's
-    // RoomsEntered / TheScythe's CurrentDamage.
     [SavedProperty]
     public int PlaysRemaining
     {
@@ -58,30 +62,35 @@ public class TheBrokenBlade() : TheHeroExpansionCard(1,
                 return Array.Empty<IHoverTip>();
 
             CardModel? card = GetBladeInstanceForCharacter(this.Owner.Character);
-            return card == null ? Array.Empty<IHoverTip>() : new[] { HoverTipFactory.FromCard(card) };
+            return card == null ? Array.Empty<IHoverTip>() : new[] { HoverTipFactory.FromCard(card, this.IsUpgraded) };
         }
     }
 
-    // Compendium/no-owner view shows the generic placeholder text; an actual
-    // owned instance shows the real blade's localized title.
     private string GetBladeName()
     {
         if (this.IsCanonical || this.Owner == null)
-            return "character specific blade";
+            return "a character specific blade";
 
         CardModel? card = GetBladeInstanceForCharacter(this.Owner.Character);
         return card?.Title ?? "character specific blade";
     }
-
-    private static CardModel? GetBladeInstanceForCharacter(CharacterModel character) => character switch
+    private static CardModel? GetBladeInstanceForCharacter(CharacterModel character)
     {
-        Ironclad => ModelDb.Card<TheScorchedBlade>(),
-        Silent => ModelDb.Card<TheTaintedBlade>(),
-        Regent => ModelDb.Card<TheSecondBlade>(),
-        Necrobinder => ModelDb.Card<TheMarrowBlade>(),
-        Defect => ModelDb.Card<TheSavageBlade>(),
-        _ => ModelDb.Card<TheFinishedBlade>()
-    };
+        switch (character)
+        {
+            case Ironclad: return ModelDb.Card<TheScorchedBlade>();
+            case Silent: return ModelDb.Card<TheTaintedBlade>();
+            case Regent: return ModelDb.Card<TheSecondBlade>();
+            case Necrobinder: return ModelDb.Card<TheMarrowBlade>();
+            case Defect: return ModelDb.Card<TheSavageBlade>();
+        }
+
+        if (CustomBrokenBladeExtension.CustomBladeCards.TryGetValue(
+                ((AbstractModel)character).Id, out ModelId customCardId))
+            return SaveUtil.CardOrDeprecated(customCardId);
+
+        return ModelDb.Card<TheFinishedBlade>();
+    }
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -95,85 +104,33 @@ public class TheBrokenBlade() : TheHeroExpansionCard(1,
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3")
             .Execute(choiceContext);
 
+        if (theBrokenBlade.PlaysRemaining == 0)
+            return;
+
         theBrokenBlade.PlaysRemaining--;
 
-        // The card played in combat is a separate instance from its permanent
-        // deck copy - same dual-update TheScythe does for its own persistent
-        // stat via DeckVersion, otherwise the change never survives past this
-        // combat.
-        TheBrokenBlade? deckVersion = theBrokenBlade.DeckVersion as TheBrokenBlade;
-        if (deckVersion != null)
+        if (theBrokenBlade.DeckVersion is TheBrokenBlade deckVersion)
             deckVersion.PlaysRemaining = theBrokenBlade.PlaysRemaining;
-
-        if (theBrokenBlade.PlaysRemaining > 0)
-            return;
-
-        // Whether the transformed result comes out upgraded depends on whether
-        // THIS card (Broken Blade) was upgraded - not always-upgraded.
-        bool shouldUpgradeResult = theBrokenBlade.IsUpgraded;
-
-        // Transform the in-combat instance (temporary, for this fight's visuals/
-        // mechanics) AND the deck version (permanent, so it sticks for the rest
-        // of the run) - same reasoning as the DeckVersion.PlaysRemaining sync
-        // above. TransformTo<T> needs a compile-time type argument, so this is
-        // an explicit branch per character rather than something driven off the
-        // GetBladeInstanceForCharacter switch used for the hover tip.
-        if (theBrokenBlade.Owner.Character is Ironclad)
-        {
-            await TransformBothVersions<TheScorchedBlade>(theBrokenBlade, deckVersion, shouldUpgradeResult);
-        }
-        else if (theBrokenBlade.Owner.Character is Silent)
-        {
-            await TransformBothVersions<TheTaintedBlade>(theBrokenBlade, deckVersion, shouldUpgradeResult);
-        }
-        else if (theBrokenBlade.Owner.Character is Regent)
-        {
-            await TransformBothVersions<TheSecondBlade>(theBrokenBlade, deckVersion, shouldUpgradeResult);
-        }
-        else if (theBrokenBlade.Owner.Character is Necrobinder)
-        {
-            await TransformBothVersions<TheMarrowBlade>(theBrokenBlade, deckVersion, shouldUpgradeResult);
-        }
-        else if (theBrokenBlade.Owner.Character is Defect)
-        {
-            await TransformBothVersions<TheSavageBlade>(theBrokenBlade, deckVersion, shouldUpgradeResult);
-        }
-        else
-        {
-            await TransformBothVersions<TheFinishedBlade>(theBrokenBlade, deckVersion, shouldUpgradeResult);
-        }
     }
 
-    private static async Task TransformBothVersions<T>(
-        TheBrokenBlade combatInstance,
-        TheBrokenBlade? deckVersion,
-        bool shouldUpgradeResult)
-        where T : CardModel
+    public override async Task BeforeCombatRewardOffered(RewardsSet rewardsSet, CombatRoom room)
     {
-        // Combat instance - handles this fight's visuals/mechanics.
-        CardPileAddResult? combatResult = await CardCmd.TransformTo<T>(combatInstance);
-        if (combatResult?.cardAdded != null)
-        {
-            CardModel transformedCombatCard = combatResult.Value.cardAdded;
-            if (shouldUpgradeResult)
-                CardCmd.Upgrade(transformedCombatCard);
-
-            // CardCmd.Transform re-inserts the replacement into whatever pile the
-            // original was in (Play, since we're mid-OnPlay) - normal card-play
-            // cleanup only ever looks at the OLD card reference (which Transform
-            // already removed from its pile), so nothing else ever moves the new
-            // card out of Play. Do it ourselves.
-            if (transformedCombatCard.Pile?.Type == PileType.Play)
-                await CardPileCmd.Add(transformedCombatCard, PileType.Discard);
-        }
-
-        // Deck version - makes the transform stick for the rest of the run,
-        // same reasoning as Dowsing transforming while sitting in the Deck pile.
-        if (deckVersion == null)
+        TheBrokenBlade theBrokenBlade = this;
+        if (theBrokenBlade.PlaysRemaining > 0)
+            return;
+        if (theBrokenBlade.Pile?.Type != PileType.Deck)
             return;
 
-        CardPileAddResult? deckResult = await CardCmd.TransformTo<T>(deckVersion);
-        if (shouldUpgradeResult && deckResult?.cardAdded != null)
-            CardCmd.Upgrade(deckResult.Value.cardAdded);
+        bool shouldUpgradeResult = theBrokenBlade.IsUpgraded;
+        
+        CardModel canonicalTarget = GetBladeInstanceForCharacter(theBrokenBlade.Owner.Character)
+            ?? ModelDb.Card<TheFinishedBlade>();
+        CardModel cardForTransform = theBrokenBlade.Owner.RunState.CreateCard(canonicalTarget, theBrokenBlade.Owner);
+
+        if (shouldUpgradeResult)
+            CardCmd.Upgrade(cardForTransform);
+
+        await CardCmd.Transform(theBrokenBlade, cardForTransform);
+        await Cmd.Wait(2.3f);
     }
 }

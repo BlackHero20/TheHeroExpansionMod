@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
+using TheHeroExpansion.TheHeroExpansionCode.Powers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(EventCardPool))]
@@ -28,7 +29,7 @@ public class TheTaintedBlade() : TheHeroExpansionCard(1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<PoisonPower>(),
-        HoverTipFactory.FromPower<EnfeeblingTouchPower>()
+        HoverTipFactory.FromPower<TaintedBladePower>()
     ];
 
     protected override async Task OnPlay(
@@ -51,7 +52,7 @@ public class TheTaintedBlade() : TheHeroExpansionCard(1,
         await PowerCmd.Apply<PoisonPower>(choiceContext, cardPlay.Target,
             (decimal)damageDealt, theTaintedBlade.Owner.Creature, theTaintedBlade);
 
-        await PowerCmd.Apply<EnfeeblingTouchPower>(choiceContext, cardPlay.Target,
+        await PowerCmd.Apply<TaintedBladePower>(choiceContext, cardPlay.Target,
             (decimal)damageDealt, theTaintedBlade.Owner.Creature, theTaintedBlade);
     }
 

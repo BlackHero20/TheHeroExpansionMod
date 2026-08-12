@@ -21,6 +21,7 @@ public class RigorMortis() : TheHeroExpansionCard(1,
     [
         HoverTipFactory.FromPower<DoomPower>()
     ];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CalculationBaseVar(0M),

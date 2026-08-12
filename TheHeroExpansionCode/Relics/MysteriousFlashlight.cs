@@ -6,12 +6,15 @@ using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Models.Characters;
 using MegaCrit.Sts2.Core.Models.RelicPools;
 using MegaCrit.Sts2.Core.Runs;
+using MegaCrit.Sts2.Core.Saves.Runs;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
 using MegaCrit.Sts2.Core.Context;
+using MegaCrit.Sts2.Core.Saves;
+using TheHeroExpansion.TheHeroExpansionCode.Extensions;
 using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
@@ -19,6 +22,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 [Pool(typeof(SharedRelicPool))]
 public class MysteriousFlashlight() : TheHeroExpansionRelic(nameof(MysteriousFlashlight))
 {
+    //look at extensions for cross mod compatability
     public override RelicRarity Rarity => RelicRarity.Shop;
 
     private IEnumerable<IHoverTip> _extraHoverTips = Array.Empty<IHoverTip>();
@@ -39,7 +43,7 @@ public class MysteriousFlashlight() : TheHeroExpansionRelic(nameof(MysteriousFla
             if (player == null)
                 return Array.Empty<IHoverTip>();
 
-            CardModel? card = GetCardForPool(player.Character.CardPool);
+            CardModel? card = GetCardForCharacter(player.Character);
 
             if (card == null)
                 return Array.Empty<IHoverTip>();
@@ -52,25 +56,30 @@ public class MysteriousFlashlight() : TheHeroExpansionRelic(nameof(MysteriousFla
     [
         new StringVar("CardName")
     ];
-
-    private static CardModel? GetCardForPool(CardPoolModel pool)
+    
+    private static CardModel? GetCardForCharacter(CharacterModel character)
     {
-        return pool switch
+        switch (character)
         {
-            IroncladCardPool    => ModelDb.Card<Exhume>(),
-            SilentCardPool      => ModelDb.Card<Concentrate>(),
-            DefectCardPool      => ModelDb.Card<Seek>(),
-            NecrobinderCardPool => ModelDb.Card<Resent>(),
-            RegentCardPool      => ModelDb.Card<Remember>(),
-            _                   => ModelDb.Card<DejaVu>()
-        };
+            case Ironclad: return ModelDb.Card<Exhume>();
+            case Silent: return ModelDb.Card<Concentrate>();
+            case Defect: return ModelDb.Card<Seek>();
+            case Necrobinder: return ModelDb.Card<Resent>();
+            case Regent: return ModelDb.Card<Remember>();
+        }
+
+        if (CustomMysteriousFlashlightExtension.CustomFlashlightCards.TryGetValue(
+                ((AbstractModel)character).Id, out ModelId customCardId))
+            return SaveUtil.CardOrDeprecated(customCardId);
+
+        return ModelDb.Card<DejaVu>();
     }
 
     public override async Task AfterObtained()
     {
         MysteriousFlashlight relic = this;
 
-        var canonical = GetCardForPool(relic.Owner.Character.CardPool);
+        var canonical = GetCardForCharacter(relic.Owner.Character);
         if (canonical == null) return;
 
         var card = relic.Owner.RunState.CreateCard(canonical, relic.Owner);

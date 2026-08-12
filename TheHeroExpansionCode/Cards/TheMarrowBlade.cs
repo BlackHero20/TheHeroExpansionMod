@@ -22,6 +22,11 @@ public class TheMarrowBlade() : TheHeroExpansionCard(1,
     public override CardPoolModel VisualCardPool => ModelDb.CardPool<NecrobinderCardPool>();
     
     protected override bool ShouldGlowRedInternal => this.Owner.IsOstyMissing;
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Ethereal
+    ];
  
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

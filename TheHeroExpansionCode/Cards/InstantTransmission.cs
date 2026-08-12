@@ -11,7 +11,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(RegentCardPool))]
-public class InstantTransmission() : TheHeroExpansionCard(0,
+public class InstantTransmission() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self, nameof(InstantTransmission))
 {

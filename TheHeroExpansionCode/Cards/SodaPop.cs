@@ -49,6 +49,6 @@ public class SodaPop() : TheHeroExpansionCard(2,
 
     protected override void OnUpgrade()
     {
-        this.AddKeyword(CardKeyword.Retain);
+        this.RemoveKeyword(CardKeyword.Exhaust);
     }
 }

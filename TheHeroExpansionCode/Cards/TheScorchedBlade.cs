@@ -19,17 +19,23 @@ public class TheScorchedBlade() : TheHeroExpansionCard(1,
     public override CardPoolModel VisualCardPool => ModelDb.CardPool<IroncladCardPool>();
     
     private readonly List<CardModel> _exhaustedByThisCard = [];
- 
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(8M, ValueProp.Move)
     ];
-    
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
     ];
- 
+    
+    public override Task BeforeCombatStartLate()
+    {
+        _exhaustedByThisCard.Clear();
+        return Task.CompletedTask;
+    }
+
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
@@ -55,13 +61,13 @@ public class TheScorchedBlade() : TheHeroExpansionCard(1,
         {
             CardSelectorPrefs prefs = new CardSelectorPrefs(theScorchedBlade.SelectionScreenPrompt, 1);
             selected = (await CardSelectCmd.FromHand(choiceContext, theScorchedBlade.Owner, prefs,
-                c => c != theScorchedBlade, theScorchedBlade)).FirstOrDefault();
+                c => c != theScorchedBlade && c.Type == CardType.Skill, theScorchedBlade)).FirstOrDefault();
         }
         else
         {
             CardPile pile = PileType.Hand.GetPile(theScorchedBlade.Owner);
             selected = theScorchedBlade.Owner.RunState.Rng.CombatCardSelection.NextItem(
-                pile.Cards.Where(c => c != theScorchedBlade));
+                pile.Cards.Where(c => c != theScorchedBlade && c.Type == CardType.Skill));
         }
  
         if (selected == null)

@@ -7,7 +7,6 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Powers;
 
 public abstract class TheHeroExpansionPower : CustomPowerModel
 {
-    //Loads from TheHeroExpansion/images/powers/your_power.png
     public override string CustomPackedIconPath
     {
         get

@@ -1,19 +1,23 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Models.Characters;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
+using TheHeroExpansion.TheHeroExpansionCode.Keywords;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(EventCardPool))]
@@ -22,23 +26,28 @@ public class TheSecondBlade() : TheHeroExpansionCard(2,
     TargetType.AnyEnemy, nameof(TheBrokenBlade))
 {
     public override CardPoolModel VisualCardPool => ModelDb.CardPool<RegentCardPool>();
-    
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
-        [CardKeyword.Retain];
-    
+ 
+     public override IEnumerable<CardKeyword> CanonicalKeywords =>
+        [CardKeyword.Retain, TheHeroExpansionKeywords.Sovereign];
+     
+     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+     [
+         HoverTipFactory.FromCard<SovereignBlade>(IsUpgraded)
+     ];
+     
     public override TargetType TargetType =>
         !HasSeekingEdge ? TargetType.AnyEnemy : TargetType.AllEnemies;
-
+    
     public override bool GainsBlock => GetOwnerParryAmount(this) > 0M;
-
+ 
     private bool HasSeekingEdge =>
         IsMutable && Owner != null && Owner.Creature.HasPower<SeekingEdgePower>();
-
+ 
     private static decimal GetOwnerParryAmount(CardModel card) =>
         !card.IsMutable || card.Owner == null || card.Pile == null || !card.Pile.IsCombatPile
             ? 0M
             : (decimal)card.Owner.Creature.GetPowerAmount<ParryPower>();
-
+ 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(10M, ValueProp.Move),
@@ -50,19 +59,21 @@ public class TheSecondBlade() : TheHeroExpansionCard(2,
         new DynamicVar("HasEdgeOfDestiny", 0M),
         new StringVar("SeekingEdgeSuffix")
     ];
-
+ 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
         TheSecondBlade theSecondBlade = this;
-        int swordSageStacks = (int)theSecondBlade.Owner.Creature.GetPowerAmount<SwordSagePower>();
-        int hitCount = theSecondBlade.DynamicVars.Repeat.IntValue + swordSageStacks;
-
+        string animName = theSecondBlade.Owner.Character is Regent ? "sovereignBladeTrigger" : "Cast";
+        float delay = theSecondBlade.Owner.Character is Regent ? 0.25f : theSecondBlade.Owner.Character.CastAnimDelay;
+ 
         AttackCommand attackCommand1 = DamageCmd.Attack(theSecondBlade.DynamicVars.Damage.BaseValue)
             .FromCard(theSecondBlade, cardPlay)
-            .WithHitCount(hitCount);
-
+            .WithHitCount(theSecondBlade.DynamicVars.Repeat.IntValue)
+            .WithAttackerAnim(animName, delay)
+            .WithAttackerFx(sfx: "event:/sfx/characters/regent/regent_sovereign_blade");
+ 
         AttackCommand attackCommand2;
         if (theSecondBlade.HasSeekingEdge)
         {
@@ -73,12 +84,12 @@ public class TheSecondBlade() : TheHeroExpansionCard(2,
                     IReadOnlyList<Creature> hittableEnemies = theSecondBlade.CombatState.HittableEnemies;
                     if (hittableEnemies.Count <= 0)
                         return Task.CompletedTask;
-
+ 
                     NSovereignBladeVfx? vfxNode = SovereignBlade.GetVfxNode(theSecondBlade.Owner, theSecondBlade);
                     NCreature? creatureNode = NCombatRoom.Instance?.GetCreatureNode(hittableEnemies[0]);
                     if (vfxNode != null && creatureNode != null)
                         vfxNode.Attack(creatureNode.VfxSpawnPosition);
-
+ 
                     return Task.CompletedTask;
                 })
                 .WithHitFx("vfx/vfx_giant_horizontal_slash", tmpSfx: "slash_attack.mp3");
@@ -94,15 +105,15 @@ public class TheSecondBlade() : TheHeroExpansionCard(2,
                     NCreature? creatureNode = NCombatRoom.Instance?.GetCreatureNode(cardPlay.Target);
                     if (vfxNode != null && creatureNode != null)
                         vfxNode.Attack(creatureNode.VfxSpawnPosition);
-
+ 
                     return Task.CompletedTask;
                 })
                 .WithHitVfxNode(NBigSlashVfx.Create)
                 .WithHitVfxNode(NBigSlashImpactVfx.Create);
         }
-
+ 
         await attackCommand2.Execute(choiceContext);
-
+ 
         if (GetOwnerParryAmount(theSecondBlade) > 0M)
         {
             await CreatureCmd.GainBlock(theSecondBlade.Owner.Creature,
@@ -118,10 +129,19 @@ public class TheSecondBlade() : TheHeroExpansionCard(2,
     {
         if (card != this)
             return Task.CompletedTask;
-
-        if (oldPileType == PileType.None || oldPileType == PileType.Exhaust)
+ 
+        if (oldPileType == PileType.Exhaust)
             ForgeCmd.PlayCombatRoomForgeVfx(this.Owner, this);
-
+ 
+        return Task.CompletedTask;
+    }
+    
+    public override Task BeforeCombatStart()
+    {
+        if (this.Pile?.Type == PileType.Deck)
+            return Task.CompletedTask;
+ 
+        ForgeCmd.PlayCombatRoomForgeVfx(this.Owner, this);
         return Task.CompletedTask;
     }
     
@@ -130,7 +150,7 @@ public class TheSecondBlade() : TheHeroExpansionCard(2,
         DamageVar damage = this.DynamicVars.Damage;
         damage.BaseValue = damage.BaseValue + amount;
     }
-
+ 
     protected override void OnUpgrade()
     {
         this.EnergyCost.UpgradeBy(-1);

@@ -12,7 +12,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(EventCardPool))]
-public class Exhume() : TheHeroExpansionCard(0,
+public class Exhume() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Event,
     TargetType.Self, nameof(MysteriousFlashlight))
 {
@@ -46,6 +46,6 @@ public class Exhume() : TheHeroExpansionCard(0,
 
     protected override void OnUpgrade()
     {
-        this.AddKeyword(CardKeyword.Retain);
+        this.EnergyCost.UpgradeBy(-1);
     }
 }
