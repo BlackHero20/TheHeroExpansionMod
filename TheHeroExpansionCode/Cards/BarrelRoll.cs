@@ -32,7 +32,7 @@ public class BarrelRoll() : TheHeroExpansionCard(1,
         BarrelRoll barrelRoll = this;
         await CreatureCmd.GainBlock(barrelRoll.Owner.Creature, barrelRoll.DynamicVars.Block, cardPlay);
 
-        var debrisPile = barrelRoll.IsUpgraded ? PileType.Discard : PileType.Draw;
+        var debrisPile = barrelRoll.IsUpgraded ? PileType.Hand : PileType.Draw;
         CardCmd.PreviewCardPileAdd(
             await CardPileCmd.AddGeneratedCardToCombat(
                 barrelRoll.CombatState.CreateCard<Debris>(barrelRoll.Owner),

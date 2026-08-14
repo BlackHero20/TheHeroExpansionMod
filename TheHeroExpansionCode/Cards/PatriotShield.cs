@@ -17,6 +17,8 @@ public class PatriotShield() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self, nameof(PatriotShield))
 {
+    public override bool GainsBlock => true;
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new BlockVar(7M, ValueProp.Move)

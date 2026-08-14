@@ -14,7 +14,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class Fma() : TheHeroExpansionCard(1,
     CardType.Power, CardRarity.Rare,
-    TargetType.Self, nameof(Fire))
+    TargetType.Self, nameof(Fma))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

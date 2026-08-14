@@ -16,6 +16,8 @@ public class JustLucky() : TheHeroExpansionCard(0,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy, nameof(JustLucky))
 {
+    public override bool GainsBlock => true;
+    
     public override IEnumerable<CardKeyword> CanonicalKeywords => 
         [CardKeyword.Exhaust];
     

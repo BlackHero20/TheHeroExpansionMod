@@ -31,10 +31,10 @@ public class Eerie() : TheHeroExpansionCard(1,
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
-        CardPlay play)
+        CardPlay cardPlay)
     {
         Eerie eerie = this;
-        await CreatureCmd.GainBlock(eerie.Owner.Creature, eerie.DynamicVars.Block, null);
+        await CreatureCmd.GainBlock(eerie.Owner.Creature, eerie.DynamicVars.Block, cardPlay);
         
         CardSelectorPrefs prefs = new CardSelectorPrefs(eerie.SelectionScreenPrompt, 1);
         CardModel card = (await CardSelectCmd.FromHand(choiceContext, eerie.Owner, prefs,

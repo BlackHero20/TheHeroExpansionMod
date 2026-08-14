@@ -18,6 +18,8 @@ public class CrystalFocus() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self, nameof(CrystalFocus))
 {
+    public override bool GainsBlock => true;
+    
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
         [CardKeyword.Retain];
 
