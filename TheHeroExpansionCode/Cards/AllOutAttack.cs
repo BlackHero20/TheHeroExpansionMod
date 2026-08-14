@@ -13,7 +13,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(NecrobinderCardPool))]
 public class AllOutAttack() : TheHeroExpansionCard(2,
     CardType.Attack, CardRarity.Common,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(AllOutAttack))
 {
     protected override bool ShouldGlowRedInternal => Owner.IsOstyMissing;
 

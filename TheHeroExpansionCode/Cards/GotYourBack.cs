@@ -13,7 +13,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(NecrobinderCardPool))]
 public class GotYourBack() : TheHeroExpansionCard(2,
-    CardType.Skill, CardRarity.Rare, TargetType.Self)
+    CardType.Skill, CardRarity.Rare, TargetType.Self, nameof(GotYourBack))
 {
     protected override bool ShouldGlowRedInternal => this.Owner.IsOstyMissing;
     

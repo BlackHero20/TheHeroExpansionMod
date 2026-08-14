@@ -19,7 +19,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(EventCardPool))]
 public class MasterfulStab() : TheHeroExpansionCard(0,
     CardType.Attack, CardRarity.Event,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(MasterfulStab))
 {
     public override CardPoolModel VisualCardPool => ModelDb.CardPool<SilentCardPool>();
 

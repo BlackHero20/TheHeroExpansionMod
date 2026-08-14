@@ -10,7 +10,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(TokenCardPool))]
 public class BustedCore() : TheHeroExpansionCard(0,
     CardType.Status, CardRarity.Status,
-    TargetType.Self)
+    TargetType.Self, nameof(SelfDestruct))
 {
     public override int MaxUpgradeLevel => 0;
     

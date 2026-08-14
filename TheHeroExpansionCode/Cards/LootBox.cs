@@ -15,7 +15,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(DefectCardPool))]
 public class LootBox() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,
-    TargetType.Self)
+    TargetType.Self, nameof(LootBox))
 {
     public override bool CanBeGeneratedInCombat => false;
     

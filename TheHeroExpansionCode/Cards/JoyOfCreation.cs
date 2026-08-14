@@ -12,7 +12,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(RegentCardPool))]
 public class JoyOfCreation() : TheHeroExpansionCard(1,
     CardType.Power, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.Self, nameof(JoyOfCreation))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

@@ -159,6 +159,22 @@ public static class CheatDisplay
             slot.Size = new Vector2(cardWidth, cardHeight);
             slot.Position = cardPos - new Vector2(0f, cardHeight / 2f);
             _container.AddChild(slot);
+            
+            if (i == 0)
+            {
+                const float glowPadding = 2f;
+                var glow = new ColorRect();
+                glow.Color = new Color(1f, 0.85f, 0.2f, 0.55f);
+                glow.Size = new Vector2(cardWidth, cardHeight) + new Vector2(glowPadding, glowPadding) * 2f;
+                glow.Position = -new Vector2(glowPadding, glowPadding);
+                glow.MouseFilter = Control.MouseFilterEnum.Ignore;
+                slot.AddChild(glow);
+
+                var glowTween = slot.CreateTween();
+                glowTween.SetLoops();
+                glowTween.TweenProperty(glow, "modulate:a", 0.7f, 0.6f);
+                glowTween.TweenProperty(glow, "modulate:a", 1f, 0.6f);
+            }
 
             var miniCard = NCard.Create(topCards[i]);
             if (miniCard != null)

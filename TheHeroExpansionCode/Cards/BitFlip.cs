@@ -16,7 +16,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(DefectCardPool))]
 public class BitFlip() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.Self, nameof(BitFlip))
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => 
     [

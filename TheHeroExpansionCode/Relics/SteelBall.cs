@@ -12,7 +12,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 [Pool(typeof(EventRelicPool))]
-public class SteelBall() : TheHeroExpansionRelic
+public class SteelBall() : TheHeroExpansionRelic(nameof(SteelBall))
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
     

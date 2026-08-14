@@ -7,13 +7,14 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models;
 using TheHeroExpansion.TheHeroExpansionCode.Cards;
+using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(EventCardPool))]
-public class Exhume() : TheHeroExpansionCard(0,
+public class Exhume() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Event,
-    TargetType.Self)
+    TargetType.Self, nameof(MysteriousFlashlight))
 {
     public override CardPoolModel VisualCardPool => ModelDb.CardPool<IroncladCardPool>();
     
@@ -45,6 +46,6 @@ public class Exhume() : TheHeroExpansionCard(0,
 
     protected override void OnUpgrade()
     {
-        this.AddKeyword(CardKeyword.Retain);
+        this.EnergyCost.UpgradeBy(-1);
     }
 }

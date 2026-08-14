@@ -13,7 +13,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 [Pool(typeof(SharedRelicPool))]
-public class PottedAloeVera() : TheHeroExpansionRelic
+public class PottedAloeVera() : TheHeroExpansionRelic(nameof(PottedAloeVera))
 {
     public override RelicRarity Rarity =>
         RelicRarity.Rare;

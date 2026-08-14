@@ -15,7 +15,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(NecrobinderCardPool))]
 public class Swipe() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Common,
-    TargetType.AllEnemies)
+    TargetType.AllEnemies, nameof(Swipe))
 {
     protected override bool ShouldGlowRedInternal => this.Owner.IsOstyMissing;
     

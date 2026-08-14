@@ -12,7 +12,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(RegentCardPool))]
 public class TheWorld() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Rare,
-    TargetType.Self)
+    TargetType.Self, nameof(TheWorld))
 {
     public override int CanonicalStarCost => 9;
     

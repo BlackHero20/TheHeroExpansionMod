@@ -16,7 +16,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Potions;
 [Pool(typeof(SharedPotionPool))]
-public sealed class TimeInABottle : TheHeroExpansionPotion
+public class TimeInABottle() : TheHeroExpansionPotion(nameof(TimeInABottle))
 {
     public override PotionRarity Rarity => PotionRarity.Uncommon;
     public override PotionUsage Usage => PotionUsage.CombatOnly;

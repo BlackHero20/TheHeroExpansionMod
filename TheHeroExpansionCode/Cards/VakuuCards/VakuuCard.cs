@@ -6,11 +6,12 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
+using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards.VakuuCards;
 
 public abstract class VakuuCard(int cost, CardType type, TargetType targetType)
-    : TheHeroExpansionCard(cost, type, CardRarity.Ancient, targetType)
+    : TheHeroExpansionCard(cost, type, CardRarity.Ancient, targetType, nameof(TheRing))
 {
     protected override bool ShouldGlowRedInternal => true;
     public override int MaxUpgradeLevel => 1;

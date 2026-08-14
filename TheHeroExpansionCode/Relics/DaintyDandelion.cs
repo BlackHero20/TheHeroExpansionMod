@@ -15,7 +15,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 [Pool(typeof(EventRelicPool))]
-public class DaintyDandelion() : TheHeroExpansionRelic
+public class DaintyDandelion() : TheHeroExpansionRelic(nameof(DaintyDandelion))
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 

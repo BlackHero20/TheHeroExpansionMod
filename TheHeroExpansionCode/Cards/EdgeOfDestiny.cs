@@ -12,7 +12,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(RegentCardPool))]
 public class EdgeOfDestiny() : TheHeroExpansionCard(1,
-    CardType.Power, CardRarity.Rare, TargetType.Self)
+    CardType.Power, CardRarity.Rare, TargetType.Self, nameof(EdgeOfDestiny))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

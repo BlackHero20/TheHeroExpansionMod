@@ -11,7 +11,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(ColorlessCardPool))]
 public class ReinforcedBody() : TheHeroExpansionCard(0,
     CardType.Skill, CardRarity.Rare,
-    TargetType.Self)
+    TargetType.Self, nameof(ReinforcedBody))
 {
     protected override bool HasEnergyCostX => true;
     

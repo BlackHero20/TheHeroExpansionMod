@@ -13,7 +13,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class VolcanicViper() : TheHeroExpansionCard(3,
     CardType.Attack, CardRarity.Uncommon,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(VolcanicViper))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

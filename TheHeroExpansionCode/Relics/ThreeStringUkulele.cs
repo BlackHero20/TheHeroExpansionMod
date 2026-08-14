@@ -13,7 +13,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 [Pool(typeof(SharedRelicPool))]
-public class ThreeStringUkulele() : TheHeroExpansionRelic
+public class ThreeStringUkulele() : TheHeroExpansionRelic(nameof(ThreeStringUkulele))
 {
     private bool _activatedThisCombat;
 

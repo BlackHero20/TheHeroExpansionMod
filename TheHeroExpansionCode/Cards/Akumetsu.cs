@@ -15,7 +15,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(IroncladCardPool))]
 public class Akumetsu() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.Self, nameof(Akumetsu))
 {
     public override bool GainsBlock => true;
 

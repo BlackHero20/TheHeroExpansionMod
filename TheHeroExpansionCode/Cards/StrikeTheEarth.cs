@@ -16,7 +16,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(RegentCardPool))]
 public class StrikeTheEarth() : TheHeroExpansionCard(0,
     CardType.Attack, CardRarity.Common,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(StrikeTheEarth))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

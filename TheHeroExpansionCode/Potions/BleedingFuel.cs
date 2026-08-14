@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.Models.PotionPools;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Potions;
 [Pool(typeof(SharedPotionPool))]
-public class BleedingFuel : TheHeroExpansionPotion
+public class BleedingFuel() : TheHeroExpansionPotion(nameof(BleedingFuel))
 {
     public override PotionRarity Rarity => PotionRarity.Rare;
 

@@ -13,7 +13,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class Groundwork() : TheHeroExpansionCard(2,
     CardType.Attack, CardRarity.Common,
-    TargetType.AllEnemies)
+    TargetType.AllEnemies, nameof(Groundwork))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

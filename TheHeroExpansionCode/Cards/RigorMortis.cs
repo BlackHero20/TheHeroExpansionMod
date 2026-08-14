@@ -13,7 +13,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(NecrobinderCardPool))]
 public class RigorMortis() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.AnyEnemy)
+    TargetType.AnyEnemy, nameof(RigorMortis))
 {
     protected override bool ShouldGlowRedInternal => this.Owner.IsOstyMissing;
     
@@ -21,6 +21,7 @@ public class RigorMortis() : TheHeroExpansionCard(1,
     [
         HoverTipFactory.FromPower<DoomPower>()
     ];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CalculationBaseVar(0M),

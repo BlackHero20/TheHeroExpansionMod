@@ -15,7 +15,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(SilentCardPool))]
 public class Repurpose() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Common,
-    TargetType.Self)
+    TargetType.Self, nameof(Repurpose))
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         HoverTipFactory.FromEnchantment<Advantageous>((int)this.DynamicVars["Advantageous"].BaseValue);
@@ -23,7 +23,7 @@ public class Repurpose() : TheHeroExpansionCard(1,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CardsVar(1),
-        new DynamicVar("Advantageous", 2)
+        new DynamicVar("Advantageous", 1)
     ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

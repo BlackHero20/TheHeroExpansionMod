@@ -10,7 +10,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(IroncladCardPool))]
 public class BetterDays() : TheHeroExpansionCard(1,
-    CardType.Power, CardRarity.Rare, TargetType.Self)
+    CardType.Power, CardRarity.Rare, TargetType.Self, nameof(BetterDays))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

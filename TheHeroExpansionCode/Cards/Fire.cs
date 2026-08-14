@@ -12,7 +12,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(RegentCardPool))]
 public class Fire() : TheHeroExpansionCard(1,
     CardType.Skill, CardRarity.Rare,
-    TargetType.Self)
+    TargetType.Self, nameof(Fire))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

@@ -13,7 +13,7 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(NecrobinderCardPool))]
 public class Yokai() : TheHeroExpansionCard(2,
     CardType.Power, CardRarity.Rare,
-    TargetType.Self)
+    TargetType.Self, nameof(Yokai))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
