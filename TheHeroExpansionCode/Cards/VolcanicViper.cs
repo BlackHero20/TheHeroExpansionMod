@@ -47,12 +47,8 @@ public class VolcanicViper() : TheHeroExpansionCard(3,
             var poison = cardPlay.Target.GetPower<PoisonPower>();
             if (poison == null || poison.Amount <= 0)
                 break;
-
-            await CreatureCmd.Damage(choiceContext, cardPlay.Target,
-                (decimal)poison.Amount,
-                ValueProp.Unblockable | ValueProp.Unpowered,
-                cardPlay.Target, volcanicViper, cardPlay);
-            await PowerCmd.Decrement(poison);
+            
+            await poison.Trigger();
         }
     }
 

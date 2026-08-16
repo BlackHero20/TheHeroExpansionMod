@@ -19,6 +19,8 @@ public class KickOfTheFinalHour() : TheHeroExpansionCard(5,
     private bool _discountActive; 
     private int _pendingDiscountAmount;
 
+    protected override bool ShouldGlowGoldInternal => this._discountActive;
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(12M, ValueProp.Move),

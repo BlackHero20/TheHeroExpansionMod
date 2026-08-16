@@ -21,6 +21,8 @@ public class Transfusion() : TheHeroExpansionCard(1,
     CardType.Attack, CardRarity.Common,
     TargetType.AllEnemies, nameof(Transfusion))
 {
+    protected override bool ShouldGlowGoldInternal => Transfusion.LostHpThisTurn(this.Owner.Creature);
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<StrengthPower>(1),
