@@ -8,8 +8,8 @@
   "THEHEROEXPANSION-BEAST_WITHIN_POWER.description": "Whenever you deal single target damage to a [gold]Vulnerable[/gold] enemy, deal that much damage to ALL other enemies [blue]X[/blue] times",
   "THEHEROEXPANSION-BEAST_WITHIN_POWER.smartDescription": "Whenever you deal single target damage to a [gold]Vulnerable[/gold] enemy, deal that much damage to ALL other enemies [blue]{Amount}[/blue] {Amount:plural:time|times}",
   "THEHEROEXPANSION-BEAST_WITHIN_POWER.title": "Beast Within",
-  "THEHEROEXPANSION-BETTER_DAYS_POWER.description": "Whenever you lose HP, Heal [blue]X[/blue] HP.",
-  "THEHEROEXPANSION-BETTER_DAYS_POWER.smartDescription": "Whenever you lose HP, Heal [blue]{Amount}[/blue] HP.",
+  "THEHEROEXPANSION-BETTER_DAYS_POWER.description": "Whenever you lose HP on your turn, heal that much for [blue]X[/blue] turns.",
+  "THEHEROEXPANSION-BETTER_DAYS_POWER.smartDescription": "Whenever you lose HP on your turn, heal that much {Amount:plural:this turn|for the next [blue]{}[/blue] turns}.",
   "THEHEROEXPANSION-BETTER_DAYS_POWER.title": "Better Days",
   "THEHEROEXPANSION-REPURPOSE_POWER.description": "At the end of your turn, [gold]Retain[/gold] [blue]1[/blue] card and [gold]Enchant[/gold] it with [purple]Advantageous X[/purple].",
   "THEHEROEXPANSION-REPURPOSE_POWER.smartDescription": "At the end of your turn, [gold]Retain[/gold] [blue]{Amount}[/blue] {Amount:plural:card|cards} and [gold]Enchant[/gold] {Amount:plural:it|them} with [purple]Advantageous {Advantageous:diff()}[/purple].",
@@ -60,8 +60,8 @@
   "THEHEROEXPANSION-SUPER_FORM_POWER.description": "At the start of your turn, gain [blue]X[/blue] [gold]Momentum[/gold].",
   "THEHEROEXPANSION-SUPER_FORM_POWER.smartDescription": "At the start of your turn, gain [blue]{Amount}[/blue] [gold]Momentum[/gold].",
   "THEHEROEXPANSION-SUPER_FORM_POWER.title": "Super Form",
-  "THEHEROEXPANSION-VAKUUS_PRANK_POWER.description": "Take [blue]X[/blue] Damage at the end of turn.\n\n[red]You're Welcome[/red]",
-  "THEHEROEXPANSION-VAKUUS_PRANK_POWER.smartDescription": "Take [blue]{Amount}[/blue] Damage at the end of turn.\n\n[red][shake]You're Welcome[/shake][/red]",
+  "THEHEROEXPANSION-VAKUUS_PRANK_POWER.description": "Take [blue]X[/blue] Damage at the end of this turn.\n\n[red]You're Welcome[/red]",
+  "THEHEROEXPANSION-VAKUUS_PRANK_POWER.smartDescription": "Take [blue]{Amount}[/blue] Damage at the end of this turn.\n\n[red][shake]You're Welcome[/shake][/red]",
   "THEHEROEXPANSION-VAKUUS_PRANK_POWER.title": "Vakuu's Prank",
   "THEHEROEXPANSION-MY_TURN_POWER.description": "[red][shake]I'm playing now[/shake][/red]",
   "THEHEROEXPANSION-MY_TURN_POWER.smartDescription": "[red][shake]I'm playing now[/shake][/red]",
@@ -81,5 +81,8 @@
   "THEHEROEXPANSION-HUBRIS_POWER.title": "Hubris",
   "THEHEROEXPANSION-MOMENTUM_POWER.description": "Momentum improves Attack damage and [gold]Block[/gold] gained from cards, but decreases on card play.",
   "THEHEROEXPANSION-MOMENTUM_POWER.smartDescription": "{Amount:cond:<0?Decreases|Increases} Attack damage and [gold]Block[/gold] gained from cards by [blue]{Amount:abs()}[/blue]. Decreases by 1 whenever you play a card.",
-  "THEHEROEXPANSION-MOMENTUM_POWER.title": "Momentum"
+  "THEHEROEXPANSION-MOMENTUM_POWER.title": "Momentum",
+  "THEHEROEXPANSION-OLD_BETTER_DAYS_POWER.description": "Whenever you lose HP, Heal [blue]X[/blue] HP.",
+  "THEHEROEXPANSION-OLD_BETTER_DAYS_POWER.smartDescription": "Whenever you lose HP, Heal [blue]{Amount}[/blue] HP.",
+  "THEHEROEXPANSION-OLD_BETTER_DAYS_POWER.title": "Old Better Days"
 }

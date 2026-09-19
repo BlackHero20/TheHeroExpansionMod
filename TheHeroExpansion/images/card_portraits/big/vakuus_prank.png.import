@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfb6r4ajj7cvf"
-path="res://.godot/imported/toasty_smores.png-0f8a630eadaf9aefdccaa83ec9a9c828.ctex"
+uid="uid://wddqn5bcrkef"
+path="res://.godot/imported/vakuus_prank.png-f8479ba134502daa3b2f1136b7b3929d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheHeroExpansion/images/relics/toasty_smores.png"
-dest_files=["res://.godot/imported/toasty_smores.png-0f8a630eadaf9aefdccaa83ec9a9c828.ctex"]
+source_file="res://TheHeroExpansion/images/card_portraits/big/vakuus_prank.png"
+dest_files=["res://.godot/imported/vakuus_prank.png-f8479ba134502daa3b2f1136b7b3929d.ctex"]
 
 [params]
 

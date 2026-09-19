@@ -24,14 +24,18 @@ public class TomeOfOrigin() : TheHeroExpansionRelic(nameof(TomeOfOrigin))
         TomeOfOrigin tomeOfOrigin = this;
         if (player != tomeOfOrigin.Owner)
             return;
-
-        // Get card pools from other characters
+        
+        if (tomeOfOrigin.Owner.PlayerCombatState.TurnNumber % 2 == 0)
+            return;
+        
         List<CardPoolModel> otherPools = tomeOfOrigin.Owner.UnlockState.CharacterCardPools.ToList();
         if (otherPools.Count > 1)
             otherPools.Remove(tomeOfOrigin.Owner.Character.CardPool);
 
         if (otherPools.Count == 0)
             return;
+        
+
 
         IEnumerable<CardModel> cards = otherPools
             .SelectMany(pool => pool.GetUnlockedCards(tomeOfOrigin.Owner.UnlockState, tomeOfOrigin.Owner.RunState.CardMultiplayerConstraint));

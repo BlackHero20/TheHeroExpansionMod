@@ -14,7 +14,7 @@ public static class OrobasPatch
         if (!TheHeroExpansionConfig.TomeOfOrigin)
             return;
         
-        var relic = ModelDb.Relic<TomeOfOrigin>().ToMutable(); //change this to whatever relic I want
+        var relic = ModelDb.Relic<TomeOfOrigin>().ToMutable();
         
         var method = typeof(AncientEventModel).GetMethod("RelicOption",
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance,

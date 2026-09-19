@@ -16,8 +16,13 @@ using TheHeroExpansion.TheHeroExpansionCode.Powers.VakuuPowers;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards.VakuuCards;
 [Pool(typeof(TokenCardPool))]
 public class VakuusPrank() : VakuuCard(0,
-    CardType.Power, TargetType.Self)
+    CardType.Skill, TargetType.Self)
 {
+    public override IEnumerable<CardKeyword> CanonicalKeywords => 
+    [
+        CardKeyword.Exhaust
+    ];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new PowerVar<VakuusPrankPower>(10M),

@@ -25,9 +25,9 @@ public class CrystalFocus() : TheHeroExpansionCard(1,
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(5M, ValueProp.Move),
-        new IntVar("RetainBlock", 3M),
-        new IntVar("BlockThreshold", 14M)
+        new BlockVar(4M, ValueProp.Move),
+        new IntVar("RetainBlock", 2M),
+        new IntVar("BlockThreshold", 10M)
     ];
 
     protected override async Task OnPlay(
@@ -84,6 +84,6 @@ public class CrystalFocus() : TheHeroExpansionCard(1,
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars.Block.UpgradeValueBy(3M);
+        this.DynamicVars.Block.UpgradeValueBy(2M);
     }
 }

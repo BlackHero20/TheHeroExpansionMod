@@ -15,11 +15,12 @@ using TheHeroExpansion.TheHeroExpansionCode.Cards;
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
 [Pool(typeof(IroncladCardPool))]
 public class SixHundredStrike() : TheHeroExpansionCard(1,
-    CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy, nameof(SixHundredStrike))
+    CardType.Attack, CardRarity.Rare, 
+    TargetType.AnyEnemy, nameof(SixHundredStrike))
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new CalculationBaseVar(4M),
+        new CalculationBaseVar(8M),
         new ExtraDamageVar(3M),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((card, _) =>
             CombatManager.Instance.History.Entries.OfType<CardPlayFinishedEntry>()

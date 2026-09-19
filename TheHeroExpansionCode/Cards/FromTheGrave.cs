@@ -40,11 +40,12 @@ public class FromTheGrave() : TheHeroExpansionCard(2,
     {
         FromTheGrave fromTheGrave = this;
         if (card != fromTheGrave) return;
-        
 
-        await CreatureCmd.GainBlock(fromTheGrave.Owner.Creature, fromTheGrave.DynamicVars.Block, null);
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(
-            fromTheGrave.CreateClone(), PileType.Draw, fromTheGrave.Owner, CardPilePosition.Random));
+        await CardCmd.AutoPlay(choiceContext, fromTheGrave, null);
+        if (fromTheGrave.Pile?.Type != PileType.Exhaust)
+            await CardPileCmd.Add(fromTheGrave, PileType.Exhaust, CardPilePosition.Random, null, skipVisuals: true);
+
+        await CardPileCmd.AddGeneratedCardToCombat(fromTheGrave.CreateClone(), PileType.Draw, fromTheGrave.Owner, CardPilePosition.Random);
     }
 
     protected override void OnUpgrade() => this.DynamicVars.Block.UpgradeValueBy(3M);

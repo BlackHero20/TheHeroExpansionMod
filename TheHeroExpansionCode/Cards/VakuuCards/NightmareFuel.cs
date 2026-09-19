@@ -22,12 +22,12 @@ public class NightmareFuel() : VakuuCard(0, CardType.Skill, TargetType.Self)
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DynamicVar("Corrupted", 1),
-        new DynamicVar("Doomsday", 1)
+        new DynamicVar("PureHorror", 1)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         this.IsUpgraded 
-            ? HoverTipFactory.FromEnchantment<Doomsday>() 
+            ? HoverTipFactory.FromEnchantment<PureHorror>() 
             : HoverTipFactory.FromEnchantment<Corrupted>();
     
     protected override async Task OnPlay(
@@ -41,7 +41,7 @@ public class NightmareFuel() : VakuuCard(0, CardType.Skill, TargetType.Self)
             if (card.Enchantment == null && card.Type == CardType.Attack)
                 if (nightmareFuel.IsUpgraded)
                 {
-                    CardCmd.Enchant<Doomsday>(card, 1M);
+                    CardCmd.Enchant<PureHorror>(card, 1M);
                 }
                 else
                 {

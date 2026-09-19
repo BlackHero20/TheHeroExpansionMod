@@ -11,11 +11,8 @@ public class MomentumPower : TheHeroExpansionPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
-
-    // Momentum's value as of the end of the last card play we resolved.
-    // Used to tell "this play's OnPlay raised Momentum off of 0" apart from
-    // "Momentum was already positive going into this play".
-    private decimal _lastResolvedAmount;
+    
+    private decimal _amountBeforeThisCard;
 
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay cardPlay)
     {
@@ -33,21 +30,22 @@ public class MomentumPower : TheHeroExpansionPower
             return 0M;
         return !props.IsPoweredCardOrMonsterMoveBlock() ? 0M : (decimal)Amount;
     }
-    
+
+    public override Task BeforeCardPlayed(CardPlay cardPlay)
+    {
+        _amountBeforeThisCard = Amount;
+        return Task.CompletedTask;
+    }
+
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Card.Owner?.Creature != Owner)
             return;
         
-        if (_lastResolvedAmount == 0M && Amount > 0M)
-        {
-            _lastResolvedAmount = Amount;
+        if (_amountBeforeThisCard == 0M && Amount > 0M)
             return;
-        }
 
         if (Amount > 0M)
             await PowerCmd.Apply<MomentumPower>(choiceContext, Owner, -1M, Owner, null);
-
-        _lastResolvedAmount = Amount;
     }
 }

@@ -39,17 +39,12 @@ public class MasterfulStab() : TheHeroExpansionCard(0,
             .Execute(choiceContext);
     }
 
-    private int GetHpLossCount()
-    {
-        return CombatManager.Instance.History.Entries
-            .OfType<DamageReceivedEntry>()
-            .Count(e => e.Receiver == Owner.Creature && e.Result.UnblockedDamage > 0);
-    }
-
     public override Task AfterCardEnteredCombat(CardModel card)
     {
         if (card != this || IsClone) return Task.CompletedTask;
-        IncreaseCostBy(GetHpLossCount());
+        EnergyCost.AddThisCombat(CombatManager.Instance.History.Entries
+            .OfType<DamageReceivedEntry>()
+            .Count(e => e.Receiver == Owner.Creature && e.Result.UnblockedDamage > 0));
         return Task.CompletedTask;
     }
 
@@ -63,19 +58,13 @@ public class MasterfulStab() : TheHeroExpansionCard(0,
     {
         if (target != Owner.Creature) return;
         if (result.UnblockedDamage <= 0) return;
-        IncreaseCostBy(1);
+        EnergyCost.AddThisCombat(1);
     }
 
     public override Task AfterCombatEnd(CombatRoom room)
     {
         EnergyCost.SetThisCombat(0);
         return Task.CompletedTask;
-    }
-
-    private void IncreaseCostBy(int amount)
-    {
-        if (amount <= 0) return;
-        EnergyCost.AddThisCombat(amount);
     }
 
     protected override void OnUpgrade()

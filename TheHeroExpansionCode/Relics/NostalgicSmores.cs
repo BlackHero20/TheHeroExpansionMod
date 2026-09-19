@@ -13,7 +13,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Relics;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Relics;
 [Pool(typeof(EventRelicPool))]
-public class ToastySmores() : TheHeroExpansionRelic(nameof(ToastySmores))
+public class NostalgicSmores() : TheHeroExpansionRelic(nameof(NostalgicSmores))
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
@@ -31,7 +31,7 @@ public class ToastySmores() : TheHeroExpansionRelic(nameof(ToastySmores))
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new CardsVar(2)
+        new CardsVar(3)
     ];
 
     public override Task BeforeSideTurnEnd(

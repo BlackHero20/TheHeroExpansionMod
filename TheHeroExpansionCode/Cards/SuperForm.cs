@@ -17,7 +17,7 @@ public class SuperForm() : TheHeroExpansionCard(3,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<MomentumPower>(6),
+        new PowerVar<MomentumPower>(5),
         new PowerVar<SuperFormPower>(3),
     ];
     
@@ -39,6 +39,5 @@ public class SuperForm() : TheHeroExpansionCard(3,
     protected override void OnUpgrade()
     {
         this.DynamicVars["MomentumPower"].UpgradeValueBy(2M);
-        this.DynamicVars["SuperFormPower"].UpgradeValueBy(1M);
     }
 }

@@ -11,7 +11,7 @@ using TheHeroExpansion.TheHeroExpansionCode.Extensions;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 
-public sealed class Doomsday : TheHeroExpansionEnchantment
+public sealed class PureHorror : TheHeroExpansionEnchantment
 {
     public override bool CanEnchantCardType(CardType cardType) =>
         cardType == CardType.Attack;
@@ -22,20 +22,20 @@ public sealed class Doomsday : TheHeroExpansionEnchantment
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new MaxHpVar(2M)
+        new MaxHpVar(1M)
         
     ];
 
     public override Decimal EnchantDamageMultiplicative(Decimal originalDamage, ValueProp props)
     {
-        return !props.IsPoweredAttack() ? 1M : 1.75M;
+        return !props.IsPoweredAttack() ? 1M : 2M;
     }
 
     public override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay? cardPlay)
     {
-        Doomsday doomsday = this;
-        if (choiceContext == null || doomsday.Card?.Owner?.Creature == null)
+        PureHorror pureHorror = this;
+        if (choiceContext == null || pureHorror.Card?.Owner?.Creature == null)
             return;
-        await CreatureCmd.LoseMaxHp(choiceContext, doomsday.Card.Owner.Creature, doomsday.DynamicVars.MaxHp.BaseValue, true);
+        await CreatureCmd.LoseMaxHp(choiceContext, pureHorror.Card.Owner.Creature, pureHorror.DynamicVars.MaxHp.BaseValue, true);
     }
 }

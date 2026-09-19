@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwoqje1ao3nxy"
-path="res://.godot/imported/toasty_smores.png-a457417139e9134fc1c1a01d7550b752.ctex"
+uid="uid://bbrq5e6c43gwu"
+path="res://.godot/imported/kara_cancel.png-8b747094622471fbcef75d804c06d538.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheHeroExpansion/images/relics/big/toasty_smores.png"
-dest_files=["res://.godot/imported/toasty_smores.png-a457417139e9134fc1c1a01d7550b752.ctex"]
+source_file="res://TheHeroExpansion/images/card_portraits/big/kara_cancel.png"
+dest_files=["res://.godot/imported/kara_cancel.png-8b747094622471fbcef75d804c06d538.ctex"]
 
 [params]
 

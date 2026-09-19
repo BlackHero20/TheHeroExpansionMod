@@ -47,6 +47,6 @@ public class PatriotShield() : TheHeroExpansionCard(1,
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars.Block.UpgradeValueBy(2M);
+        this.DynamicVars.Block.UpgradeValueBy(3M);
     }
 }

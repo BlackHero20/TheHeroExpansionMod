@@ -21,7 +21,7 @@ public class Akumetsu() : TheHeroExpansionCard(2,
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(10M, ValueProp.Move),
+        new BlockVar(12M, ValueProp.Move),
         new PowerVar<AkumetsuPower>(1M)
     ];
 

@@ -27,16 +27,10 @@ public class BottledDynamism() : VakuuCard(0,
         new PowerVar<CeaseToExistPower>(1M)
     ];
     
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
-    {
-        get
-        {
-            var tips = new List<IHoverTip> { HoverTipFactory.FromPower<VigorPower>() };
-            if (this.IsUpgraded)
-                tips.Add(HoverTipFactory.FromPower<CeaseToExistPower>());
-            return tips;
-        }
-    }
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<VigorPower>()
+    ];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

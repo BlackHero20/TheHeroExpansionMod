@@ -7,7 +7,6 @@ namespace TheHeroExpansion.TheHeroExpansionCode.Enchantments;
 
 public class TheHeroExpansionEnchantment : CustomEnchantmentModel
 {
-    //Loads from TheHeroExpansion/images/powers/your_power.png
     protected override string? CustomIconPath
     {
         get

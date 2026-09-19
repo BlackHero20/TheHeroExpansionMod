@@ -18,7 +18,7 @@ public class VenomFlurry() : TheHeroExpansionCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(2M, ValueProp.Move),
+        new DamageVar(3M, ValueProp.Move),
         new PowerVar<PoisonPower>(1M),
         new IntVar("Replay", 1M)
     ];

@@ -26,8 +26,8 @@ public class MinionDuty() : TheHeroExpansionCard(1,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
-            new DamageVar(6M, ValueProp.Move),
-            new BlockVar(5M, ValueProp.Move)
+            new DamageVar(5M, ValueProp.Move),
+            new BlockVar(4M, ValueProp.Move)
         ];
 
     protected override HashSet<CardTag> CanonicalTags =>

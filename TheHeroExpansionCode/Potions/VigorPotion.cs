@@ -25,7 +25,7 @@ public class VigorPotion() : TheHeroExpansionPotion(nameof(VigorPotion))
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<VigorPower>(12M)
+        new PowerVar<VigorPower>(9M)
     ];
     
     public override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -35,8 +35,9 @@ public class VigorPotion() : TheHeroExpansionPotion(nameof(VigorPotion))
 
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
     {
+        VigorPotion vigorPotion = this;
         AssertValidForTargetedPotion(target);
         NCombatRoom.Instance?.PlaySplashVfx(target, new Color("#ffd100"));
-        await PowerCmd.Apply<VigorPower>(choiceContext, target, 12M, Owner.Creature, null);
+        await PowerCmd.Apply<VigorPower>(choiceContext, target, vigorPotion.DynamicVars["VigorPower"].BaseValue, Owner.Creature, null);
     }
 }

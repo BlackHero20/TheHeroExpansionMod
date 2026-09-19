@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btrnwco7s7cqq"
-path="res://.godot/imported/toasty_smores_outline.png-385a207fa572f1f01c86f9a26e5433e8.ctex"
+uid="uid://gx4h8g31jryx"
+path="res://.godot/imported/tainted_blade_power.png-62332dbbbadbfa9a1827968c1f650728.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheHeroExpansion/images/relics/toasty_smores_outline.png"
-dest_files=["res://.godot/imported/toasty_smores_outline.png-385a207fa572f1f01c86f9a26e5433e8.ctex"]
+source_file="res://TheHeroExpansion/images/powers/tainted_blade_power.png"
+dest_files=["res://.godot/imported/tainted_blade_power.png-62332dbbbadbfa9a1827968c1f650728.ctex"]
 
 [params]
 

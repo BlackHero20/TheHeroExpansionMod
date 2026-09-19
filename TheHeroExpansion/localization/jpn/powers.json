@@ -8,8 +8,8 @@
   "THEHEROEXPANSION-BEAST_WITHIN_POWER.description": "[gold]弱体[/gold]の敵に単体対象ダメージを与えるたび、他のすべての敵に同量のダメージをX回与える。",
   "THEHEROEXPANSION-BEAST_WITHIN_POWER.smartDescription": "[gold]弱体[/gold]の敵に単体対象ダメージを与えるたび、他のすべての敵に同量のダメージを[blue]{Amount}[/blue]{Amount:plural:回|回}与える。",
   "THEHEROEXPANSION-BEAST_WITHIN_POWER.title": "内なる獣",
-  "THEHEROEXPANSION-BETTER_DAYS_POWER.description": "HPを失うたび、HPを[blue]X[/blue]回復する。",
-  "THEHEROEXPANSION-BETTER_DAYS_POWER.smartDescription": "HPを失うたび、HPを[blue]{Amount}[/blue]回復する。",
+  "THEHEROEXPANSION-BETTER_DAYS_POWER.description": "[blue]X[/blue]ターンの間、自分のターンにHPを失うたび、同じ値のHPを回復する。",
+  "THEHEROEXPANSION-BETTER_DAYS_POWER.smartDescription": "{Amount:plural:このターン|次の[blue]{}[/blue]ターンの間}、自分のターンにHPを失うたび、同じ値のHPを回復する。",
   "THEHEROEXPANSION-BETTER_DAYS_POWER.title": "良き日々",
   "THEHEROEXPANSION-REPURPOSE_POWER.description": "ターン終了時、カードを[blue]1[/blue]枚[gold]保留[/gold]し、[purple]幸先X[/purple]を[gold]エンチャント[/gold]する。",
   "THEHEROEXPANSION-REPURPOSE_POWER.smartDescription": "ターン終了時、カードを[blue]{Amount}[/blue]{Amount:plural:枚|枚}[gold]保留[/gold]し、[purple]幸先{Advantageous:diff()}[/purple]を[gold]エンチャント[/gold]する。",
@@ -81,5 +81,8 @@
   "THEHEROEXPANSION-HUBRIS_POWER.title": "傲慢",
   "THEHEROEXPANSION-MOMENTUM_POWER.description": "カードのダメージと[gold]ブロック[/gold]を増加させる。[gold]モメンタム[/gold]の値はカードをプレイするたびに減少する。",
   "THEHEROEXPANSION-MOMENTUM_POWER.smartDescription": "カードのダメージと[gold]ブロック[/gold]を[blue]{Amount:abs()}[/blue]{Amount:cond:<0?減少|増加}させる。カードをプレイするたびに1減少する。",
-  "THEHEROEXPANSION-MOMENTUM_POWER.title": "モメンタム"
+  "THEHEROEXPANSION-MOMENTUM_POWER.title": "モメンタム",
+  "THEHEROEXPANSION-OLD_BETTER_DAYS_POWER.description": "HPを失うたび、HPを[blue]X[/blue]回復する。",
+  "THEHEROEXPANSION-OLD_BETTER_DAYS_POWER.smartDescription": "HPを失うたび、HPを[blue]{Amount}[/blue]回復する。",
+  "THEHEROEXPANSION-OLD_BETTER_DAYS_POWER.title": "良き日々（旧）"
 }

@@ -12,11 +12,11 @@ internal class TheHeroExpansionConfig : SimpleModConfig
     public static bool TryAgain { get; set; } = true;
     public static bool Suffocate { get; set; } = true;
     public static bool Transfusion { get; set; } = true;
-    public static bool SixHundredStrike { get; set; } = true;
+    public static bool BetterDays { get; set; } = true;
     public static bool FromTheGrave { get; set; } = true;
     public static bool Akumetsu { get; set; } = true;
+    public static bool SixHundredStrike { get; set; } = true;
     public static bool BeastWithin { get; set; } = true;
-    public static bool BetterDays { get; set; } = true;
     public static bool AllEndsInFlames { get; set; } = true;
     
     // ── Silent ────────────────────────────────────────────
@@ -94,7 +94,7 @@ internal class TheHeroExpansionConfig : SimpleModConfig
     public static bool PottetAloeVera { get; set; } = true;
     public static bool MysteriousFlashlight { get; set; } = true;
     public static bool BladeHandle { get; set; } = true;
-    public static bool ToastySmores { get; set; } = true;
+    public static bool NostalgicSmores { get; set; } = true;
     public static bool PaelsBlight { get; set; } = true;
     public static bool TomeOfOrigin { get; set; } = true;
     public static bool SteelBall { get; set; } = true;
@@ -107,4 +107,7 @@ internal class TheHeroExpansionConfig : SimpleModConfig
     public static bool VigorPotion { get; set; } = true;
     public static bool TimeInABottle { get; set; } = true;
     public static bool BleedingFuel { get; set; } = true;
+
+    [ConfigSection("Deprecated")] 
+    public static bool OldBetterDays { get; set; } = false;
 }

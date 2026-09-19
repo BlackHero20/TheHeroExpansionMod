@@ -32,7 +32,7 @@ public sealed class PerishSongPower : TheHeroExpansionPower
         this.DynamicVars.Doom.BaseValue = doom;
     }
 
-    public override async Task AfterSideTurnEnd(
+    public override async Task AfterSideTurnEndLate(
         PlayerChoiceContext choiceContext,
         CombatSide side,
         IEnumerable<Creature> participants)

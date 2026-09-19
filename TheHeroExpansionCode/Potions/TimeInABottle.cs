@@ -34,8 +34,9 @@ public class TimeInABottle() : TheHeroExpansionPotion(nameof(TimeInABottle))
 
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
     {
+        TimeInABottle timeInABottle = this;
         AssertValidForTargetedPotion(target);
         NCombatRoom.Instance?.PlaySplashVfx(target, new Color("2f2fe4"));
-        await PowerCmd.Apply<MomentumPower>(choiceContext, target, 5M, Owner.Creature, null);
+        await PowerCmd.Apply<MomentumPower>(choiceContext, target, timeInABottle.DynamicVars["MomentumPower"].BaseValue, Owner.Creature, null);
     }
 }
