@@ -4,6 +4,7 @@ bin/
 .git/
 .idea/
 .vs/
+.uid
 publish/
 Properties/
 packages/
