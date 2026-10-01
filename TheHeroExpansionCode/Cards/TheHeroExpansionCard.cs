@@ -2,7 +2,8 @@
 using BaseLib.Extensions;
 using TheHeroExpansion.TheHeroExpansionCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
- 
+using TheHeroExpansion.TheHeroExpansionCode.UI;
+
 namespace TheHeroExpansion.TheHeroExpansionCode.Cards;
  
 public abstract class TheHeroExpansionCard : CustomCardModel
@@ -19,7 +20,7 @@ public abstract class TheHeroExpansionCard : CustomCardModel
     {
     }
  
-    public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
+    public override string CustomPortraitPath => HeroBetaArt.GetPortraitPath(this, (Id.Entry.RemovePrefix().ToLowerInvariant() + ".png").BigCardImagePath());
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
     public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
 }

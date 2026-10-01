@@ -15,6 +15,8 @@ public class FromTheGrave() : TheHeroExpansionCard(2,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self, nameof(FromTheGrave))
 {
+    private bool _autoPlayingFromExhaust;
+        
     public override bool GainsBlock => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -39,9 +41,17 @@ public class FromTheGrave() : TheHeroExpansionCard(2,
         bool causedByEthereal)
     {
         FromTheGrave fromTheGrave = this;
-        if (card != fromTheGrave) return;
+        
+        if (card != fromTheGrave) 
+            return;
+        
+        if (_autoPlayingFromExhaust)
+            return;
 
-        await CardCmd.AutoPlay(choiceContext, fromTheGrave, null);
+        _autoPlayingFromExhaust = true;
+        await CardCmd.AutoPlay(choiceContext, this, null);
+        _autoPlayingFromExhaust = false;
+        
         if (fromTheGrave.Pile?.Type != PileType.Exhaust)
             await CardPileCmd.Add(fromTheGrave, PileType.Exhaust, CardPilePosition.Random, null, skipVisuals: true);
 
