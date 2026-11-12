@@ -36,6 +36,6 @@ public sealed class Doomsday : TheHeroExpansionEnchantment
         Doomsday doomsday = this;
         if (choiceContext == null || doomsday.Card?.Owner?.Creature == null)
             return;
-        await CreatureCmd.LoseMaxHp(choiceContext, doomsday.Card.Owner.Creature, doomsday.DynamicVars.MaxHp.BaseValue, true);
+        await CreatureCmd.LoseMaxHp(choiceContext, doomsday.Card.Owner.Creature, doomsday.DynamicVars.MaxHp.BaseValue, doomsday.Card);
     }
 }
