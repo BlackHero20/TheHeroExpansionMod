@@ -185,7 +185,7 @@
   "THEHEROEXPANSION-DEJA_VU.description": "[gold]手札[/gold]のカード1枚に[gold]リプレイ[/gold]を付与する。",
   "THEHEROEXPANSION-DEJA_VU.selectionScreenPrompt": "[gold]リプレイ[/gold]を付与するカードを1枚選ぶ。",
   "THEHEROEXPANSION-DEJA_VU.title": "デジャヴ",
-  "SOVEREIGN_BLADE.description": "{TargetType:choose(AllEnemies):すべての敵に|}{Damage:diff()}ダメージを{Repeat:choose(1):|{}回}与える。{GainsBlock:cond:\n{CalculatedBlock:diff()}[gold]ブロック[/gold]を得る。|}{InCombat:{HasEdgeOfDestiny:cond:>0?\n追加で1回ヒットし、{EdgeOfDestinyDamage:diff()}ダメージを与える{SeekingEdgeSuffix}|}|}",
+  "SOVEREIGN_BLADE.description": "{TargetType:choose(AllEnemies):すべての敵に|}{Damage:diff()}ダメージを{HitCount:choose(1):|{}回}与える。{GainsBlock:cond:\n{CalculatedBlock:diff()}[gold]ブロック[/gold]を得る。|}{InCombat:{HasEdgeOfDestiny:cond:>0?\n追加で1回ヒットし、{EdgeOfDestinyDamage:diff()}ダメージを与える{SeekingEdgeSuffix}|}|}",
   "THEHEROEXPANSION-MASTERFUL_STAB.description": "この戦闘中にHPを失うたび、コストが1{energyPrefix:energyIcons(1)}増加する。\n{Damage:diff()}ダメージを与える。",
   "THEHEROEXPANSION-MASTERFUL_STAB.title": "一撃必殺",
   "THEHEROEXPANSION-OLD_BETTER_DAYS.description": "HPを失うたび、HPを{OldBetterDaysPower:diff()}回復する。",

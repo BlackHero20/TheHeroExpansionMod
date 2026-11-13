@@ -185,7 +185,7 @@
   "THEHEROEXPANSION-BOTTLED_DYNAMISM.title": "瓶装动能",
   "THEHEROEXPANSION-TIME_GUN.description": "{IfUpgraded:show:[red][shake]别得寸进尺，凡人[/shake][/red]\n}本回合结束后，进行一个额外回合{IfUpgraded:show:\n{HubrisPower:diff()}回合后，[red]死亡[/red]。|}",
   "THEHEROEXPANSION-TIME_GUN.title": "杀死过去的枪",
-  "SOVEREIGN_BLADE.description": "{TargetType:choose(AllEnemies):对所有敌人|}造成{Damage:diff()}点伤害{Repeat:plural:|{}次}。{GainsBlock:cond:\n获得{CalculatedBlock:diff()}点[gold]格挡[/gold]。|}{InCombat:{HasEdgeOfDestiny:cond:>0?\n额外命中一次，造成{EdgeOfDestinyDamage:diff()}点伤害{SeekingEdgeSuffix}|}|}",
+  "SOVEREIGN_BLADE.description": "{TargetType:choose(AllEnemies):对所有敌人|}造成{Damage:diff()}点伤害{HitCount:plural:|{}次}。{GainsBlock:cond:\n获得{CalculatedBlock:diff()}点[gold]格挡[/gold]。|}{InCombat:{HasEdgeOfDestiny:cond:>0?\n额外命中一次，造成{EdgeOfDestinyDamage:diff()}点伤害{SeekingEdgeSuffix}|}|}",
   "THEHEROEXPANSION-MASTERFUL_STAB.description": "本场战斗中你每失去过一次生命值，此牌的耗能增加1{energyPrefix:energyIcons(1)}。\n造成{Damage:diff()}点伤害。",
   "THEHEROEXPANSION-MASTERFUL_STAB.title": "精巧刺击",
   "THEHEROEXPANSION-OLD_BETTER_DAYS.description": "每当你失去生命，回复{OldBetterDaysPower:diff()}点生命。",

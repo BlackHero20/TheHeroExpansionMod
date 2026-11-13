@@ -3,9 +3,9 @@
   "name": "TheHeroExpansion",
   "author": "BlackHero20",
   "description": "A mod that adds additional content to the game",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "has_pck": true,
   "has_dll": true,
-  "dependencies": [{ "id": "BaseLib", "minVersion": "3.4.7" }],
+  "dependencies": [{ "id": "BaseLib", "minVersion": "3.4.8" }],
   "affects_gameplay": true
 }
