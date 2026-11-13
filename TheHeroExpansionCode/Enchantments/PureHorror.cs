@@ -36,6 +36,6 @@ public sealed class PureHorror : TheHeroExpansionEnchantment
         PureHorror pureHorror = this;
         if (choiceContext == null || pureHorror.Card?.Owner?.Creature == null)
             return;
-        await CreatureCmd.LoseMaxHp(choiceContext, pureHorror.Card.Owner.Creature, pureHorror.DynamicVars.MaxHp.BaseValue, true);
+        await CreatureCmd.LoseMaxHp(choiceContext, pureHorror.Card.Owner.Creature, pureHorror.DynamicVars.MaxHp.BaseValue, pureHorror.Card);
     }
 }
