@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Random;
+using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.TestSupport;
 
 namespace TheHeroExpansion.TheHeroExpansionCode.Powers.VakuuPowers;
@@ -29,7 +30,7 @@ public class MyTurnPower : TheHeroExpansionPower
 
         ICombatState combatState = player.Creature.CombatState;
 
-        using (CardSelectCmd.PushSelector((ICardSelector) new VakuuCardSelector()))
+        using (RunManager.Instance.CardSelectorStack.PushSelector(player, new VakuuCardSelector()))
         {
             int cardsPlayed = 0;
             while (cardsPlayed < 13 && !CombatManager.Instance.IsOverOrEnding && !CombatManager.Instance.IsPlayerReadyToEndTurn(player))
