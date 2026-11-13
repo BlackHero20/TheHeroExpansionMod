@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f1e444gsjdbu"
-path="res://.godot/imported/loot_box.png-263c7e4d67a4ba150e9c6fbd88b77190.ctex"
+uid="uid://nkt735efsinq"
+path="res://.godot/imported/instant_transmission.png-75a6e867a3e436e1584c2d71bdf811fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheHeroExpansion/images/card_portraits/big/loot_box.png"
-dest_files=["res://.godot/imported/loot_box.png-263c7e4d67a4ba150e9c6fbd88b77190.ctex"]
+source_file="res://TheHeroExpansion/images/card_portraits/big/beta/instant_transmission.png"
+dest_files=["res://.godot/imported/instant_transmission.png-75a6e867a3e436e1584c2d71bdf811fc.ctex"]
 
 [params]
 

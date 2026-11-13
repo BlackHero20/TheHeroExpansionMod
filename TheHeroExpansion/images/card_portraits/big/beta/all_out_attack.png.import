@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwfweektaad7k"
-path="res://.godot/imported/all_out_attack.png-ef449d9441a3fb442d87bae1bf9bc018.ctex"
+uid="uid://dmmc0ai7wh2n8"
+path="res://.godot/imported/all_out_attack.png-7aa9e5cbc651fa7b2a4fe099a2ff2d91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheHeroExpansion/images/card_portraits/big/all_out_attack.png"
-dest_files=["res://.godot/imported/all_out_attack.png-ef449d9441a3fb442d87bae1bf9bc018.ctex"]
+source_file="res://TheHeroExpansion/images/card_portraits/big/beta/all_out_attack.png"
+dest_files=["res://.godot/imported/all_out_attack.png-7aa9e5cbc651fa7b2a4fe099a2ff2d91.ctex"]
 
 [params]
 

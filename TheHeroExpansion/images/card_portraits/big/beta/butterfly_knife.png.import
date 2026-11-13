@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh1bb3ebrfbn0"
-path="res://.godot/imported/sixth_finger.png-074e3ae835cf2eb05307302f85edefd3.ctex"
+uid="uid://do1ar0gjr3c0f"
+path="res://.godot/imported/butterfly_knife.png-c46edf3b1339892ee43d119f448b45a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheHeroExpansion/images/card_portraits/big/sixth_finger.png"
-dest_files=["res://.godot/imported/sixth_finger.png-074e3ae835cf2eb05307302f85edefd3.ctex"]
+source_file="res://TheHeroExpansion/images/card_portraits/big/beta/butterfly_knife.png"
+dest_files=["res://.godot/imported/butterfly_knife.png-c46edf3b1339892ee43d119f448b45a5.ctex"]
 
 [params]
 

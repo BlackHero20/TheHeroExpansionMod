@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iev2ckjm1w50"
-path="res://.godot/imported/all_ends_in_flames.png-fb0b74ea3f8b9caa204ac5f6dbfc7e25.ctex"
+uid="uid://gvm6k87kkq31"
+path="res://.godot/imported/better_days.png-d0d0ad6c752459eaacc69e5932852e81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheHeroExpansion/images/card_portraits/big/all_ends_in_flames.png"
-dest_files=["res://.godot/imported/all_ends_in_flames.png-fb0b74ea3f8b9caa204ac5f6dbfc7e25.ctex"]
+source_file="res://TheHeroExpansion/images/card_portraits/big/beta/better_days.png"
+dest_files=["res://.godot/imported/better_days.png-d0d0ad6c752459eaacc69e5932852e81.ctex"]
 
 [params]
 

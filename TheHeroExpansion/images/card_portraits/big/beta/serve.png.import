@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ga3nhgfw1vj"
-path="res://.godot/imported/shadow_boxing.png-77aeae8399563ded2a53e5a4facc0f6e.ctex"
+uid="uid://b7ondbvhfwccl"
+path="res://.godot/imported/serve.png-dfda49b2def507e073436ee63eca0a2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheHeroExpansion/images/card_portraits/big/shadow_boxing.png"
-dest_files=["res://.godot/imported/shadow_boxing.png-77aeae8399563ded2a53e5a4facc0f6e.ctex"]
+source_file="res://TheHeroExpansion/images/card_portraits/big/beta/serve.png"
+dest_files=["res://.godot/imported/serve.png-dfda49b2def507e073436ee63eca0a2c.ctex"]
 
 [params]
 
